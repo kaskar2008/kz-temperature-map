@@ -12,6 +12,7 @@
       "lng": 44.06531,
       "lat": 9.560022,
       "population": 477876,
+      "displayPriority": 10000477876,
       "countryCode": "SOL",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 47.333305,
       "lat": 10.583298,
       "population": 180000,
+      "displayPriority": 100180000,
       "countryCode": "SOL",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 45.54,
       "lat": 9.520387,
       "population": 106593,
+      "displayPriority": 100106593,
       "countryCode": "SOL",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 47.3167,
       "lat": 8.433297,
       "population": 60100,
+      "displayPriority": 100060100,
       "countryCode": "SOL",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 45.016415,
       "lat": 10.43555,
       "population": 242344,
+      "displayPriority": 242344,
       "countryCode": "SOL",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 43.180041,
       "lat": 9.940413,
       "population": 67664,
+      "displayPriority": 67664,
       "countryCode": "SOL",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 47.097528,
       "lat": 10.980091,
       "population": 30000,
+      "displayPriority": 30000,
       "countryCode": "SOL",
       "alt": null,
       "temps": [

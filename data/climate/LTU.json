@@ -12,6 +12,7 @@
       "lng": 25.316635,
       "lat": 54.683366,
       "population": 542366,
+      "displayPriority": 10000542366,
       "countryCode": "LTU",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 23.880031,
       "lat": 54.950404,
       "population": 374643,
+      "displayPriority": 100374643,
       "countryCode": "LTU",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 21.119941,
       "lat": 55.720409,
       "population": 192307,
+      "displayPriority": 100192307,
       "countryCode": "LTU",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 23.325026,
       "lat": 55.938639,
       "population": 133528,
+      "displayPriority": 100133528,
       "countryCode": "LTU",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 24.370026,
       "lat": 55.74002,
       "population": 127405,
+      "displayPriority": 100127405,
       "countryCode": "LTU",
       "alt": null,
       "temps": [

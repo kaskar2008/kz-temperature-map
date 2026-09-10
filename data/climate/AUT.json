@@ -12,6 +12,7 @@
       "lng": 16.364693,
       "lat": 48.201961,
       "population": 2400000,
+      "displayPriority": 11002400000,
       "countryCode": "AUT",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 14.288781,
       "lat": 48.319233,
       "population": 349161,
+      "displayPriority": 100349161,
       "countryCode": "AUT",
       "alt": 382,
       "temps": [
@@ -142,6 +144,7 @@
       "lng": 15.410005,
       "lat": 47.077758,
       "population": 263234,
+      "displayPriority": 100263234,
       "countryCode": "AUT",
       "alt": 340,
       "temps": [
@@ -209,6 +212,7 @@
       "lng": 13.04002,
       "lat": 47.810478,
       "population": 206279,
+      "displayPriority": 100206279,
       "countryCode": "AUT",
       "alt": 430,
       "temps": [
@@ -276,6 +280,7 @@
       "lng": 11.409991,
       "lat": 47.280407,
       "population": 155214,
+      "displayPriority": 100155214,
       "countryCode": "AUT",
       "alt": 578,
       "temps": [
@@ -343,6 +348,7 @@
       "lng": 14.31002,
       "lat": 46.620344,
       "population": 90610,
+      "displayPriority": 100090610,
       "countryCode": "AUT",
       "alt": null,
       "temps": [
@@ -406,6 +412,7 @@
       "lng": 9.766702,
       "lat": 47.516697,
       "population": 26928,
+      "displayPriority": 100026928,
       "countryCode": "AUT",
       "alt": null,
       "temps": [
@@ -469,6 +476,7 @@
       "lng": 16.533297,
       "lat": 47.833299,
       "population": 13165,
+      "displayPriority": 100013165,
       "countryCode": "AUT",
       "alt": null,
       "temps": [
@@ -532,6 +540,7 @@
       "lng": 16.249954,
       "lat": 47.815982,
       "population": 82762,
+      "displayPriority": 82762,
       "countryCode": "AUT",
       "alt": null,
       "temps": [

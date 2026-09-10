@@ -12,6 +12,7 @@
       "lng": 104.914689,
       "lat": 11.551976,
       "population": 1466000,
+      "displayPriority": 10001466000,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 103.200047,
       "lat": 13.100013,
       "population": 154773,
+      "displayPriority": 100154773,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 103.850033,
       "lat": 13.366638,
       "population": 109398,
+      "displayPriority": 100109398,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 105.450039,
       "lat": 12.000442,
       "population": 83233,
+      "displayPriority": 100083233,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 104.666624,
       "lat": 12.250478,
       "population": 75244,
+      "displayPriority": 100075244,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 105.324004,
       "lat": 11.484,
       "population": 74000,
+      "displayPriority": 100074000,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 103.916696,
       "lat": 12.533691,
       "population": 52476,
+      "displayPriority": 100052476,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 104.183346,
       "lat": 10.61709,
       "population": 50105,
+      "displayPriority": 100050105,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 104.518999,
       "lat": 11.451996,
       "population": 33231,
+      "displayPriority": 100033231,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 102.984933,
       "lat": 11.617539,
       "population": 33134,
+      "displayPriority": 100033134,
       "countryCode": "KHM",
       "alt": 2,
       "temps": [
@@ -646,6 +656,7 @@
       "lng": 105.974002,
       "lat": 13.523004,
       "population": 29665,
+      "displayPriority": 100029665,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -709,6 +720,7 @@
       "lng": 104.966704,
       "lat": 13.816701,
       "population": 24380,
+      "displayPriority": 100024380,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -772,6 +784,7 @@
       "lng": 105.801004,
       "lat": 11.079999,
       "population": 23956,
+      "displayPriority": 100023956,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -835,6 +848,7 @@
       "lng": 106.023997,
       "lat": 12.468996,
       "population": 19975,
+      "displayPriority": 100019975,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -898,6 +912,7 @@
       "lng": 104.888998,
       "lat": 12.711996,
       "population": 19951,
+      "displayPriority": 100019951,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -961,6 +976,7 @@
       "lng": 106.981003,
       "lat": 13.507002,
       "population": 19205,
+      "displayPriority": 100019205,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -1024,6 +1040,7 @@
       "lng": 104.783309,
       "lat": 10.98376,
       "population": 15264,
+      "displayPriority": 100015264,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -1087,6 +1104,7 @@
       "lng": 107.2,
       "lat": 12.449997,
       "population": 7944,
+      "displayPriority": 100007944,
       "countryCode": "KHM",
       "alt": null,
       "temps": [
@@ -1150,6 +1168,7 @@
       "lng": 102.983316,
       "lat": 13.583756,
       "population": 50302,
+      "displayPriority": 50302,
       "countryCode": "KHM",
       "alt": null,
       "temps": [

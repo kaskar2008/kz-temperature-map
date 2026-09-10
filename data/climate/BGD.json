@@ -12,6 +12,7 @@
       "lng": 90.406634,
       "lat": 23.725006,
       "population": 12797394,
+      "displayPriority": 10012797394,
       "countryCode": "BGD",
       "alt": 8.4,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 91.798022,
       "lat": 22.331938,
       "population": 4529000,
+      "displayPriority": 104529000,
       "countryCode": "BGD",
       "alt": -876.5,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 89.558055,
       "lat": 22.841933,
       "population": 1553000,
+      "displayPriority": 101553000,
       "countryCode": "BGD",
       "alt": 2.1,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 88.603074,
       "lat": 24.37693,
       "population": 810000,
+      "displayPriority": 100810000,
       "countryCode": "BGD",
       "alt": 19.5,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 91.873606,
       "lat": 24.903556,
       "population": 237000,
+      "displayPriority": 100237000,
       "countryCode": "BGD",
       "alt": 33.5,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 90.37499,
       "lat": 22.700409,
       "population": 202242,
+      "displayPriority": 100202242,
       "countryCode": "BGD",
       "alt": 2.1,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": 89.950003,
       "lat": 24.90043,
       "population": 167900,
+      "displayPriority": 100167900,
       "countryCode": "BGD",
       "alt": 18,
       "temps": [
@@ -481,6 +488,7 @@
       "lng": 91.16998,
       "lat": 23.470414,
       "population": 389411,
+      "displayPriority": 389411,
       "countryCode": "BGD",
       "alt": 7.5,
       "temps": [
@@ -548,6 +556,7 @@
       "lng": 90.380002,
       "lat": 24.750413,
       "population": 330126,
+      "displayPriority": 330126,
       "countryCode": "BGD",
       "alt": 18,
       "temps": [
@@ -615,6 +624,7 @@
       "lng": 89.280018,
       "lat": 25.750016,
       "population": 285564,
+      "displayPriority": 285564,
       "countryCode": "BGD",
       "alt": 32.6,
       "temps": [
@@ -682,6 +692,7 @@
       "lng": 89.199971,
       "lat": 23.170432,
       "population": 243987,
+      "displayPriority": 243987,
       "countryCode": "BGD",
       "alt": 6.1,
       "temps": [
@@ -749,6 +760,7 @@
       "lng": 88.999983,
       "lat": 25.800427,
       "population": 232209,
+      "displayPriority": 232209,
       "countryCode": "BGD",
       "alt": 39.6,
       "temps": [
@@ -816,6 +828,7 @@
       "lng": 90.499995,
       "lat": 23.620404,
       "population": 223622,
+      "displayPriority": 223622,
       "countryCode": "BGD",
       "alt": 8.4,
       "temps": [
@@ -883,6 +896,7 @@
       "lng": 89.92003,
       "lat": 24.249979,
       "population": 180144,
+      "displayPriority": 180144,
       "countryCode": "BGD",
       "alt": 10.2,
       "temps": [
@@ -950,6 +964,7 @@
       "lng": 88.349997,
       "lat": 24.580398,
       "population": 142361,
+      "displayPriority": 142361,
       "countryCode": "BGD",
       "alt": 19.5,
       "temps": [
@@ -1017,6 +1032,7 @@
       "lng": 89.249994,
       "lat": 24.000381,
       "population": 137888,
+      "displayPriority": 137888,
       "countryCode": "BGD",
       "alt": 12.9,
       "temps": [

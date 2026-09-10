@@ -11,7 +11,15 @@ const OUTPUT_DIR = join(ROOT, 'data', 'climate');
 const CACHE_DIR = join(ROOT, '.cache', 'climate-build');
 
 const PERIOD = '1991–2020';
-const GLOBAL_CITY_LIMIT = 20;
+// Число городов теперь зависит от масштаба страны и количества доступных точек.
+// Для крупных стран фиксированные 20 точек давали слишком разреженную карту.
+const CITY_LIMITS = {
+  tiny: 14,
+  small: 20,
+  medium: 35,
+  large: 55,
+  huge: 80,
+};
 const MAX_WMO_DISTANCE_KM = 80;
 
 // География нужна только на этапе сборки. В браузере климатические API не вызываются.
@@ -350,6 +358,84 @@ function buildPlacesByCountry(features) {
   return byCountry;
 }
 
+function countryCityLimit(countryFeature, availableCount) {
+  const population = Number(
+    getProperty(countryFeature?.properties, 'POP_EST', 'pop_est', 'POPULATION', 'population') || 0,
+  );
+
+  // availableCount хорошо отражает как размер страны, так и детализацию Natural Earth.
+  // Население добавляем как второй сигнал, чтобы густонаселённые страны не обрезались слишком сильно.
+  if (availableCount >= 150 || population >= 120_000_000) return CITY_LIMITS.huge;
+  if (availableCount >= 95 || population >= 60_000_000) return CITY_LIMITS.large;
+  if (availableCount >= 55 || population >= 25_000_000) return CITY_LIMITS.medium;
+  if (availableCount >= 25 || population >= 8_000_000) return CITY_LIMITS.small;
+  return CITY_LIMITS.tiny;
+}
+
+function placePoint(feature) {
+  const coords = feature?.geometry?.coordinates;
+  return {
+    lng: Number(coords?.[0]),
+    lat: Number(coords?.[1]),
+  };
+}
+
+function minDistanceToSelected(feature, selected) {
+  if (!selected.length) return Infinity;
+  const point = placePoint(feature);
+  if (!Number.isFinite(point.lat) || !Number.isFinite(point.lng)) return -Infinity;
+
+  let minDistance = Infinity;
+  for (const selectedFeature of selected) {
+    const selectedPoint = placePoint(selectedFeature);
+    const distance = haversineKm(
+      point.lat,
+      point.lng,
+      selectedPoint.lat,
+      selectedPoint.lng,
+    );
+    if (distance < minDistance) minDistance = distance;
+  }
+  return minDistance;
+}
+
+function selectGeographicallyBalancedPlaces(features, limit) {
+  if (features.length <= limit) {
+    return [...features].sort((a, b) => scorePlace(b) - scorePlace(a));
+  }
+
+  const ranked = [...features].sort((a, b) => scorePlace(b) - scorePlace(a));
+
+  // Около 40% — крупнейшие/столичные/региональные центры.
+  // Остальные точки добираются по максимальному расстоянию до уже выбранных,
+  // чтобы Россия не схлопывалась в европейскую часть, а США — в восточное побережье.
+  const priorityCount = Math.max(8, Math.min(limit, Math.round(limit * 0.4)));
+  const selected = ranked.slice(0, priorityCount);
+  const remaining = ranked.slice(priorityCount);
+
+  while (selected.length < limit && remaining.length) {
+    let bestIndex = 0;
+    let bestScore = -Infinity;
+
+    for (let index = 0; index < remaining.length; index += 1) {
+      const feature = remaining[index];
+      const distanceKm = minDistanceToSelected(feature, selected);
+      const population = Number(getProperty(feature.properties, 'pop_max', 'POP_MAX') || 0);
+
+      // География — главный фактор, население лишь слегка разрешает ничьи.
+      const candidateScore = distanceKm + Math.log10(Math.max(1, population)) * 4;
+      if (candidateScore > bestScore) {
+        bestScore = candidateScore;
+        bestIndex = index;
+      }
+    }
+
+    selected.push(remaining.splice(bestIndex, 1)[0]);
+  }
+
+  return selected;
+}
+
 function chooseCountryPlaces(countryCode, countryFeature, placesByCountry) {
   const features = placesByCountry.get(countryCode) || [];
   const unique = new Map();
@@ -362,14 +448,16 @@ function chooseCountryPlaces(countryCode, countryFeature, placesByCountry) {
     if (!unique.has(key)) unique.set(key, feature);
   }
 
-  const selected = [...unique.values()]
-    .sort((a, b) => scorePlace(b) - scorePlace(a))
-    .slice(0, GLOBAL_CITY_LIMIT)
+  const available = [...unique.values()];
+  const limit = countryCityLimit(countryFeature, available.length);
+  const selected = selectGeographicallyBalancedPlaces(available, limit)
     .map(feature => ({
       name: getPlaceName(feature),
       lng: Number(feature.geometry.coordinates[0]),
       lat: Number(feature.geometry.coordinates[1]),
       population: Number(getProperty(feature.properties, 'pop_max', 'POP_MAX') || 0) || null,
+      // Нужен только для возможного declutter на клиенте; на климатические расчёты не влияет.
+      displayPriority: scorePlace(feature),
     }));
 
   if (selected.length) return selected;
@@ -385,6 +473,7 @@ function chooseCountryPlaces(countryCode, countryFeature, placesByCountry) {
       lng,
       population: null,
       representativePoint: true,
+      displayPriority: 0,
     }];
   }
 
@@ -664,7 +753,11 @@ async function main() {
     }
 
     const countryName = getCountryDisplayName(feature);
+    const availablePlaces = (placesByCountry.get(code) || []).length;
     const baseCities = chooseCountryPlaces(code, feature, placesByCountry);
+    if (baseCities.length >= 35) {
+      console.log(`• ${code} ${countryName}: выбираю ${baseCities.length} из ${availablePlaces} городских точек`);
+    }
     const cityPlans = baseCities.map((city, index) => {
       const station = nearestWmoStation(city, code, stationsByCountry, stations);
       if (station) return { type: 'wmo', city, station };

@@ -12,6 +12,7 @@
       "lng": 55.44999,
       "lat": -4.616632,
       "population": 33576,
+      "displayPriority": 10000033576,
       "countryCode": "SYC",
       "alt": 3,
       "temps": [

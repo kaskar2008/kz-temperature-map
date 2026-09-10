@@ -12,6 +12,7 @@
       "lng": 58.383299,
       "lat": 37.949995,
       "population": 727700,
+      "displayPriority": 10000727700,
       "countryCode": "TKM",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 63.580036,
       "lat": 39.110002,
       "population": 234817,
+      "displayPriority": 100234817,
       "countryCode": "TKM",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 59.96496,
       "lat": 41.83999,
       "population": 201424,
+      "displayPriority": 100201424,
       "countryCode": "TKM",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 61.833321,
       "lat": 37.600016,
       "population": 178708,
+      "displayPriority": 100178708,
       "countryCode": "TKM",
       "alt": 240,
       "temps": [
@@ -268,6 +272,7 @@
       "lng": 54.36494,
       "lat": 39.51238,
       "population": 110827,
+      "displayPriority": 100110827,
       "countryCode": "TKM",
       "alt": null,
       "temps": [
@@ -331,6 +336,7 @@
       "lng": 52.969676,
       "lat": 40.023047,
       "population": 68292,
+      "displayPriority": 100068292,
       "countryCode": "TKM",
       "alt": null,
       "temps": [
@@ -394,6 +400,7 @@
       "lng": 60.496038,
       "lat": 37.378609,
       "population": 67294,
+      "displayPriority": 67294,
       "countryCode": "TKM",
       "alt": 186.4,
       "temps": [
@@ -461,6 +468,7 @@
       "lng": 56.277795,
       "lat": 38.97554,
       "population": 48458,
+      "displayPriority": 48458,
       "countryCode": "TKM",
       "alt": 33.4,
       "temps": [
@@ -528,6 +536,7 @@
       "lng": 58.210028,
       "lat": 38.051668,
       "population": 40813,
+      "displayPriority": 40813,
       "countryCode": "TKM",
       "alt": 159,
       "temps": [
@@ -595,6 +604,7 @@
       "lng": 59.600021,
       "lat": 37.350342,
       "population": 38381,
+      "displayPriority": 38381,
       "countryCode": "TKM",
       "alt": null,
       "temps": [
@@ -658,6 +668,7 @@
       "lng": 65.199731,
       "lat": 37.824809,
       "population": 33242,
+      "displayPriority": 33242,
       "countryCode": "TKM",
       "alt": 239.8,
       "temps": [
@@ -725,6 +736,7 @@
       "lng": 59.166662,
       "lat": 42.316654,
       "population": 31400,
+      "displayPriority": 31400,
       "countryCode": "TKM",
       "alt": null,
       "temps": [
@@ -788,6 +800,7 @@
       "lng": 53.122591,
       "lat": 39.436155,
       "population": 1206,
+      "displayPriority": 1206,
       "countryCode": "TKM",
       "alt": null,
       "temps": [

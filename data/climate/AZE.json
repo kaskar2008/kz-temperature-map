@@ -12,6 +12,7 @@
       "lng": 49.860271,
       "lat": 40.397218,
       "population": 2122300,
+      "displayPriority": 10002122300,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 49.629983,
       "lat": 40.580015,
       "population": 279159,
+      "displayPriority": 100279159,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 45.412205,
       "lat": 39.20922,
       "population": 94788,
+      "displayPriority": 100094788,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 47.170547,
       "lat": 41.192329,
       "population": 64968,
+      "displayPriority": 100064968,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 47.150031,
       "lat": 40.617196,
       "population": 53716,
+      "displayPriority": 100053716,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 46.414986,
       "lat": 39.201521,
       "population": 42288,
+      "displayPriority": 100042288,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 47.74059,
       "lat": 40.653422,
       "population": 35348,
+      "displayPriority": 100035348,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 45.628889,
       "lat": 40.992222,
       "population": 12626,
+      "displayPriority": 100012626,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 47.845833,
       "lat": 40.981389,
       "population": 11867,
+      "displayPriority": 100011867,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 45.816111,
       "lat": 40.565556,
       "population": 8657,
+      "displayPriority": 100008657,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": 46.789722,
       "lat": 40.610278,
       "population": 7333,
+      "displayPriority": 100007333,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": 47.458333,
       "lat": 41.070833,
       "population": 6876,
+      "displayPriority": 100006876,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": 46.350028,
       "lat": 40.684996,
       "population": 303268,
+      "displayPriority": 303268,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -831,6 +844,7 @@
       "lng": 48.920259,
       "lat": 39.932303,
       "population": 70684,
+      "displayPriority": 70684,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -894,6 +908,7 @@
       "lng": 48.851064,
       "lat": 38.754003,
       "population": 60180,
+      "displayPriority": 60180,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -957,6 +972,7 @@
       "lng": 46.751968,
       "lat": 39.815643,
       "population": 57473,
+      "displayPriority": 57473,
       "countryCode": "AZE",
       "alt": null,
       "temps": [
@@ -1020,6 +1036,7 @@
       "lng": 45.556389,
       "lat": 40.905278,
       "population": null,
+      "displayPriority": 0,
       "countryCode": "AZE",
       "alt": null,
       "temps": [

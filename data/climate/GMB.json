@@ -12,6 +12,7 @@
       "lng": -16.591701,
       "lat": 13.453876,
       "population": 43094,
+      "displayPriority": 10000043094,
       "countryCode": "GMB",
       "alt": 5,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": -16.65995,
       "lat": 13.280364,
       "population": 195136,
+      "displayPriority": 100195136,
       "countryCode": "GMB",
       "alt": 36,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": -15.543324,
       "lat": 13.454894,
       "population": 18672,
+      "displayPriority": 100018672,
       "countryCode": "GMB",
       "alt": 20,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": -14.222997,
       "lat": 13.310001,
       "population": 14380,
+      "displayPriority": 100014380,
       "countryCode": "GMB",
       "alt": 35,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": -14.767001,
       "lat": 13.551003,
       "population": 3584,
+      "displayPriority": 100003584,
       "countryCode": "GMB",
       "alt": 8,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": -16.094997,
       "lat": 13.493997,
       "population": 2751,
+      "displayPriority": 100002751,
       "countryCode": "GMB",
       "alt": 16,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": -14.650021,
       "lat": 13.433636,
       "population": 7615,
+      "displayPriority": 7615,
       "countryCode": "GMB",
       "alt": 8,
       "temps": [

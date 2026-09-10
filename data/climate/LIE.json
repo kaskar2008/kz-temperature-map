@@ -12,6 +12,7 @@
       "lng": 9.51667,
       "lat": 47.133724,
       "population": 36281,
+      "displayPriority": 10000036281,
       "countryCode": "LIE",
       "alt": 457,
       "temps": [

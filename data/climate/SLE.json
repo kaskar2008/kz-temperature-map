@@ -12,6 +12,7 @@
       "lng": -13.236162,
       "lat": 8.471957,
       "population": 827000,
+      "displayPriority": 10000827000,
       "countryCode": "SLE",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": -11.740018,
       "lat": 7.970016,
       "population": 174354,
+      "displayPriority": 100174354,
       "countryCode": "SLE",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": -11.189974,
       "lat": 7.880409,
       "population": 143137,
+      "displayPriority": 100143137,
       "countryCode": "SLE",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": -12.049973,
       "lat": 8.880426,
       "population": 87679,
+      "displayPriority": 100087679,
       "countryCode": "SLE",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": -10.849994,
       "lat": 8.440478,
       "population": 87539,
+      "displayPriority": 87539,
       "countryCode": "SLE",
       "alt": null,
       "temps": [

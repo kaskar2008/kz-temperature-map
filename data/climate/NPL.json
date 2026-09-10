@@ -12,6 +12,7 @@
       "lng": 85.314696,
       "lat": 27.718638,
       "population": 895000,
+      "displayPriority": 10000895000,
       "countryCode": "NPL",
       "alt": 1337,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 84.00558,
       "lat": 28.204201,
       "population": 200000,
+      "displayPriority": 100200000,
       "countryCode": "NPL",
       "alt": 827,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 87.283344,
       "lat": 26.483744,
       "population": 182324,
+      "displayPriority": 100182324,
       "countryCode": "NPL",
       "alt": 72,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 80.593003,
       "lat": 28.694997,
       "population": 92294,
+      "displayPriority": 100092294,
       "countryCode": "NPL",
       "alt": 184,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 81.616661,
       "lat": 28.050341,
       "population": 64400,
+      "displayPriority": 100064400,
       "countryCode": "NPL",
       "alt": 165,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 83.3833,
       "lat": 27.533304,
       "population": 63367,
+      "displayPriority": 100063367,
       "countryCode": "NPL",
       "alt": 108,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": 86.733298,
       "lat": 26.533296,
       "population": 33061,
+      "displayPriority": 100033061,
       "countryCode": "NPL",
       "alt": 72,
       "temps": [
@@ -481,6 +488,7 @@
       "lng": 83.583298,
       "lat": 28.266696,
       "population": 23296,
+      "displayPriority": 100023296,
       "countryCode": "NPL",
       "alt": 827,
       "temps": [
@@ -548,6 +556,7 @@
       "lng": 80.600004,
       "lat": 29.300004,
       "population": 19014,
+      "displayPriority": 100019014,
       "countryCode": "NPL",
       "alt": 1879,
       "temps": [
@@ -615,6 +624,7 @@
       "lng": 87.926005,
       "lat": 26.908002,
       "population": 17491,
+      "displayPriority": 100017491,
       "countryCode": "NPL",
       "alt": 1744,
       "temps": [
@@ -682,6 +692,7 @@
       "lng": 82.183303,
       "lat": 28.35,
       "population": 15000,
+      "displayPriority": 100015000,
       "countryCode": "NPL",
       "alt": 663,
       "temps": [
@@ -749,6 +760,7 @@
       "lng": 86.086999,
       "lat": 27.325998,
       "population": 15000,
+      "displayPriority": 100015000,
       "countryCode": "NPL",
       "alt": 1731,
       "temps": [
@@ -816,6 +828,7 @@
       "lng": 85.130002,
       "lat": 27.550998,
       "population": 15000,
+      "displayPriority": 100015000,
       "countryCode": "NPL",
       "alt": 1337,
       "temps": [
@@ -883,6 +896,7 @@
       "lng": 82.216702,
       "lat": 29.25,
       "population": 9073,
+      "displayPriority": 100009073,
       "countryCode": "NPL",
       "alt": 2363,
       "temps": [
@@ -950,6 +964,7 @@
       "lng": 85.333334,
       "lat": 27.666618,
       "population": 337785,
+      "displayPriority": 337785,
       "countryCode": "NPL",
       "alt": 1337,
       "temps": [
@@ -1017,6 +1032,7 @@
       "lng": 85.033352,
       "lat": 27.416684,
       "population": 232334,
+      "displayPriority": 232334,
       "countryCode": "NPL",
       "alt": 137,
       "temps": [
@@ -1084,6 +1100,7 @@
       "lng": 84.866592,
       "lat": 27.000405,
       "population": 133238,
+      "displayPriority": 133238,
       "countryCode": "NPL",
       "alt": 137,
       "temps": [

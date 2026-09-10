@@ -13,6 +13,7 @@
       "lng": -62.833193,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "BLM",
       "alt": null,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": 14.422939,
       "lat": 50.086967,
       "population": 1162000,
+      "displayPriority": 11001162000,
       "countryCode": "CZE",
       "alt": 302,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 18.249986,
       "lat": 49.830355,
       "population": 478963,
+      "displayPriority": 100478963,
       "countryCode": "CZE",
       "alt": 252.8,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 16.609983,
       "lat": 49.200393,
       "population": 388277,
+      "displayPriority": 100388277,
       "countryCode": "CZE",
       "alt": 241,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 13.360001,
       "lat": 49.740438,
       "population": 164180,
+      "displayPriority": 100164180,
       "countryCode": "CZE",
       "alt": 519,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 15.760009,
       "lat": 50.04042,
       "population": 107064,
+      "displayPriority": 100107064,
       "countryCode": "CZE",
       "alt": 225.2,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 15.079999,
       "lat": 50.79996,
       "population": 102175,
+      "displayPriority": 100102175,
       "countryCode": "CZE",
       "alt": 397.7,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": 17.256796,
       "lat": 49.586661,
       "population": 101268,
+      "displayPriority": 100101268,
       "countryCode": "CZE",
       "alt": 510,
       "temps": [
@@ -481,6 +488,7 @@
       "lng": 14.460037,
       "lat": 48.980019,
       "population": 98851,
+      "displayPriority": 100098851,
       "countryCode": "CZE",
       "alt": 394.6,
       "temps": [
@@ -548,6 +556,7 @@
       "lng": 15.812001,
       "lat": 50.205996,
       "population": 95195,
+      "displayPriority": 100095195,
       "countryCode": "CZE",
       "alt": 225.2,
       "temps": [
@@ -615,6 +624,7 @@
       "lng": 14.081005,
       "lat": 50.662998,
       "population": 94105,
+      "displayPriority": 100094105,
       "countryCode": "CZE",
       "alt": 375.4,
       "temps": [
@@ -682,6 +692,7 @@
       "lng": 15.583328,
       "lat": 49.400381,
       "population": 53921,
+      "displayPriority": 100053921,
       "countryCode": "CZE",
       "alt": 532.5,
       "temps": [
@@ -749,6 +760,7 @@
       "lng": 17.650023,
       "lat": 49.230418,
       "population": 124610,
+      "displayPriority": 124610,
       "countryCode": "CZE",
       "alt": 222,
       "temps": [

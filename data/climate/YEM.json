@@ -12,6 +12,7 @@
       "lng": 44.204648,
       "lat": 15.356679,
       "population": 2008000,
+      "displayPriority": 10002008000,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 45.00949,
       "lat": 12.779723,
       "population": 1000000,
+      "displayPriority": 101000000,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 42.951029,
       "lat": 14.799891,
       "population": 780000,
+      "displayPriority": 100780000,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 44.037474,
       "lat": 13.606398,
       "population": 751000,
+      "displayPriority": 100751000,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 49.125931,
       "lat": 14.541165,
       "population": 258132,
+      "displayPriority": 100258132,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 44.170885,
       "lat": 13.975851,
       "population": 234837,
+      "displayPriority": 100234837,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 43.602134,
       "lat": 15.691741,
       "population": 208287,
+      "displayPriority": 100208287,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 44.387461,
       "lat": 14.557469,
       "population": 191259,
+      "displayPriority": 100191259,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 43.849768,
       "lat": 16.939779,
       "population": 105542,
+      "displayPriority": 100105542,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 44.883761,
       "lat": 13.058181,
       "population": 66288,
+      "displayPriority": 100066288,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": 45.574003,
       "lat": 13.978998,
       "population": 37821,
+      "displayPriority": 100037821,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": 46.800001,
       "lat": 14.550003,
       "population": 37315,
+      "displayPriority": 100037315,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": 45.333999,
       "lat": 15.420996,
       "population": 16794,
+      "displayPriority": 100016794,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -831,6 +844,7 @@
       "lng": 43.315537,
       "lat": 14.195088,
       "population": 152504,
+      "displayPriority": 152504,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -894,6 +908,7 @@
       "lng": 48.787347,
       "lat": 15.942992,
       "population": 68747,
+      "displayPriority": 68747,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -957,6 +972,7 @@
       "lng": 49.609158,
       "lat": 14.759317,
       "population": 54274,
+      "displayPriority": 54274,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -1020,6 +1036,7 @@
       "lng": 44.8341,
       "lat": 14.429493,
       "population": 45233,
+      "displayPriority": 45233,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -1083,6 +1100,7 @@
       "lng": 52.163782,
       "lat": 16.239408,
       "population": 27404,
+      "displayPriority": 27404,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -1146,6 +1164,7 @@
       "lng": 54.023927,
       "lat": 12.651875,
       "population": 11396,
+      "displayPriority": 11396,
       "countryCode": "YEM",
       "alt": null,
       "temps": [
@@ -1209,6 +1228,7 @@
       "lng": 51.24544,
       "lat": 15.210504,
       "population": 189,
+      "displayPriority": 189,
       "countryCode": "YEM",
       "alt": null,
       "temps": [

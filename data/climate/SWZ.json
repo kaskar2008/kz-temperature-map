@@ -12,6 +12,7 @@
       "lng": 31.133335,
       "lat": -26.316651,
       "population": 90138,
+      "displayPriority": 10000090138,
       "countryCode": "SWZ",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 31.388005,
       "lat": -26.495001,
       "population": 110537,
+      "displayPriority": 100110537,
       "countryCode": "SWZ",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 31.951999,
       "lat": -26.454996,
       "population": 6152,
+      "displayPriority": 100006152,
       "countryCode": "SWZ",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 31.247001,
       "lat": -25.961004,
       "population": 5750,
+      "displayPriority": 100005750,
       "countryCode": "SWZ",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 31.310137,
       "lat": -26.960815,
       "population": 2748,
+      "displayPriority": 100002748,
       "countryCode": "SWZ",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 31.199997,
       "lat": -26.466667,
       "population": 9782,
+      "displayPriority": 9782,
       "countryCode": "SWZ",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 31.900006,
       "lat": -27.296178,
       "population": 3695,
+      "displayPriority": 3695,
       "countryCode": "SWZ",
       "alt": null,
       "temps": [

@@ -13,6 +13,7 @@
       "lng": -64.63661,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "VGB",
       "alt": null,
       "temps": [

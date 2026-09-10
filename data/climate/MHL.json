@@ -12,6 +12,7 @@
       "lng": 171.38,
       "lat": 7.103004,
       "population": 25400,
+      "displayPriority": 10000025400,
       "countryCode": "MHL",
       "alt": 3,
       "temps": [

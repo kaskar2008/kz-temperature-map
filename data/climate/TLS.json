@@ -12,6 +12,7 @@
       "lng": 125.579456,
       "lat": -8.559388,
       "population": 234331,
+      "displayPriority": 10000234331,
       "countryCode": "TLS",
       "alt": null,
       "temps": [

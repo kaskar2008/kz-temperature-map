@@ -12,6 +12,7 @@
       "lng": 102.59998,
       "lat": 17.966693,
       "population": 754000,
+      "displayPriority": 10000754000,
       "countryCode": "LAO",
       "alt": 173.2,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 102.14161,
       "lat": 19.884534,
       "population": 107142,
+      "displayPriority": 100107142,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -142,6 +144,7 @@
       "lng": 105.818337,
       "lat": 15.12206,
       "population": 102775,
+      "displayPriority": 100102775,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -205,6 +208,7 @@
       "lng": 104.772974,
       "lat": 16.537581,
       "population": 84898,
+      "displayPriority": 100084898,
       "countryCode": "LAO",
       "alt": 138,
       "temps": [
@@ -272,6 +276,7 @@
       "lng": 104.836123,
       "lat": 17.411197,
       "population": 76928,
+      "displayPriority": 100076928,
       "countryCode": "LAO",
       "alt": 145,
       "temps": [
@@ -339,6 +344,7 @@
       "lng": 104.033305,
       "lat": 20.416698,
       "population": 38992,
+      "displayPriority": 100038992,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -402,6 +408,7 @@
       "lng": 101.750058,
       "lat": 19.250464,
       "population": 16200,
+      "displayPriority": 100016200,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -465,6 +472,7 @@
       "lng": 105.866704,
       "lat": 14.8833,
       "population": 12994,
+      "displayPriority": 100012994,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -528,6 +536,7 @@
       "lng": 100.412778,
       "lat": 20.2775,
       "population": 6347,
+      "displayPriority": 100006347,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -591,6 +600,7 @@
       "lng": 102.099997,
       "lat": 21.683304,
       "population": 6000,
+      "displayPriority": 100006000,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -654,6 +664,7 @@
       "lng": 106.426999,
       "lat": 15.715998,
       "population": 5521,
+      "displayPriority": 100005521,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -717,6 +728,7 @@
       "lng": 106.839,
       "lat": 14.807997,
       "population": 4297,
+      "displayPriority": 100004297,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -780,6 +792,7 @@
       "lng": 101.416699,
       "lat": 20.950002,
       "population": 3225,
+      "displayPriority": 100003225,
       "countryCode": "LAO",
       "alt": null,
       "temps": [
@@ -843,6 +856,7 @@
       "lng": 103.195997,
       "lat": 19.451896,
       "population": 37507,
+      "displayPriority": 37507,
       "countryCode": "LAO",
       "alt": null,
       "temps": [

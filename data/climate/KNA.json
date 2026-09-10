@@ -12,6 +12,7 @@
       "lng": -62.717009,
       "lat": 17.302031,
       "population": 21887,
+      "displayPriority": 10000021887,
       "countryCode": "KNA",
       "alt": null,
       "temps": [

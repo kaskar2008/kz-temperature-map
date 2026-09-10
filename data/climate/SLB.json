@@ -12,6 +12,7 @@
       "lng": 159.949766,
       "lat": -9.437994,
       "population": 76328,
+      "displayPriority": 10000076328,
       "countryCode": "SLB",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 156.835016,
       "lat": -8.099623,
       "population": 6154,
+      "displayPriority": 6154,
       "countryCode": "SLB",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 165.856735,
       "lat": -10.738018,
       "population": 553,
+      "displayPriority": 553,
       "countryCode": "SLB",
       "alt": null,
       "temps": [

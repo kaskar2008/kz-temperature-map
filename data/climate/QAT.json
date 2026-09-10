@@ -12,6 +12,7 @@
       "lng": 51.532968,
       "lat": 25.286556,
       "population": 1450000,
+      "displayPriority": 10001450000,
       "countryCode": "QAT",
       "alt": null,
       "temps": [

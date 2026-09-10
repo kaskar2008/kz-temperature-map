@@ -12,6 +12,7 @@
       "lng": -15.598361,
       "lat": 11.865024,
       "population": 403339,
+      "displayPriority": 10000403339,
       "countryCode": "GNB",
       "alt": 39,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": -14.666015,
       "lat": 12.166995,
       "population": 29704,
+      "displayPriority": 100029704,
       "countryCode": "GNB",
       "alt": 42,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": -14.234004,
       "lat": 12.279996,
       "population": 14430,
+      "displayPriority": 100014430,
       "countryCode": "GNB",
       "alt": 42,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": -15.482804,
       "lat": 11.582953,
       "population": 10769,
+      "displayPriority": 100010769,
       "countryCode": "GNB",
       "alt": 18,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": -16.164998,
       "lat": 12.268998,
       "population": 10490,
+      "displayPriority": 100010490,
       "countryCode": "GNB",
       "alt": 39,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": -15.254246,
       "lat": 11.273036,
       "population": 9898,
+      "displayPriority": 100009898,
       "countryCode": "GNB",
       "alt": 18,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": -15.227,
       "lat": 12.492999,
       "population": 6792,
+      "displayPriority": 100006792,
       "countryCode": "GNB",
       "alt": 42,
       "temps": [
@@ -481,6 +488,7 @@
       "lng": -15.194997,
       "lat": 11.772999,
       "population": 1311,
+      "displayPriority": 100001311,
       "countryCode": "GNB",
       "alt": 18,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": -79.534983,
       "lat": 8.969963,
       "population": 1281000,
+      "displayPriority": 10001281000,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": -79.87498,
       "lat": 9.365021,
       "population": 204000,
+      "displayPriority": 100204000,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": -82.433325,
       "lat": 8.433321,
       "population": 110037,
+      "displayPriority": 100110037,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": -80.983336,
       "lat": 8.10037,
       "population": 45955,
+      "displayPriority": 100045955,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": -80.420037,
       "lat": 7.970016,
       "population": 44082,
+      "displayPriority": 100044082,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": -80.359989,
       "lat": 8.509983,
       "population": 28766,
+      "displayPriority": 100028766,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": -80.28002,
       "lat": 7.760391,
       "population": 11358,
+      "displayPriority": 100011358,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": -82.247471,
       "lat": 9.33535,
       "population": 9883,
+      "displayPriority": 100009883,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": -78.140228,
       "lat": 8.398181,
       "population": 1845,
+      "displayPriority": 100001845,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": -78.971963,
       "lat": 9.541686,
       "population": 10,
+      "displayPriority": 100000010,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": -79.566653,
       "lat": 8.949982,
       "population": 62882,
+      "displayPriority": 62882,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": -82.870017,
       "lat": 8.280023,
       "population": 27147,
+      "displayPriority": 27147,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": -82.399968,
       "lat": 9.300012,
       "population": 8114,
+      "displayPriority": 8114,
       "countryCode": "PAN",
       "alt": null,
       "temps": [
@@ -831,6 +844,7 @@
       "lng": -78.166015,
       "lat": 7.518958,
       "population": 1357,
+      "displayPriority": 1357,
       "countryCode": "PAN",
       "alt": null,
       "temps": [

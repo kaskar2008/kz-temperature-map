@@ -12,6 +12,7 @@
       "lng": 2.404355,
       "lat": 6.36298,
       "population": 762000,
+      "displayPriority": 10000762000,
       "countryCode": "BEN",
       "alt": 7,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 1.680042,
       "lat": 9.700427,
       "population": 202810,
+      "displayPriority": 100202810,
       "countryCode": "BEN",
       "alt": null,
       "temps": [
@@ -142,6 +144,7 @@
       "lng": 2.620036,
       "lat": 9.34001,
       "population": 188853,
+      "displayPriority": 100188853,
       "countryCode": "BEN",
       "alt": 392,
       "temps": [
@@ -209,6 +212,7 @@
       "lng": 2.940017,
       "lat": 11.130366,
       "population": 109701,
+      "displayPriority": 100109701,
       "countryCode": "BEN",
       "alt": null,
       "temps": [
@@ -272,6 +276,7 @@
       "lng": 1.715005,
       "lat": 6.615,
       "population": 86971,
+      "displayPriority": 100086971,
       "countryCode": "BEN",
       "alt": 166,
       "temps": [
@@ -339,6 +344,7 @@
       "lng": 2.089991,
       "lat": 6.360373,
       "population": 83503,
+      "displayPriority": 100083503,
       "countryCode": "BEN",
       "alt": 7,
       "temps": [
@@ -406,6 +412,7 @@
       "lng": 1.989997,
       "lat": 7.1904,
       "population": 82154,
+      "displayPriority": 100082154,
       "countryCode": "BEN",
       "alt": 166,
       "temps": [
@@ -473,6 +480,7 @@
       "lng": 1.389982,
       "lat": 10.320415,
       "population": 80892,
+      "displayPriority": 100080892,
       "countryCode": "BEN",
       "alt": 429,
       "temps": [
@@ -540,6 +548,7 @@
       "lng": 2.616626,
       "lat": 6.483311,
       "population": 300000,
+      "displayPriority": 300000,
       "countryCode": "BEN",
       "alt": 7,
       "temps": [

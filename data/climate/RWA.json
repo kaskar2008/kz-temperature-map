@@ -12,6 +12,7 @@
       "lng": 30.058586,
       "lat": -1.951644,
       "population": 860000,
+      "displayPriority": 10000860000,
       "countryCode": "RWA",
       "alt": 1473,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 29.759982,
       "lat": -2.069604,
       "population": 87613,
+      "displayPriority": 100087613,
       "countryCode": "RWA",
       "alt": null,
       "temps": [
@@ -142,6 +144,7 @@
       "lng": 29.630015,
       "lat": -1.499613,
       "population": 86685,
+      "displayPriority": 100086685,
       "countryCode": "RWA",
       "alt": null,
       "temps": [
@@ -205,6 +208,7 @@
       "lng": 29.262906,
       "lat": -1.684666,
       "population": 83623,
+      "displayPriority": 100083623,
       "countryCode": "RWA",
       "alt": null,
       "temps": [
@@ -268,6 +272,7 @@
       "lng": 29.730009,
       "lat": -2.589624,
       "population": 77000,
+      "displayPriority": 100077000,
       "countryCode": "RWA",
       "alt": null,
       "temps": [
@@ -331,6 +336,7 @@
       "lng": 30.060015,
       "lat": -1.579556,
       "population": 70593,
+      "displayPriority": 100070593,
       "countryCode": "RWA",
       "alt": 1473,
       "temps": [
@@ -398,6 +404,7 @@
       "lng": 29.35,
       "lat": -2.050002,
       "population": 48024,
+      "displayPriority": 100048024,
       "countryCode": "RWA",
       "alt": null,
       "temps": [
@@ -461,6 +468,7 @@
       "lng": 30.533302,
       "lat": -2.166696,
       "population": 46240,
+      "displayPriority": 100046240,
       "countryCode": "RWA",
       "alt": 1473,
       "temps": [
@@ -528,6 +536,7 @@
       "lng": 28.899983,
       "lat": -2.479605,
       "population": 19900,
+      "displayPriority": 100019900,
       "countryCode": "RWA",
       "alt": null,
       "temps": [
@@ -591,6 +600,7 @@
       "lng": 29.566702,
       "lat": -2.483298,
       "population": 15000,
+      "displayPriority": 100015000,
       "countryCode": "RWA",
       "alt": null,
       "temps": [
@@ -654,6 +664,7 @@
       "lng": 29.740035,
       "lat": -2.349587,
       "population": 225209,
+      "displayPriority": 225209,
       "countryCode": "RWA",
       "alt": null,
       "temps": [

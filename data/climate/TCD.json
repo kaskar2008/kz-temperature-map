@@ -12,6 +12,7 @@
       "lng": 15.047202,
       "lat": 12.115042,
       "population": 989000,
+      "displayPriority": 10000989000,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 15.387164,
       "lat": 10.285947,
       "population": 193941,
+      "displayPriority": 100193941,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 18.39003,
       "lat": 9.14997,
       "population": 169196,
+      "displayPriority": 100169196,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 20.829984,
       "lat": 13.839994,
       "population": 158317,
+      "displayPriority": 100158317,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 16.090015,
       "lat": 8.549981,
       "population": 156705,
+      "displayPriority": 100156705,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 20.283299,
       "lat": 11.033292,
       "population": 30443,
+      "displayPriority": 100030443,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 16.85002,
       "lat": 8.65044,
       "population": 29597,
+      "displayPriority": 100029597,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 18.699985,
       "lat": 12.183738,
       "population": 27763,
+      "displayPriority": 100027763,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 18.333289,
       "lat": 13.21706,
       "population": 25373,
+      "displayPriority": 100025373,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 16.305004,
       "lat": 9.395001,
       "population": 19382,
+      "displayPriority": 100019382,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": 15.313318,
       "lat": 14.119434,
       "population": 18031,
+      "displayPriority": 100018031,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": 19.116704,
       "lat": 17.91667,
       "population": 13400,
+      "displayPriority": 100013400,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": 20.916697,
       "lat": 14.533259,
       "population": 11000,
+      "displayPriority": 100011000,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -831,6 +844,7 @@
       "lng": 14.714698,
       "lat": 13.458958,
       "population": 3303,
+      "displayPriority": 100003303,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -894,6 +908,7 @@
       "lng": 15.800007,
       "lat": 9.317066,
       "population": 96224,
+      "displayPriority": 96224,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -957,6 +972,7 @@
       "lng": 14.966621,
       "lat": 9.350423,
       "population": 35466,
+      "displayPriority": 35466,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -1020,6 +1036,7 @@
       "lng": 19.683336,
       "lat": 13.300414,
       "population": 19271,
+      "displayPriority": 19271,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -1083,6 +1100,7 @@
       "lng": 21.590248,
       "lat": 17.184725,
       "population": 448,
+      "displayPriority": 448,
       "countryCode": "TCD",
       "alt": null,
       "temps": [
@@ -1146,6 +1164,7 @@
       "lng": 16.527766,
       "lat": 20.458737,
       "population": 204,
+      "displayPriority": 204,
       "countryCode": "TCD",
       "alt": null,
       "temps": [

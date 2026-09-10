@@ -12,6 +12,7 @@
       "lng": 35.206626,
       "lat": 31.778408,
       "population": 1029300,
+      "displayPriority": 10001029300,
       "countryCode": "ISR",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 34.978079,
       "lat": 32.822357,
       "population": 1011000,
+      "displayPriority": 101011000,
       "countryCode": "ISR",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 34.830008,
       "lat": 31.250016,
       "population": 206408,
+      "displayPriority": 100206408,
       "countryCode": "ISR",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 35.295509,
       "lat": 32.703984,
       "population": 151459,
+      "displayPriority": 100151459,
       "countryCode": "ISR",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 34.866703,
       "lat": 31.9167,
       "population": 63860,
+      "displayPriority": 100063860,
       "countryCode": "ISR",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 34.768066,
       "lat": 32.081937,
       "population": 3112000,
+      "displayPriority": 3112000,
       "countryCode": "ISR",
       "alt": null,
       "temps": [

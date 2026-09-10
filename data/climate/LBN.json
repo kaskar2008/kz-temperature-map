@@ -12,6 +12,7 @@
       "lng": 35.507762,
       "lat": 33.873921,
       "population": 1846000,
+      "displayPriority": 10001846000,
       "countryCode": "LBN",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 35.831661,
       "lat": 34.438267,
       "population": 530000,
+      "displayPriority": 100530000,
       "countryCode": "LBN",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 35.368787,
       "lat": 33.563028,
       "population": 173894,
+      "displayPriority": 100173894,
       "countryCode": "LBN",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 35.450002,
       "lat": 33.383304,
       "population": 80000,
+      "displayPriority": 100080000,
       "countryCode": "LBN",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 35.904154,
       "lat": 33.850116,
       "population": 78145,
+      "displayPriority": 100078145,
       "countryCode": "LBN",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 35.533296,
       "lat": 33.833304,
       "population": 9000,
+      "displayPriority": 100009000,
       "countryCode": "LBN",
       "alt": null,
       "temps": [

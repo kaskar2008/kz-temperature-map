@@ -13,6 +13,7 @@
       "lng": 33.790583,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "ESB",
       "alt": null,
       "temps": [

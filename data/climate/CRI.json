@@ -12,6 +12,7 @@
       "lng": -84.078814,
       "lat": 9.930371,
       "population": 1284000,
+      "displayPriority": 10001284000,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": -84.230037,
       "lat": 10.02002,
       "population": 387743,
+      "displayPriority": 100387743,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": -83.929978,
       "lat": 9.869978,
       "population": 196946,
+      "displayPriority": 100196946,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": -83.03334,
       "lat": 10.000021,
       "population": 85001,
+      "displayPriority": 100085001,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": -84.83359,
       "lat": 9.970164,
       "population": 57102,
+      "displayPriority": 100057102,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": -85.433323,
       "lat": 10.633755,
       "population": 45380,
+      "displayPriority": 100045380,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": -84.120002,
       "lat": 9.991998,
       "population": 21947,
+      "displayPriority": 100021947,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": -84.439973,
       "lat": 10.330492,
       "population": 31106,
+      "displayPriority": 31106,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": -85.10001,
       "lat": 10.429995,
       "population": 20306,
+      "displayPriority": 20306,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": -83.149974,
       "lat": 8.650026,
       "population": 6777,
+      "displayPriority": 6777,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": -85.630004,
       "lat": 11.070421,
       "population": 4319,
+      "displayPriority": 4319,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": -83.530002,
       "lat": 8.960369,
       "population": 3850,
+      "displayPriority": 3850,
       "countryCode": "CRI",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": -82.61998,
       "lat": 9.520387,
       "population": 1823,
+      "displayPriority": 1823,
       "countryCode": "CRI",
       "alt": null,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": 33.95001,
       "lat": 35.125025,
       "population": 42526,
+      "displayPriority": 100042526,
       "countryCode": "CYN",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 33.333004,
       "lat": 35.325999,
       "population": 26701,
+      "displayPriority": 100026701,
       "countryCode": "CYN",
       "alt": 162,
       "temps": [

@@ -13,6 +13,7 @@
       "lng": -56.332352,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "SPM",
       "alt": null,
       "temps": [

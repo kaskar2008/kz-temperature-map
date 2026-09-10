@@ -12,6 +12,7 @@
       "lng": 31.042764,
       "lat": -17.815844,
       "population": 1572000,
+      "displayPriority": 10001572000,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 28.580002,
       "lat": -20.169998,
       "population": 699385,
+      "displayPriority": 100699385,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 32.650038,
       "lat": -18.970019,
       "population": 249365,
+      "displayPriority": 100249365,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 29.82003,
       "lat": -19.450042,
       "population": 183358,
+      "displayPriority": 100183358,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 30.82002,
       "lat": -20.059617,
       "population": 76311,
+      "displayPriority": 100076311,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 30.180008,
       "lat": -17.359626,
       "population": 61739,
+      "displayPriority": 100061739,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 28.80004,
       "lat": -16.5296,
       "population": 25531,
+      "displayPriority": 100025531,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 29.010002,
       "lat": -20.939615,
       "population": 14450,
+      "displayPriority": 100014450,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 31.100003,
       "lat": -18.000001,
       "population": 340360,
+      "displayPriority": 340360,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 29.799979,
       "lat": -18.929608,
       "population": 99149,
+      "displayPriority": 99149,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": 29.909947,
       "lat": -18.330006,
       "population": 79174,
+      "displayPriority": 79174,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": 30.04999,
       "lat": -20.329574,
       "population": 35896,
+      "displayPriority": 35896,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": 25.840014,
       "lat": -17.929617,
       "population": 35761,
+      "displayPriority": 35761,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -831,6 +844,7 @@
       "lng": 26.500026,
       "lat": -18.370004,
       "population": 33989,
+      "displayPriority": 33989,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -894,6 +908,7 @@
       "lng": 31.660021,
       "lat": -21.049582,
       "population": 28205,
+      "displayPriority": 28205,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -957,6 +972,7 @@
       "lng": 29.989993,
       "lat": -22.209615,
       "population": 26459,
+      "displayPriority": 26459,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -1020,6 +1036,7 @@
       "lng": 29.679986,
       "lat": -16.819556,
       "population": 25030,
+      "displayPriority": 25030,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -1083,6 +1100,7 @@
       "lng": 31.57,
       "lat": -17.319629,
       "population": 10317,
+      "displayPriority": 10317,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -1146,6 +1164,7 @@
       "lng": 30.970037,
       "lat": -17.519617,
       "population": 9966,
+      "displayPriority": 9966,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [
@@ -1209,6 +1228,7 @@
       "lng": 27.819997,
       "lat": -20.479539,
       "population": 2148,
+      "displayPriority": 2148,
       "countryCode": "ZWE",
       "alt": null,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": 7.406913,
       "lat": 43.739646,
       "population": 36371,
+      "displayPriority": 10000036371,
       "countryCode": "MCO",
       "alt": null,
       "temps": [

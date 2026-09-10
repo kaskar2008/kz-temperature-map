@@ -12,6 +12,7 @@
       "lng": 168.316641,
       "lat": -17.73335,
       "population": 44040,
+      "displayPriority": 10000044040,
       "countryCode": "VUT",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 167.176607,
       "lat": -15.512556,
       "population": 13397,
+      "displayPriority": 13397,
       "countryCode": "VUT",
       "alt": null,
       "temps": [

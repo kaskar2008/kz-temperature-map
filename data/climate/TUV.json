@@ -12,6 +12,7 @@
       "lng": 179.216647,
       "lat": -8.516652,
       "population": 4749,
+      "displayPriority": 10000004749,
       "countryCode": "TUV",
       "alt": null,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": 18.383002,
       "lat": 43.850022,
       "population": 696731,
+      "displayPriority": 10000696731,
       "countryCode": "BIH",
       "alt": 630,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 17.179974,
       "lat": 44.780405,
       "population": 221738,
+      "displayPriority": 221738,
       "countryCode": "BIH",
       "alt": 158,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 17.919981,
       "lat": 44.219974,
       "population": 164423,
+      "displayPriority": 164423,
       "countryCode": "BIH",
       "alt": 562,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 17.820039,
       "lat": 43.350492,
       "population": 163067,
+      "displayPriority": 163067,
       "countryCode": "BIH",
       "alt": 99,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 18.680038,
       "lat": 44.550471,
       "population": 144334,
+      "displayPriority": 144334,
       "countryCode": "BIH",
       "alt": 305,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 16.700004,
       "lat": 44.980393,
       "population": 104858,
+      "displayPriority": 104858,
       "countryCode": "BIH",
       "alt": 158,
       "temps": [

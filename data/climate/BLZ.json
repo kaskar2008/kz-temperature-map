@@ -12,6 +12,7 @@
       "lng": -88.767073,
       "lat": 17.252033,
       "population": 15220,
+      "displayPriority": 10000015220,
       "countryCode": "BLZ",
       "alt": 5,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": -88.188374,
       "lat": 17.498711,
       "population": 63028,
+      "displayPriority": 100063028,
       "countryCode": "BLZ",
       "alt": 5,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": -88.55998,
       "lat": 18.090432,
       "population": 20835,
+      "displayPriority": 100020835,
       "countryCode": "BLZ",
       "alt": 5,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": -89.061003,
       "lat": 17.155998,
       "population": 16977,
+      "displayPriority": 100016977,
       "countryCode": "BLZ",
       "alt": null,
       "temps": [
@@ -276,6 +280,7 @@
       "lng": -88.22,
       "lat": 16.970035,
       "population": 10750,
+      "displayPriority": 100010750,
       "countryCode": "BLZ",
       "alt": 5,
       "temps": [
@@ -343,6 +348,7 @@
       "lng": -88.388001,
       "lat": 18.397998,
       "population": 8724,
+      "displayPriority": 100008724,
       "countryCode": "BLZ",
       "alt": null,
       "temps": [
@@ -406,6 +412,7 @@
       "lng": -88.810016,
       "lat": 16.100347,
       "population": 7748,
+      "displayPriority": 100007748,
       "countryCode": "BLZ",
       "alt": null,
       "temps": [

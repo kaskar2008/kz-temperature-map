@@ -12,6 +12,7 @@
       "lng": 19.266307,
       "lat": 42.465972,
       "population": 145850,
+      "displayPriority": 10000145850,
       "countryCode": "MNE",
       "alt": null,
       "temps": [

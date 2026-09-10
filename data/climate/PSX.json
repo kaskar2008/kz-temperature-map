@@ -12,6 +12,7 @@
       "lng": 34.445019,
       "lat": 31.529999,
       "population": 505700,
+      "displayPriority": 505700,
       "countryCode": "PSX",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 35.095573,
       "lat": 31.540593,
       "population": 280321,
+      "displayPriority": 280321,
       "countryCode": "PSX",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 35.254427,
       "lat": 32.221482,
       "population": 215981,
+      "displayPriority": 215981,
       "countryCode": "PSX",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 35.206209,
       "lat": 31.902945,
       "population": 24599,
+      "displayPriority": 24599,
       "countryCode": "PSX",
       "alt": null,
       "temps": [

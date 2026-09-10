@@ -12,6 +12,7 @@
       "lng": -23.516689,
       "lat": 14.916698,
       "population": 113364,
+      "displayPriority": 10000113364,
       "countryCode": "CPV",
       "alt": 70,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": -25.000009,
       "lat": 16.883761,
       "population": 70611,
+      "displayPriority": 70611,
       "countryCode": "CPV",
       "alt": null,
       "temps": [

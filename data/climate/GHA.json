@@ -12,6 +12,7 @@
       "lng": -0.218662,
       "lat": 5.55198,
       "population": 2121000,
+      "displayPriority": 10002121000,
       "countryCode": "GHA",
       "alt": 62,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": -1.63196,
       "lat": 6.691937,
       "population": 1646000,
+      "displayPriority": 101646000,
       "countryCode": "GHA",
       "alt": 286.3,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": -0.839985,
       "lat": 9.40042,
       "population": 360579,
+      "displayPriority": 100360579,
       "countryCode": "GHA",
       "alt": null,
       "temps": [
@@ -209,6 +212,7 @@
       "lng": -1.704015,
       "lat": 4.943276,
       "population": 286248,
+      "displayPriority": 100286248,
       "countryCode": "GHA",
       "alt": 10,
       "temps": [
@@ -276,6 +280,7 @@
       "lng": -0.260021,
       "lat": 6.090415,
       "population": 156653,
+      "displayPriority": 100156653,
       "countryCode": "GHA",
       "alt": 166.5,
       "temps": [
@@ -343,6 +348,7 @@
       "lng": -1.249986,
       "lat": 5.110372,
       "population": 143015,
+      "displayPriority": 100143015,
       "countryCode": "GHA",
       "alt": 439,
       "temps": [
@@ -410,6 +416,7 @@
       "lng": 0.469986,
       "lat": 6.60041,
       "population": 93044,
+      "displayPriority": 100093044,
       "countryCode": "GHA",
       "alt": 157.6,
       "temps": [
@@ -477,6 +484,7 @@
       "lng": -0.849985,
       "lat": 10.790387,
       "population": 82177,
+      "displayPriority": 100082177,
       "countryCode": "GHA",
       "alt": 213.4,
       "temps": [
@@ -544,6 +552,7 @@
       "lng": -2.500013,
       "lat": 10.060405,
       "population": 78107,
+      "displayPriority": 100078107,
       "countryCode": "GHA",
       "alt": 322.7,
       "temps": [
@@ -611,6 +620,7 @@
       "lng": -2.336003,
       "lat": 7.335999,
       "population": 70299,
+      "displayPriority": 100070299,
       "countryCode": "GHA",
       "alt": 303,
       "temps": [
@@ -678,6 +688,7 @@
       "lng": 0.010015,
       "lat": 5.640365,
       "population": 209000,
+      "displayPriority": 209000,
       "countryCode": "GHA",
       "alt": 14,
       "temps": [
@@ -745,6 +756,7 @@
       "lng": -1.659987,
       "lat": 6.190409,
       "population": 180117,
+      "displayPriority": 180117,
       "countryCode": "GHA",
       "alt": 286.3,
       "temps": [
@@ -812,6 +824,7 @@
       "lng": -0.239996,
       "lat": 11.060396,
       "population": 73594,
+      "displayPriority": 73594,
       "countryCode": "GHA",
       "alt": null,
       "temps": [
@@ -875,6 +888,7 @@
       "lng": -0.780015,
       "lat": 6.550465,
       "population": 62667,
+      "displayPriority": 62667,
       "countryCode": "GHA",
       "alt": 594.7,
       "temps": [
@@ -942,6 +956,7 @@
       "lng": -2.590008,
       "lat": 7.450384,
       "population": 46287,
+      "displayPriority": 46287,
       "countryCode": "GHA",
       "alt": 303,
       "temps": [
@@ -1009,6 +1024,7 @@
       "lng": -0.63005,
       "lat": 5.350434,
       "population": 44254,
+      "displayPriority": 44254,
       "countryCode": "GHA",
       "alt": 439,
       "temps": [
@@ -1076,6 +1092,7 @@
       "lng": -0.01665,
       "lat": 9.433725,
       "population": 42972,
+      "displayPriority": 42972,
       "countryCode": "GHA",
       "alt": null,
       "temps": [

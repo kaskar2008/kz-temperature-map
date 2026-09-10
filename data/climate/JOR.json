@@ -12,6 +12,7 @@
       "lng": 35.931354,
       "lat": 31.951971,
       "population": 1060000,
+      "displayPriority": 10001060000,
       "countryCode": "JOR",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 36.100008,
       "lat": 32.069992,
       "population": 894691,
+      "displayPriority": 100894691,
       "countryCode": "JOR",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 35.849998,
       "lat": 32.549989,
       "population": 650000,
+      "displayPriority": 100650000,
       "countryCode": "JOR",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 35.727214,
       "lat": 32.039193,
       "population": 140689,
+      "displayPriority": 100140689,
       "countryCode": "JOR",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 35.077693,
       "lat": 29.526995,
       "population": 95048,
+      "displayPriority": 100095048,
       "countryCode": "JOR",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 35.704735,
       "lat": 31.185111,
       "population": 80062,
+      "displayPriority": 100080062,
       "countryCode": "JOR",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 36.233298,
       "lat": 32.283297,
       "population": 57118,
+      "displayPriority": 100057118,
       "countryCode": "JOR",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 35.736004,
       "lat": 30.192003,
       "population": 50350,
+      "displayPriority": 100050350,
       "countryCode": "JOR",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 35.600005,
       "lat": 30.833334,
       "population": 25429,
+      "displayPriority": 100025429,
       "countryCode": "JOR",
       "alt": null,
       "temps": [

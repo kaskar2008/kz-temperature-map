@@ -13,6 +13,7 @@
       "lng": -63.049399,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "MAF",
       "alt": null,
       "temps": [

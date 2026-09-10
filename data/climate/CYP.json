@@ -12,6 +12,7 @@
       "lng": 33.366635,
       "lat": 35.166677,
       "population": 224300,
+      "displayPriority": 10000224300,
       "countryCode": "CYP",
       "alt": 162,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 33.033322,
       "lat": 34.675414,
       "population": 154000,
+      "displayPriority": 100154000,
       "countryCode": "CYP",
       "alt": 9,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 33.635998,
       "lat": 34.917003,
       "population": 48947,
+      "displayPriority": 100048947,
       "countryCode": "CYP",
       "alt": 2,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 32.422457,
       "lat": 34.755915,
       "population": 35961,
+      "displayPriority": 100035961,
       "countryCode": "CYP",
       "alt": 9,
       "temps": [

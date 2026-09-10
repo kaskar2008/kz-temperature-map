@@ -12,6 +12,7 @@
       "lng": 19.081375,
       "lat": 47.501952,
       "population": 1679000,
+      "displayPriority": 11001679000,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 20.780013,
       "lat": 48.100409,
       "population": 247757,
+      "displayPriority": 100247757,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 21.630039,
       "lat": 47.53047,
       "population": 231286,
+      "displayPriority": 100231286,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 20.150026,
       "lat": 46.250393,
       "population": 187765,
+      "displayPriority": 100187765,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 18.220014,
       "lat": 46.080429,
       "population": 186262,
+      "displayPriority": 100186262,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 21.718715,
       "lat": 47.965327,
       "population": 176880,
+      "displayPriority": 100176880,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 18.408065,
       "lat": 47.194676,
       "population": 144319,
+      "displayPriority": 100144319,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 17.630024,
       "lat": 47.700356,
       "population": 136081,
+      "displayPriority": 100136081,
       "countryCode": "HUN",
       "alt": 121,
       "temps": [
@@ -520,6 +528,7 @@
       "lng": 19.700027,
       "lat": 46.900043,
       "population": 113895,
+      "displayPriority": 100113895,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -583,6 +592,7 @@
       "lng": 16.628742,
       "lat": 47.225346,
       "population": 109518,
+      "displayPriority": 100109518,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -646,6 +656,7 @@
       "lng": 20.179378,
       "lat": 47.186356,
       "population": 109261,
+      "displayPriority": 100109261,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -709,6 +720,7 @@
       "lng": 17.799988,
       "lat": 46.367026,
       "population": 108528,
+      "displayPriority": 100108528,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -772,6 +784,7 @@
       "lng": 18.433,
       "lat": 47.549997,
       "population": 70541,
+      "displayPriority": 100070541,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -835,6 +848,7 @@
       "lng": 21.101005,
       "lat": 46.672002,
       "population": 65206,
+      "displayPriority": 100065206,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -898,6 +912,7 @@
       "lng": 17.911,
       "lat": 47.090997,
       "population": 62023,
+      "displayPriority": 100062023,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -961,6 +976,7 @@
       "lng": 16.84,
       "lat": 46.844001,
       "population": 61898,
+      "displayPriority": 100061898,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -1024,6 +1040,7 @@
       "lng": 20.383003,
       "lat": 47.895003,
       "population": 56647,
+      "displayPriority": 100056647,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -1087,6 +1104,7 @@
       "lng": 19.826002,
       "lat": 48.105,
       "population": 39640,
+      "displayPriority": 100039640,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -1150,6 +1168,7 @@
       "lng": 18.712999,
       "lat": 46.343997,
       "population": 34174,
+      "displayPriority": 100034174,
       "countryCode": "HUN",
       "alt": null,
       "temps": [
@@ -1213,6 +1232,7 @@
       "lng": 19.13324,
       "lat": 47.783658,
       "population": 35293,
+      "displayPriority": 35293,
       "countryCode": "HUN",
       "alt": null,
       "temps": [

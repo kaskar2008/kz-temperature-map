@@ -12,6 +12,7 @@
       "lng": -9.652522,
       "lat": 26.119167,
       "population": 500,
+      "displayPriority": 500,
       "countryCode": "SAH",
       "alt": null,
       "temps": [

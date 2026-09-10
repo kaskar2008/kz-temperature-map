@@ -12,6 +12,7 @@
       "lng": 89.639014,
       "lat": 27.472986,
       "population": 98676,
+      "displayPriority": 10000098676,
       "countryCode": "BTN",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 89.416777,
       "lat": 27.42937,
       "population": 15000,
+      "displayPriority": 100015000,
       "countryCode": "BTN",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 89.864135,
       "lat": 27.584154,
       "population": 5000,
+      "displayPriority": 100005000,
       "countryCode": "BTN",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 89.916697,
       "lat": 27.433296,
       "population": 5000,
+      "displayPriority": 100005000,
       "countryCode": "BTN",
       "alt": null,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": -61.850034,
       "lat": 17.118036,
       "population": 35499,
+      "displayPriority": 10000035499,
       "countryCode": "ATG",
       "alt": 62,
       "temps": [

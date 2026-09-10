@@ -12,6 +12,7 @@
       "lng": 29.360006,
       "lat": -3.376087,
       "population": 331700,
+      "displayPriority": 10000331700,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 30.31726,
       "lat": -2.852347,
       "population": 71076,
+      "displayPriority": 100071076,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 30.243997,
       "lat": -3.481002,
       "population": 38458,
+      "displayPriority": 100038458,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 29.843594,
       "lat": -3.426007,
       "population": 23167,
+      "displayPriority": 100023167,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 29.825002,
       "lat": -2.912004,
       "population": 21506,
+      "displayPriority": 100021506,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 29.993005,
       "lat": -3.931002,
       "population": 20893,
+      "displayPriority": 100020893,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 29.61658,
       "lat": -3.950729,
       "population": 20393,
+      "displayPriority": 100020393,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 29.8,
       "lat": -4.133304,
       "population": 19642,
+      "displayPriority": 100019642,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 29.566702,
       "lat": -2.899998,
       "population": 19443,
+      "displayPriority": 100019443,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 29.611999,
       "lat": -3.260997,
       "population": 18041,
+      "displayPriority": 100018041,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": 29.366703,
       "lat": -3.083301,
       "population": 12728,
+      "displayPriority": 100012728,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": 30.162996,
       "lat": -3.099996,
       "population": 10705,
+      "displayPriority": 100010705,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": 30.516697,
       "lat": -3.166704,
       "population": 6585,
+      "displayPriority": 100006585,
       "countryCode": "BDI",
       "alt": null,
       "temps": [
@@ -831,6 +844,7 @@
       "lng": 30.097222,
       "lat": -2.584722,
       "population": 6083,
+      "displayPriority": 100006083,
       "countryCode": "BDI",
       "alt": null,
       "temps": [

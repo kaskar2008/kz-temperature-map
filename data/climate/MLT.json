@@ -12,6 +12,7 @@
       "lng": 14.514711,
       "lat": 35.899732,
       "population": 368250,
+      "displayPriority": 10000368250,
       "countryCode": "MLT",
       "alt": null,
       "temps": [

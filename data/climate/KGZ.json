@@ -12,6 +12,7 @@
       "lng": 74.583258,
       "lat": 42.875025,
       "population": 837000,
+      "displayPriority": 10000837000,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 72.790017,
       "lat": 40.540405,
       "population": 391277,
+      "displayPriority": 100391277,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 73.00251,
       "lat": 40.942887,
       "population": 248899,
+      "displayPriority": 100248899,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 78.38182,
       "lat": 42.492043,
       "population": 70171,
+      "displayPriority": 100070171,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 75.991062,
       "lat": 41.426346,
       "population": 52300,
+      "displayPriority": 100052300,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 72.242918,
       "lat": 42.518372,
       "population": 35172,
+      "displayPriority": 100035172,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 75.284593,
       "lat": 42.829878,
       "population": 112860,
+      "displayPriority": 112860,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 73.88566,
       "lat": 42.830627,
       "population": 74133,
+      "displayPriority": 74133,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 76.185365,
       "lat": 42.456025,
       "population": 40527,
+      "displayPriority": 40527,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 72.937191,
       "lat": 41.882571,
       "population": 26115,
+      "displayPriority": 26115,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": 72.231446,
       "lat": 41.341855,
       "population": 23594,
+      "displayPriority": 23594,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": 77.081073,
       "lat": 42.651336,
       "population": 18595,
+      "displayPriority": 18595,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": 75.79681,
       "lat": 41.172486,
       "population": 15601,
+      "displayPriority": 15601,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [
@@ -831,6 +844,7 @@
       "lng": 73.205754,
       "lat": 41.030711,
       "population": 15000,
+      "displayPriority": 15000,
       "countryCode": "KGZ",
       "alt": null,
       "temps": [

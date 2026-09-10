@@ -12,6 +12,7 @@
       "lng": -61.741643,
       "lat": 12.052633,
       "population": 33734,
+      "displayPriority": 10000033734,
       "countryCode": "GRD",
       "alt": null,
       "temps": [

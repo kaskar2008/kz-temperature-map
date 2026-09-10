@@ -12,6 +12,7 @@
       "lng": 21.165984,
       "lat": 42.66671,
       "population": 465186,
+      "displayPriority": 10000465186,
       "countryCode": "KOS",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 20.750092,
       "lat": 42.22932,
       "population": 171464,
+      "displayPriority": 171464,
       "countryCode": "KOS",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 20.310739,
       "lat": 42.660328,
       "population": 105163,
+      "displayPriority": 105163,
       "countryCode": "KOS",
       "alt": null,
       "temps": [

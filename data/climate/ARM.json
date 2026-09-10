@@ -12,6 +12,7 @@
       "lng": 44.511606,
       "lat": 40.183097,
       "population": 1102000,
+      "displayPriority": 10001102000,
       "countryCode": "ARM",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 43.847494,
       "lat": 40.789434,
       "population": 148381,
+      "displayPriority": 100148381,
       "countryCode": "ARM",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 45.126667,
       "lat": 40.358889,
       "population": 21680,
+      "displayPriority": 100021680,
       "countryCode": "ARM",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 44.550556,
       "lat": 39.953889,
       "population": 20562,
+      "displayPriority": 100020562,
       "countryCode": "ARM",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 44.359167,
       "lat": 40.301667,
       "population": 18779,
+      "displayPriority": 100018779,
       "countryCode": "ARM",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 45.149167,
       "lat": 40.875556,
       "population": 14737,
+      "displayPriority": 100014737,
       "countryCode": "ARM",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 45.333333,
       "lat": 39.761111,
       "population": 8200,
+      "displayPriority": 100008200,
       "countryCode": "ARM",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 44.488282,
       "lat": 40.812766,
       "population": 101098,
+      "displayPriority": 101098,
       "countryCode": "ARM",
       "alt": null,
       "temps": [

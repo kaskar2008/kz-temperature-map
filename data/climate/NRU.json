@@ -13,6 +13,7 @@
       "lng": 166.932644,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "NRU",
       "alt": null,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": -77.350044,
       "lat": 25.08339,
       "population": 227940,
+      "displayPriority": 10000227940,
       "countryCode": "BHS",
       "alt": 8,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": -78.700013,
       "lat": 26.533276,
       "population": 25383,
+      "displayPriority": 25383,
       "countryCode": "BHS",
       "alt": null,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": 4.331371,
       "lat": 50.835263,
       "population": 1743000,
+      "displayPriority": 11001743000,
       "countryCode": "BEL",
       "alt": 99,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 4.413071,
       "lat": 51.222319,
       "population": 920000,
+      "displayPriority": 100920000,
       "countryCode": "BEL",
       "alt": 12,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 5.580011,
       "lat": 50.629996,
       "population": 749110,
+      "displayPriority": 100749110,
       "countryCode": "BEL",
       "alt": 201,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 3.700022,
       "lat": 51.029998,
       "population": 444336,
+      "displayPriority": 100444336,
       "countryCode": "BEL",
       "alt": 35,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 3.230025,
       "lat": 51.220374,
       "population": 146469,
+      "displayPriority": 100146469,
       "countryCode": "BEL",
       "alt": 3,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 4.870028,
       "lat": 50.470394,
       "population": 106284,
+      "displayPriority": 100106284,
       "countryCode": "BEL",
       "alt": 285,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": 3.939004,
       "lat": 50.445999,
       "population": 91277,
+      "displayPriority": 100091277,
       "countryCode": "BEL",
       "alt": 187,
       "temps": [
@@ -481,6 +488,7 @@
       "lng": 5.338536,
       "lat": 50.928838,
       "population": 69222,
+      "displayPriority": 100069222,
       "countryCode": "BEL",
       "alt": 61,
       "temps": [
@@ -548,6 +556,7 @@
       "lng": 5.8167,
       "lat": 49.683303,
       "population": 26179,
+      "displayPriority": 100026179,
       "countryCode": "BEL",
       "alt": 563,
       "temps": [
@@ -615,6 +624,7 @@
       "lng": 4.450002,
       "lat": 50.420397,
       "population": 345367,
+      "displayPriority": 345367,
       "countryCode": "BEL",
       "alt": 187,
       "temps": [

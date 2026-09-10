@@ -12,6 +12,7 @@
       "lng": 17.116981,
       "lat": 48.150018,
       "population": 423737,
+      "displayPriority": 10000423737,
       "countryCode": "SVK",
       "alt": 286,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 21.25001,
       "lat": 48.730448,
       "population": 236563,
+      "displayPriority": 100236563,
       "countryCode": "SVK",
       "alt": 230,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 21.239365,
       "lat": 48.999734,
       "population": 94718,
+      "displayPriority": 100094718,
       "countryCode": "SVK",
       "alt": 309,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 18.749388,
       "lat": 49.219824,
       "population": 87625,
+      "displayPriority": 100087625,
       "countryCode": "SVK",
       "alt": 309,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 19.149983,
       "lat": 48.73329,
       "population": 82336,
+      "displayPriority": 100082336,
       "countryCode": "SVK",
       "alt": 313,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 17.6,
       "lat": 48.366594,
       "population": 69785,
+      "displayPriority": 100069785,
       "countryCode": "SVK",
       "alt": 178,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": 19.13324,
       "lat": 48.583739,
       "population": 44502,
+      "displayPriority": 44502,
       "countryCode": "SVK",
       "alt": 313,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": -159.785437,
       "lat": -21.196226,
       "population": 5445,
+      "displayPriority": 100005445,
       "countryCode": "COK",
       "alt": null,
       "temps": [

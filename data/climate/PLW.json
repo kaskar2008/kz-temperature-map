@@ -12,6 +12,7 @@
       "lng": 134.626549,
       "lat": 7.487396,
       "population": 7026,
+      "displayPriority": 10000007026,
       "countryCode": "PLW",
       "alt": 29,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 134.469501,
       "lat": 7.345226,
       "population": 11200,
+      "displayPriority": 100011200,
       "countryCode": "PLW",
       "alt": 29,
       "temps": [

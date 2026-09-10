@@ -12,6 +12,7 @@
       "lng": -89.215576,
       "lat": 13.70328,
       "population": 1433000,
+      "displayPriority": 10001433000,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": -89.559764,
       "lat": 13.99461,
       "population": 234478,
+      "displayPriority": 100234478,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": -88.183336,
       "lat": 13.483349,
       "population": 201563,
+      "displayPriority": 100201563,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": -89.729986,
       "lat": 13.719975,
       "population": 168947,
+      "displayPriority": 100168947,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": -89.289998,
       "lat": 13.673997,
       "population": 124694,
+      "displayPriority": 100124694,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": -88.432002,
       "lat": 13.346001,
       "population": 51910,
+      "displayPriority": 100051910,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": -88.933302,
       "lat": 13.716702,
       "population": 48411,
+      "displayPriority": 100048411,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": -88.867998,
       "lat": 13.508001,
       "population": 39613,
+      "displayPriority": 100039613,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": -88.785,
       "lat": 13.641003,
       "population": 37326,
+      "displayPriority": 100037326,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": -89.845001,
       "lat": 13.919004,
       "population": 34102,
+      "displayPriority": 100034102,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": -88.906737,
       "lat": 14.009527,
       "population": 29271,
+      "displayPriority": 100029271,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": -88.630001,
       "lat": 13.880043,
       "population": 26989,
+      "displayPriority": 100026989,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": -87.839,
       "lat": 13.331997,
       "population": 26807,
+      "displayPriority": 100026807,
       "countryCode": "SLV",
       "alt": null,
       "temps": [
@@ -831,6 +844,7 @@
       "lng": -88.1,
       "lat": 13.699998,
       "population": 16152,
+      "displayPriority": 100016152,
       "countryCode": "SLV",
       "alt": null,
       "temps": [

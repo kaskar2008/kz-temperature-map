@@ -12,6 +12,7 @@
       "lng": 38.933324,
       "lat": 15.333339,
       "population": 620802,
+      "displayPriority": 10000620802,
       "countryCode": "ERI",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 38.816328,
       "lat": 14.885976,
       "population": 257390,
+      "displayPriority": 100257390,
       "countryCode": "ERI",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 38.454351,
       "lat": 15.781441,
       "population": 150000,
+      "displayPriority": 100150000,
       "countryCode": "ERI",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 39.450036,
       "lat": 15.610118,
       "population": 142564,
+      "displayPriority": 100142564,
       "countryCode": "ERI",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 42.729991,
       "lat": 13.010018,
       "population": 105496,
+      "displayPriority": 100105496,
       "countryCode": "ERI",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 37.886669,
       "lat": 15.549037,
       "population": 28600,
+      "displayPriority": 28600,
       "countryCode": "ERI",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 36.657493,
       "lat": 15.110381,
       "population": 15255,
+      "displayPriority": 15255,
       "countryCode": "ERI",
       "alt": null,
       "temps": [

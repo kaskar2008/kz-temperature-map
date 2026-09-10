@@ -12,6 +12,7 @@
       "lng": -57.849968,
       "lat": -51.700011,
       "population": 2213,
+      "displayPriority": 2213,
       "countryCode": "FLK",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": -60.086963,
       "lat": -51.95059,
       "population": 120,
+      "displayPriority": 120,
       "countryCode": "FLK",
       "alt": null,
       "temps": [

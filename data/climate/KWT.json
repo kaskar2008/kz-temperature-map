@@ -12,6 +12,7 @@
       "lng": 47.976355,
       "lat": 29.371664,
       "population": 2063000,
+      "displayPriority": 10002063000,
       "countryCode": "KWT",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 47.658062,
       "lat": 29.337471,
       "population": 194193,
+      "displayPriority": 100194193,
       "countryCode": "KWT",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 47.999998,
       "lat": 29.33334,
       "population": 164212,
+      "displayPriority": 100164212,
       "countryCode": "KWT",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 48.083773,
       "lat": 29.076945,
       "population": 68763,
+      "displayPriority": 100068763,
       "countryCode": "KWT",
       "alt": null,
       "temps": [

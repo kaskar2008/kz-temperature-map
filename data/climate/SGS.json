@@ -12,6 +12,7 @@
       "lng": -36.507989,
       "lat": -54.280577,
       "population": 99,
+      "displayPriority": 100000099,
       "countryCode": "SGS",
       "alt": null,
       "temps": [

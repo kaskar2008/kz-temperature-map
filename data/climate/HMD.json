@@ -13,6 +13,7 @@
       "lng": 73.50521,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "HMD",
       "alt": null,
       "temps": [

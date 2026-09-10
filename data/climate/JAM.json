@@ -12,6 +12,7 @@
       "lng": -76.767434,
       "lat": 17.977077,
       "population": 937700,
+      "displayPriority": 10000937700,
       "countryCode": "JAM",
       "alt": 3,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": -76.949991,
       "lat": 17.983332,
       "population": 432704,
+      "displayPriority": 100432704,
       "countryCode": "JAM",
       "alt": 3,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": -77.233281,
       "lat": 17.966615,
       "population": 135142,
+      "displayPriority": 100135142,
       "countryCode": "JAM",
       "alt": 3,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": -77.916676,
       "lat": 18.466688,
       "population": 126008,
+      "displayPriority": 100126008,
       "countryCode": "JAM",
       "alt": 1,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": -76.799997,
       "lat": 18.0333,
       "population": 96494,
+      "displayPriority": 100096494,
       "countryCode": "JAM",
       "alt": 3,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": -77.499999,
       "lat": 18.033003,
       "population": 47115,
+      "displayPriority": 100047115,
       "countryCode": "JAM",
       "alt": 1,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": -77.948001,
       "lat": 18.163998,
       "population": 30000,
+      "displayPriority": 100030000,
       "countryCode": "JAM",
       "alt": 1,
       "temps": [
@@ -481,6 +488,7 @@
       "lng": -76.380003,
       "lat": 18.159003,
       "population": 14400,
+      "displayPriority": 100014400,
       "countryCode": "JAM",
       "alt": 3,
       "temps": [
@@ -548,6 +556,7 @@
       "lng": -77.199524,
       "lat": 18.432639,
       "population": 13671,
+      "displayPriority": 100013671,
       "countryCode": "JAM",
       "alt": 3,
       "temps": [
@@ -615,6 +624,7 @@
       "lng": -76.329,
       "lat": 17.891001,
       "population": 11536,
+      "displayPriority": 100011536,
       "countryCode": "JAM",
       "alt": 3,
       "temps": [
@@ -682,6 +692,7 @@
       "lng": -76.899996,
       "lat": 18.377001,
       "population": 7906,
+      "displayPriority": 100007906,
       "countryCode": "JAM",
       "alt": 3,
       "temps": [
@@ -749,6 +760,7 @@
       "lng": -77.65605,
       "lat": 18.479583,
       "population": 7779,
+      "displayPriority": 100007779,
       "countryCode": "JAM",
       "alt": 1,
       "temps": [
@@ -816,6 +828,7 @@
       "lng": -78.179004,
       "lat": 18.442998,
       "population": 6289,
+      "displayPriority": 100006289,
       "countryCode": "JAM",
       "alt": 1,
       "temps": [
@@ -883,6 +896,7 @@
       "lng": -77.851997,
       "lat": 18.030996,
       "population": 4229,
+      "displayPriority": 100004229,
       "countryCode": "JAM",
       "alt": 1,
       "temps": [

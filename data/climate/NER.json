@@ -12,6 +12,7 @@
       "lng": 2.11471,
       "lat": 13.518652,
       "population": 915000,
+      "displayPriority": 10000915000,
       "countryCode": "NER",
       "alt": 222,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 7.096404,
       "lat": 13.491643,
       "population": 232555,
+      "displayPriority": 100232555,
       "countryCode": "NER",
       "alt": 372,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 8.983317,
       "lat": 13.799996,
       "population": 230358,
+      "displayPriority": 100230358,
       "countryCode": "NER",
       "alt": 439,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 7.98281,
       "lat": 16.995873,
       "population": 117770,
+      "displayPriority": 100117770,
       "countryCode": "NER",
       "alt": 501,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 5.259927,
       "lat": 14.899981,
       "population": 115956,
+      "displayPriority": 100115956,
       "countryCode": "NER",
       "alt": 390,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 3.200001,
       "lat": 13.050016,
       "population": 49750,
+      "displayPriority": 100049750,
       "countryCode": "NER",
       "alt": null,
       "temps": [
@@ -410,6 +416,7 @@
       "lng": 12.608884,
       "lat": 13.317054,
       "population": 30988,
+      "displayPriority": 100030988,
       "countryCode": "NER",
       "alt": 300,
       "temps": [
@@ -477,6 +484,7 @@
       "lng": 1.453079,
       "lat": 14.212038,
       "population": 19262,
+      "displayPriority": 100019262,
       "countryCode": "NER",
       "alt": 209,
       "temps": [
@@ -544,6 +552,7 @@
       "lng": 7.389005,
       "lat": 18.736339,
       "population": 100000,
+      "displayPriority": 100000,
       "countryCode": "NER",
       "alt": null,
       "temps": [
@@ -607,6 +616,7 @@
       "lng": 5.259927,
       "lat": 13.790436,
       "population": 65252,
+      "displayPriority": 65252,
       "countryCode": "NER",
       "alt": 272,
       "temps": [
@@ -674,6 +684,7 @@
       "lng": 3.446652,
       "lat": 11.888175,
       "population": 33051,
+      "displayPriority": 33051,
       "countryCode": "NER",
       "alt": 202,
       "temps": [
@@ -741,6 +752,7 @@
       "lng": 0.919468,
       "lat": 14.7318,
       "population": 26290,
+      "displayPriority": 26290,
       "countryCode": "NER",
       "alt": null,
       "temps": [
@@ -804,6 +816,7 @@
       "lng": 5.958592,
       "lat": 14.076181,
       "population": 24804,
+      "displayPriority": 24804,
       "countryCode": "NER",
       "alt": 272,
       "temps": [
@@ -871,6 +884,7 @@
       "lng": 13.110817,
       "lat": 14.253173,
       "population": 17897,
+      "displayPriority": 17897,
       "countryCode": "NER",
       "alt": 287,
       "temps": [
@@ -938,6 +952,7 @@
       "lng": 10.270008,
       "lat": 13.987401,
       "population": 14639,
+      "displayPriority": 14639,
       "countryCode": "NER",
       "alt": 443,
       "temps": [
@@ -1005,6 +1020,7 @@
       "lng": 12.307507,
       "lat": 21.014982,
       "population": 10,
+      "displayPriority": 10,
       "countryCode": "NER",
       "alt": null,
       "temps": [

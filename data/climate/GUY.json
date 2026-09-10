@@ -12,6 +12,7 @@
       "lng": -58.167029,
       "lat": 6.801974,
       "population": 264350,
+      "displayPriority": 10000264350,
       "countryCode": "GUY",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": -57.529987,
       "lat": 6.250018,
       "population": 46874,
+      "displayPriority": 46874,
       "countryCode": "GUY",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": -58.269968,
       "lat": 5.990008,
       "population": 44690,
+      "displayPriority": 44690,
       "countryCode": "GUY",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": -57.169984,
       "lat": 5.900039,
       "population": 12000,
+      "displayPriority": 12000,
       "countryCode": "GUY",
       "alt": 2,
       "temps": [
@@ -268,6 +272,7 @@
       "lng": -58.630024,
       "lat": 6.410421,
       "population": 11524,
+      "displayPriority": 11524,
       "countryCode": "GUY",
       "alt": null,
       "temps": [
@@ -331,6 +336,7 @@
       "lng": -58.500057,
       "lat": 7.270421,
       "population": 3113,
+      "displayPriority": 3113,
       "countryCode": "GUY",
       "alt": null,
       "temps": [
@@ -394,6 +400,7 @@
       "lng": -59.779979,
       "lat": 8.199976,
       "population": 2972,
+      "displayPriority": 2972,
       "countryCode": "GUY",
       "alt": null,
       "temps": [
@@ -457,6 +464,7 @@
       "lng": -58.380013,
       "lat": 3.900394,
       "population": 2190,
+      "displayPriority": 2190,
       "countryCode": "GUY",
       "alt": null,
       "temps": [
@@ -520,6 +528,7 @@
       "lng": -59.80003,
       "lat": 3.38996,
       "population": 352,
+      "displayPriority": 352,
       "countryCode": "GUY",
       "alt": null,
       "temps": [
@@ -583,6 +592,7 @@
       "lng": -58.249995,
       "lat": 5.430016,
       "population": 100,
+      "displayPriority": 100,
       "countryCode": "GUY",
       "alt": null,
       "temps": [

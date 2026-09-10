@@ -12,6 +12,7 @@
       "lng": -175.220564,
       "lat": -21.138512,
       "population": 42620,
+      "displayPriority": 10000042620,
       "countryCode": "TON",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": -173.983293,
       "lat": -18.649573,
       "population": 7391,
+      "displayPriority": 7391,
       "countryCode": "TON",
       "alt": null,
       "temps": [

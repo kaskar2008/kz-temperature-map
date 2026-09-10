@@ -12,6 +12,7 @@
       "lng": -61.387013,
       "lat": 15.301016,
       "population": 23336,
+      "displayPriority": 10000023336,
       "countryCode": "DMA",
       "alt": 5,
       "temps": [

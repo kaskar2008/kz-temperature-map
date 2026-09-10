@@ -12,6 +12,7 @@
       "lng": 33.783302,
       "lat": -13.983295,
       "population": 646750,
+      "displayPriority": 10000646750,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 34.989947,
       "lat": -15.790007,
       "population": 584877,
+      "displayPriority": 100584877,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 34.01998,
       "lat": -11.459987,
       "population": 110201,
+      "displayPriority": 100110201,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 35.269981,
       "lat": -14.459597,
       "population": 97711,
+      "displayPriority": 100097711,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 35.310031,
       "lat": -15.390031,
       "population": 80932,
+      "displayPriority": 100080932,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 34.433288,
       "lat": -13.782946,
       "population": 71181,
+      "displayPriority": 100071181,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 34.300015,
       "lat": -12.91628,
       "population": 59854,
+      "displayPriority": 100059854,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 33.933319,
       "lat": -9.932896,
       "population": 34207,
+      "displayPriority": 100034207,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 34.300015,
       "lat": -11.599616,
       "population": 22108,
+      "displayPriority": 100022108,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 35.266667,
       "lat": -16.916667,
       "population": 21774,
+      "displayPriority": 100021774,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": 33.6,
       "lat": -11.9,
       "population": 19308,
+      "displayPriority": 100019308,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": 32.9,
       "lat": -13.8,
       "population": 18305,
+      "displayPriority": 100018305,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": 35.5,
       "lat": -16.033333,
       "population": 16483,
+      "displayPriority": 100016483,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -831,6 +844,7 @@
       "lng": 34.333333,
       "lat": -14.366667,
       "population": 15608,
+      "displayPriority": 100015608,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -894,6 +908,7 @@
       "lng": 33.266641,
       "lat": -9.716217,
       "population": 13412,
+      "displayPriority": 100013412,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -957,6 +972,7 @@
       "lng": 34.516667,
       "lat": -15.616667,
       "population": 11379,
+      "displayPriority": 100011379,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -1020,6 +1036,7 @@
       "lng": 34.633333,
       "lat": -14.816667,
       "population": 10445,
+      "displayPriority": 100010445,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -1083,6 +1100,7 @@
       "lng": 35.183333,
       "lat": -15.7,
       "population": 1580,
+      "displayPriority": 100001580,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -1146,6 +1164,7 @@
       "lng": 35.301665,
       "lat": -15.176186,
       "population": 1418,
+      "displayPriority": 100001418,
       "countryCode": "MWI",
       "alt": null,
       "temps": [
@@ -1209,6 +1228,7 @@
       "lng": 35.133245,
       "lat": -16.550012,
       "population": 25235,
+      "displayPriority": 25235,
       "countryCode": "MWI",
       "alt": null,
       "temps": [

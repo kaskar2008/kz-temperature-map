@@ -12,6 +12,7 @@
       "lng": 50.583052,
       "lat": 26.236136,
       "population": 563920,
+      "displayPriority": 10000563920,
       "countryCode": "BHR",
       "alt": 2,
       "temps": [

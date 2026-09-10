@@ -12,6 +12,7 @@
       "lng": 20.466045,
       "lat": 44.820591,
       "population": 1099000,
+      "displayPriority": 10001099000,
       "countryCode": "SRB",
       "alt": 132,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 21.899996,
       "lat": 43.330416,
       "population": 250000,
+      "displayPriority": 250000,
       "countryCode": "SRB",
       "alt": 202,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 19.849941,
       "lat": 45.250376,
       "population": 225457,
+      "displayPriority": 225457,
       "countryCode": "SRB",
       "alt": 86,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 20.920004,
       "lat": 44.01996,
       "population": 171197,
+      "displayPriority": 171197,
       "countryCode": "SRB",
       "alt": null,
       "temps": [
@@ -276,6 +280,7 @@
       "lng": 20.330118,
       "lat": 43.889736,
       "population": 170000,
+      "displayPriority": 170000,
       "countryCode": "SRB",
       "alt": null,
       "temps": [
@@ -339,6 +344,7 @@
       "lng": 19.680028,
       "lat": 46.070016,
       "population": 100000,
+      "displayPriority": 100000,
       "countryCode": "SRB",
       "alt": null,
       "temps": [
@@ -402,6 +408,7 @@
       "lng": 20.399468,
       "lat": 45.378637,
       "population": 64053,
+      "displayPriority": 64053,
       "countryCode": "SRB",
       "alt": 86,
       "temps": [

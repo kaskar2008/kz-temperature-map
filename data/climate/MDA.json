@@ -12,6 +12,7 @@
       "lng": 28.857711,
       "lat": 47.005024,
       "population": 688134,
+      "displayPriority": 10000688134,
       "countryCode": "MDA",
       "alt": 79,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 29.639989,
       "lat": 46.853095,
       "population": 157000,
+      "displayPriority": 100157000,
       "countryCode": "MDA",
       "alt": 173,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 27.905314,
       "lat": 47.759086,
       "population": 151355,
+      "displayPriority": 100151355,
       "countryCode": "MDA",
       "alt": 232,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 28.194444,
       "lat": 45.907881,
       "population": 63407,
+      "displayPriority": 100063407,
       "countryCode": "MDA",
       "alt": 110,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 29.160833,
       "lat": 47.263056,
       "population": 23254,
+      "displayPriority": 100023254,
       "countryCode": "MDA",
       "alt": 79,
       "temps": [

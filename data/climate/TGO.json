@@ -12,6 +12,7 @@
       "lng": 1.220811,
       "lat": 6.133883,
       "population": 1452000,
+      "displayPriority": 10001452000,
       "countryCode": "TGO",
       "alt": 19.6,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 1.149997,
       "lat": 8.990471,
       "population": 117811,
+      "displayPriority": 100117811,
       "countryCode": "TGO",
       "alt": 387,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 0.630028,
       "lat": 6.900391,
       "population": 100479,
+      "displayPriority": 100100479,
       "countryCode": "TGO",
       "alt": 641,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 1.120024,
       "lat": 7.530043,
       "population": 80683,
+      "displayPriority": 100080683,
       "countryCode": "TGO",
       "alt": 400,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 0.789004,
       "lat": 9.261,
       "population": 61845,
+      "displayPriority": 100061845,
       "countryCode": "TGO",
       "alt": 387,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 0.984997,
       "lat": 8.557002,
       "population": 21054,
+      "displayPriority": 100021054,
       "countryCode": "TGO",
       "alt": 387,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": 0.470813,
       "lat": 10.35956,
       "population": 42626,
+      "displayPriority": 42626,
       "countryCode": "TGO",
       "alt": 146,
       "temps": [

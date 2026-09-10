@@ -12,6 +12,7 @@
       "lng": 12.56154,
       "lat": 55.68051,
       "population": 1085000,
+      "displayPriority": 11001085000,
       "countryCode": "DNK",
       "alt": 1,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 9.916593,
       "lat": 57.033714,
       "population": 122219,
+      "displayPriority": 100122219,
       "countryCode": "DNK",
       "alt": null,
       "temps": [
@@ -142,6 +144,7 @@
       "lng": 9.534997,
       "lat": 55.709001,
       "population": 51177,
+      "displayPriority": 100051177,
       "countryCode": "DNK",
       "alt": null,
       "temps": [
@@ -205,6 +208,7 @@
       "lng": 9.399984,
       "lat": 56.433337,
       "population": 34831,
+      "displayPriority": 100034831,
       "countryCode": "DNK",
       "alt": null,
       "temps": [
@@ -268,6 +272,7 @@
       "lng": 12.316698,
       "lat": 55.933299,
       "population": 28313,
+      "displayPriority": 100028313,
       "countryCode": "DNK",
       "alt": 43,
       "temps": [
@@ -335,6 +340,7 @@
       "lng": 11.566702,
       "lat": 55.432998,
       "population": 7167,
+      "displayPriority": 100007167,
       "countryCode": "DNK",
       "alt": null,
       "temps": [
@@ -398,6 +404,7 @@
       "lng": 10.210684,
       "lat": 56.157204,
       "population": 237551,
+      "displayPriority": 237551,
       "countryCode": "DNK",
       "alt": null,
       "temps": [
@@ -461,6 +468,7 @@
       "lng": 10.383335,
       "lat": 55.400377,
       "population": 158222,
+      "displayPriority": 158222,
       "countryCode": "DNK",
       "alt": null,
       "temps": [
@@ -524,6 +532,7 @@
       "lng": 8.450016,
       "lat": 55.467039,
       "population": 72205,
+      "displayPriority": 72205,
       "countryCode": "DNK",
       "alt": null,
       "temps": [
@@ -587,6 +596,7 @@
       "lng": 12.083334,
       "lat": 55.649974,
       "population": 44285,
+      "displayPriority": 44285,
       "countryCode": "DNK",
       "alt": null,
       "temps": [
@@ -650,6 +660,7 @@
       "lng": 10.616654,
       "lat": 55.070423,
       "population": 29180,
+      "displayPriority": 29180,
       "countryCode": "DNK",
       "alt": null,
       "temps": [
@@ -713,6 +724,7 @@
       "lng": 10.5333,
       "lat": 57.433689,
       "population": 24103,
+      "displayPriority": 24103,
       "countryCode": "DNK",
       "alt": null,
       "temps": [

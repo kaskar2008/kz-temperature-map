@@ -12,6 +12,7 @@
       "lng": 145.750576,
       "lat": 15.211254,
       "population": 2500,
+      "displayPriority": 100002500,
       "countryCode": "MNP",
       "alt": 66,
       "temps": [

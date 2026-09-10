@@ -1,8 +1,8 @@
 {
   "period": "1991–2020",
   "generated": 256,
-  "totalWmo": 1077,
-  "totalCru": 1515,
+  "totalWmo": 1667,
+  "totalCru": 2292,
   "countries": [
     {
       "countryCode": "ABW",
@@ -14,16 +14,16 @@
     {
       "countryCode": "AFG",
       "countryName": "Афганистан",
-      "cityCount": 20,
+      "cityCount": 33,
       "wmoCount": 1,
-      "cruCount": 19
+      "cruCount": 32
     },
     {
       "countryCode": "AGO",
       "countryName": "Ангола",
-      "cityCount": 20,
+      "cityCount": 35,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 35
     },
     {
       "countryCode": "AIA",
@@ -63,9 +63,9 @@
     {
       "countryCode": "ARG",
       "countryName": "Аргентина",
-      "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "cityCount": 80,
+      "wmoCount": 53,
+      "cruCount": 27
     },
     {
       "countryCode": "ARM",
@@ -105,9 +105,9 @@
     {
       "countryCode": "AUS",
       "countryName": "Австралия",
-      "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "cityCount": 80,
+      "wmoCount": 77,
+      "cruCount": 3
     },
     {
       "countryCode": "AUT",
@@ -161,9 +161,9 @@
     {
       "countryCode": "BGR",
       "countryName": "Болгария",
-      "cityCount": 18,
+      "cityCount": 14,
       "wmoCount": 0,
-      "cruCount": 18
+      "cruCount": 14
     },
     {
       "countryCode": "BHR",
@@ -224,16 +224,16 @@
     {
       "countryCode": "BOL",
       "countryName": "Боливия",
-      "cityCount": 20,
+      "cityCount": 35,
       "wmoCount": 1,
-      "cruCount": 19
+      "cruCount": 34
     },
     {
       "countryCode": "BRA",
       "countryName": "Бразилия",
-      "cityCount": 20,
-      "wmoCount": 12,
-      "cruCount": 8
+      "cityCount": 80,
+      "wmoCount": 25,
+      "cruCount": 55
     },
     {
       "countryCode": "BRB",
@@ -273,23 +273,23 @@
     {
       "countryCode": "BWA",
       "countryName": "Ботсвана",
-      "cityCount": 20,
+      "cityCount": 14,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 14
     },
     {
       "countryCode": "CAF",
       "countryName": "Центральноафриканская Республика",
-      "cityCount": 20,
+      "cityCount": 14,
       "wmoCount": 1,
-      "cruCount": 19
+      "cruCount": 13
     },
     {
       "countryCode": "CAN",
       "countryName": "Канада",
-      "cityCount": 20,
-      "wmoCount": 11,
-      "cruCount": 9
+      "cityCount": 80,
+      "wmoCount": 40,
+      "cruCount": 40
     },
     {
       "countryCode": "CHE",
@@ -301,23 +301,23 @@
     {
       "countryCode": "CHL",
       "countryName": "Чили",
-      "cityCount": 20,
-      "wmoCount": 16,
-      "cruCount": 4
+      "cityCount": 35,
+      "wmoCount": 15,
+      "cruCount": 20
     },
     {
       "countryCode": "CHN",
       "countryName": "Китайская Народная Республика",
-      "cityCount": 20,
-      "wmoCount": 16,
-      "cruCount": 4
+      "cityCount": 80,
+      "wmoCount": 61,
+      "cruCount": 19
     },
     {
       "countryCode": "CIV",
       "countryName": "Кот-д’Ивуар",
-      "cityCount": 20,
+      "cityCount": 25,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 25
     },
     {
       "countryCode": "CLP",
@@ -329,9 +329,9 @@
     {
       "countryCode": "CMR",
       "countryName": "Камерун",
-      "cityCount": 20,
+      "cityCount": 31,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 31
     },
     {
       "countryCode": "CNM",
@@ -343,16 +343,16 @@
     {
       "countryCode": "COD",
       "countryName": "Демократическая Республика Конго",
-      "cityCount": 20,
+      "cityCount": 55,
       "wmoCount": 1,
-      "cruCount": 19
+      "cruCount": 54
     },
     {
       "countryCode": "COG",
       "countryName": "Республика Конго",
-      "cityCount": 17,
+      "cityCount": 14,
       "wmoCount": 4,
-      "cruCount": 13
+      "cruCount": 10
     },
     {
       "countryCode": "COK",
@@ -364,9 +364,9 @@
     {
       "countryCode": "COL",
       "countryName": "Колумбия",
-      "cityCount": 20,
-      "wmoCount": 1,
-      "cruCount": 19
+      "cityCount": 35,
+      "wmoCount": 2,
+      "cruCount": 33
     },
     {
       "countryCode": "COM",
@@ -441,9 +441,9 @@
     {
       "countryCode": "DEU",
       "countryName": "Германия",
-      "cityCount": 20,
-      "wmoCount": 0,
-      "cruCount": 20
+      "cityCount": 55,
+      "wmoCount": 1,
+      "cruCount": 54
     },
     {
       "countryCode": "DJI",
@@ -476,9 +476,9 @@
     {
       "countryCode": "DZA",
       "countryName": "Алжир",
-      "cityCount": 20,
-      "wmoCount": 19,
-      "cruCount": 1
+      "cityCount": 35,
+      "wmoCount": 25,
+      "cruCount": 10
     },
     {
       "countryCode": "ECU",
@@ -490,9 +490,9 @@
     {
       "countryCode": "EGY",
       "countryName": "Египет",
-      "cityCount": 20,
+      "cityCount": 42,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 42
     },
     {
       "countryCode": "ERI",
@@ -511,8 +511,8 @@
     {
       "countryCode": "ESP",
       "countryName": "Испания",
-      "cityCount": 20,
-      "wmoCount": 19,
+      "cityCount": 35,
+      "wmoCount": 34,
       "cruCount": 1
     },
     {
@@ -525,15 +525,15 @@
     {
       "countryCode": "ETH",
       "countryName": "Эфиопия",
-      "cityCount": 20,
+      "cityCount": 34,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 34
     },
     {
       "countryCode": "FIN",
       "countryName": "Финляндия",
-      "cityCount": 20,
-      "wmoCount": 20,
+      "cityCount": 14,
+      "wmoCount": 14,
       "cruCount": 0
     },
     {
@@ -553,9 +553,9 @@
     {
       "countryCode": "FRA",
       "countryName": "Франция",
-      "cityCount": 20,
-      "wmoCount": 0,
-      "cruCount": 20
+      "cityCount": 55,
+      "wmoCount": 2,
+      "cruCount": 53
     },
     {
       "countryCode": "FRO",
@@ -574,16 +574,16 @@
     {
       "countryCode": "GAB",
       "countryName": "Габон",
-      "cityCount": 20,
+      "cityCount": 14,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 14
     },
     {
       "countryCode": "GBR",
       "countryName": "Великобритания",
-      "cityCount": 20,
-      "wmoCount": 11,
-      "cruCount": 9
+      "cityCount": 55,
+      "wmoCount": 39,
+      "cruCount": 16
     },
     {
       "countryCode": "GEO",
@@ -617,8 +617,8 @@
       "countryCode": "GIN",
       "countryName": "Гвинея",
       "cityCount": 20,
-      "wmoCount": 10,
-      "cruCount": 10
+      "wmoCount": 7,
+      "cruCount": 13
     },
     {
       "countryCode": "GMB",
@@ -645,8 +645,8 @@
       "countryCode": "GRC",
       "countryName": "Греция",
       "cityCount": 20,
-      "wmoCount": 1,
-      "cruCount": 19
+      "wmoCount": 3,
+      "cruCount": 17
     },
     {
       "countryCode": "GRD",
@@ -658,16 +658,16 @@
     {
       "countryCode": "GRL",
       "countryName": "Гренландия",
-      "cityCount": 20,
-      "wmoCount": 13,
-      "cruCount": 7
+      "cityCount": 14,
+      "wmoCount": 10,
+      "cruCount": 4
     },
     {
       "countryCode": "GTM",
       "countryName": "Гватемала",
       "cityCount": 20,
-      "wmoCount": 17,
-      "cruCount": 3
+      "wmoCount": 15,
+      "cruCount": 5
     },
     {
       "countryCode": "GUM",
@@ -728,9 +728,9 @@
     {
       "countryCode": "IDN",
       "countryName": "Индонезия",
-      "cityCount": 20,
-      "wmoCount": 9,
-      "cruCount": 11
+      "cityCount": 80,
+      "wmoCount": 22,
+      "cruCount": 58
     },
     {
       "countryCode": "IMN",
@@ -742,9 +742,9 @@
     {
       "countryCode": "IND",
       "countryName": "Индия",
-      "cityCount": 20,
+      "cityCount": 80,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 80
     },
     {
       "countryCode": "IOA",
@@ -763,23 +763,23 @@
     {
       "countryCode": "IRL",
       "countryName": "Ирландия",
-      "cityCount": 15,
+      "cityCount": 14,
       "wmoCount": 2,
-      "cruCount": 13
+      "cruCount": 12
     },
     {
       "countryCode": "IRN",
       "countryName": "Иран",
-      "cityCount": 20,
-      "wmoCount": 19,
-      "cruCount": 1
+      "cityCount": 55,
+      "wmoCount": 49,
+      "cruCount": 6
     },
     {
       "countryCode": "IRQ",
       "countryName": "Ирак",
-      "cityCount": 20,
-      "wmoCount": 17,
-      "cruCount": 3
+      "cityCount": 27,
+      "wmoCount": 21,
+      "cruCount": 6
     },
     {
       "countryCode": "ISL",
@@ -798,9 +798,9 @@
     {
       "countryCode": "ITA",
       "countryName": "Италия",
-      "cityCount": 20,
-      "wmoCount": 1,
-      "cruCount": 19
+      "cityCount": 55,
+      "wmoCount": 2,
+      "cruCount": 53
     },
     {
       "countryCode": "JAM",
@@ -826,9 +826,9 @@
     {
       "countryCode": "JPN",
       "countryName": "Япония",
-      "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "cityCount": 69,
+      "wmoCount": 64,
+      "cruCount": 5
     },
     {
       "countryCode": "KAB",
@@ -853,9 +853,9 @@
     {
       "countryCode": "KEN",
       "countryName": "Кения",
-      "cityCount": 20,
+      "cityCount": 35,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 35
     },
     {
       "countryCode": "KGZ",
@@ -888,9 +888,9 @@
     {
       "countryCode": "KOR",
       "countryName": "Республика Корея",
-      "cityCount": 20,
-      "wmoCount": 16,
-      "cruCount": 4
+      "cityCount": 28,
+      "wmoCount": 21,
+      "cruCount": 7
     },
     {
       "countryCode": "KOS",
@@ -931,8 +931,8 @@
       "countryCode": "LBY",
       "countryName": "Ливия",
       "cityCount": 20,
-      "wmoCount": 9,
-      "cruCount": 11
+      "wmoCount": 8,
+      "cruCount": 12
     },
     {
       "countryCode": "LCA",
@@ -1000,9 +1000,9 @@
     {
       "countryCode": "MAR",
       "countryName": "Марокко",
-      "cityCount": 20,
-      "wmoCount": 19,
-      "cruCount": 1
+      "cityCount": 26,
+      "wmoCount": 23,
+      "cruCount": 3
     },
     {
       "countryCode": "MCO",
@@ -1021,9 +1021,9 @@
     {
       "countryCode": "MDG",
       "countryName": "Мадагаскар",
-      "cityCount": 20,
-      "wmoCount": 18,
-      "cruCount": 2
+      "cityCount": 28,
+      "wmoCount": 22,
+      "cruCount": 6
     },
     {
       "countryCode": "MDV",
@@ -1035,9 +1035,9 @@
     {
       "countryCode": "MEX",
       "countryName": "Мексика",
-      "cityCount": 20,
-      "wmoCount": 8,
-      "cruCount": 12
+      "cityCount": 80,
+      "wmoCount": 17,
+      "cruCount": 63
     },
     {
       "countryCode": "MHL",
@@ -1057,8 +1057,8 @@
       "countryCode": "MLI",
       "countryName": "Мали",
       "cityCount": 20,
-      "wmoCount": 14,
-      "cruCount": 6
+      "wmoCount": 12,
+      "cruCount": 8
     },
     {
       "countryCode": "MLT",
@@ -1070,8 +1070,8 @@
     {
       "countryCode": "MMR",
       "countryName": "Мьянма",
-      "cityCount": 20,
-      "wmoCount": 20,
+      "cityCount": 35,
+      "wmoCount": 35,
       "cruCount": 0
     },
     {
@@ -1084,9 +1084,9 @@
     {
       "countryCode": "MNG",
       "countryName": "Монголия",
-      "cityCount": 20,
-      "wmoCount": 1,
-      "cruCount": 19
+      "cityCount": 14,
+      "wmoCount": 0,
+      "cruCount": 14
     },
     {
       "countryCode": "MNP",
@@ -1098,16 +1098,16 @@
     {
       "countryCode": "MOZ",
       "countryName": "Мозамбик",
-      "cityCount": 20,
+      "cityCount": 34,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 34
     },
     {
       "countryCode": "MRT",
       "countryName": "Мавритания",
-      "cityCount": 20,
+      "cityCount": 14,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 14
     },
     {
       "countryCode": "MSR",
@@ -1133,16 +1133,16 @@
     {
       "countryCode": "MYS",
       "countryName": "Малайзия",
-      "cityCount": 20,
-      "wmoCount": 15,
-      "cruCount": 5
+      "cityCount": 32,
+      "wmoCount": 24,
+      "cruCount": 8
     },
     {
       "countryCode": "NAM",
       "countryName": "Намибия",
       "cityCount": 20,
-      "wmoCount": 0,
-      "cruCount": 20
+      "wmoCount": 1,
+      "cruCount": 19
     },
     {
       "countryCode": "NCL",
@@ -1168,16 +1168,16 @@
     {
       "countryCode": "NGA",
       "countryName": "Нигерия",
-      "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "cityCount": 68,
+      "wmoCount": 59,
+      "cruCount": 9
     },
     {
       "countryCode": "NIC",
       "countryName": "Никарагуа",
-      "cityCount": 19,
+      "cityCount": 14,
       "wmoCount": 0,
-      "cruCount": 19
+      "cruCount": 14
     },
     {
       "countryCode": "NIU",
@@ -1197,8 +1197,8 @@
       "countryCode": "NOR",
       "countryName": "Норвегия",
       "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "wmoCount": 19,
+      "cruCount": 1
     },
     {
       "countryCode": "NPL",
@@ -1218,8 +1218,8 @@
       "countryCode": "NZL",
       "countryName": "Новая Зеландия",
       "cityCount": 20,
-      "wmoCount": 8,
-      "cruCount": 12
+      "wmoCount": 11,
+      "cruCount": 9
     },
     {
       "countryCode": "OMN",
@@ -1231,9 +1231,9 @@
     {
       "countryCode": "PAK",
       "countryName": "Пакистан",
-      "cityCount": 20,
-      "wmoCount": 14,
-      "cruCount": 6
+      "cityCount": 41,
+      "wmoCount": 28,
+      "cruCount": 13
     },
     {
       "countryCode": "PAN",
@@ -1252,9 +1252,9 @@
     {
       "countryCode": "PER",
       "countryName": "Перу",
-      "cityCount": 20,
+      "cityCount": 35,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 35
     },
     {
       "countryCode": "PGA",
@@ -1266,9 +1266,9 @@
     {
       "countryCode": "PHL",
       "countryName": "Филиппины",
-      "cityCount": 20,
-      "wmoCount": 16,
-      "cruCount": 4
+      "cityCount": 38,
+      "wmoCount": 31,
+      "cruCount": 7
     },
     {
       "countryCode": "PLW",
@@ -1287,8 +1287,8 @@
     {
       "countryCode": "POL",
       "countryName": "Польша",
-      "cityCount": 20,
-      "wmoCount": 20,
+      "cityCount": 24,
+      "wmoCount": 24,
       "cruCount": 0
     },
     {
@@ -1301,9 +1301,9 @@
     {
       "countryCode": "PRK",
       "countryName": "КНДР",
-      "cityCount": 20,
+      "cityCount": 27,
       "wmoCount": 3,
-      "cruCount": 17
+      "cruCount": 24
     },
     {
       "countryCode": "PRT",
@@ -1350,9 +1350,9 @@
     {
       "countryCode": "RUS",
       "countryName": "Россия",
-      "cityCount": 20,
-      "wmoCount": 12,
-      "cruCount": 8
+      "cityCount": 80,
+      "wmoCount": 30,
+      "cruCount": 50
     },
     {
       "countryCode": "RWA",
@@ -1371,9 +1371,9 @@
     {
       "countryCode": "SAU",
       "countryName": "Саудовская Аравия",
-      "cityCount": 20,
-      "wmoCount": 18,
-      "cruCount": 2
+      "cityCount": 31,
+      "wmoCount": 27,
+      "cruCount": 4
     },
     {
       "countryCode": "SCR",
@@ -1385,9 +1385,9 @@
     {
       "countryCode": "SDN",
       "countryName": "Судан",
-      "cityCount": 20,
-      "wmoCount": 1,
-      "cruCount": 19
+      "cityCount": 30,
+      "wmoCount": 2,
+      "cruCount": 28
     },
     {
       "countryCode": "SDS",
@@ -1554,8 +1554,8 @@
       "countryCode": "SYR",
       "countryName": "Сирия",
       "cityCount": 20,
-      "wmoCount": 0,
-      "cruCount": 20
+      "wmoCount": 1,
+      "cruCount": 19
     },
     {
       "countryCode": "TCA",
@@ -1581,8 +1581,8 @@
     {
       "countryCode": "THA",
       "countryName": "Таиланд",
-      "cityCount": 20,
-      "wmoCount": 20,
+      "cityCount": 55,
+      "wmoCount": 55,
       "cruCount": 0
     },
     {
@@ -1624,15 +1624,15 @@
       "countryCode": "TUN",
       "countryName": "Тунис",
       "cityCount": 20,
-      "wmoCount": 0,
-      "cruCount": 20
+      "wmoCount": 1,
+      "cruCount": 19
     },
     {
       "countryCode": "TUR",
       "countryName": "Турция",
-      "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "cityCount": 55,
+      "wmoCount": 54,
+      "cruCount": 1
     },
     {
       "countryCode": "TUV",
@@ -1651,23 +1651,23 @@
     {
       "countryCode": "TZA",
       "countryName": "Танзания",
-      "cityCount": 20,
+      "cityCount": 35,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 35
     },
     {
       "countryCode": "UGA",
       "countryName": "Уганда",
-      "cityCount": 20,
+      "cityCount": 35,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 35
     },
     {
       "countryCode": "UKR",
       "countryName": "Украина",
-      "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "cityCount": 35,
+      "wmoCount": 31,
+      "cruCount": 4
     },
     {
       "countryCode": "UMI",
@@ -1680,15 +1680,15 @@
       "countryCode": "URY",
       "countryName": "Уругвай",
       "cityCount": 20,
-      "wmoCount": 18,
-      "cruCount": 2
+      "wmoCount": 17,
+      "cruCount": 3
     },
     {
       "countryCode": "USA",
       "countryName": "США",
-      "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "cityCount": 80,
+      "wmoCount": 57,
+      "cruCount": 23
     },
     {
       "countryCode": "USG",
@@ -1700,9 +1700,9 @@
     {
       "countryCode": "UZB",
       "countryName": "Узбекистан",
-      "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "cityCount": 29,
+      "wmoCount": 28,
+      "cruCount": 1
     },
     {
       "countryCode": "VAT",
@@ -1721,9 +1721,9 @@
     {
       "countryCode": "VEN",
       "countryName": "Венесуэла",
-      "cityCount": 20,
-      "wmoCount": 20,
-      "cruCount": 0
+      "cityCount": 35,
+      "wmoCount": 27,
+      "cruCount": 8
     },
     {
       "countryCode": "VGB",
@@ -1742,9 +1742,9 @@
     {
       "countryCode": "VNM",
       "countryName": "Вьетнам",
-      "cityCount": 20,
+      "cityCount": 55,
       "wmoCount": 0,
-      "cruCount": 20
+      "cruCount": 55
     },
     {
       "countryCode": "VUT",
@@ -1784,16 +1784,16 @@
     {
       "countryCode": "ZAF",
       "countryName": "ЮАР",
-      "cityCount": 20,
-      "wmoCount": 9,
-      "cruCount": 11
+      "cityCount": 35,
+      "wmoCount": 11,
+      "cruCount": 24
     },
     {
       "countryCode": "ZMB",
       "countryName": "Замбия",
       "cityCount": 20,
-      "wmoCount": 0,
-      "cruCount": 20
+      "wmoCount": 1,
+      "cruCount": 19
     },
     {
       "countryCode": "ZWE",

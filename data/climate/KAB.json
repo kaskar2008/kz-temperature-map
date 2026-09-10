@@ -13,6 +13,7 @@
       "lng": 63.383897,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "KAB",
       "alt": null,
       "temps": [

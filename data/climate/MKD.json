@@ -12,6 +12,7 @@
       "lng": 21.433461,
       "lat": 42.000006,
       "population": 494087,
+      "displayPriority": 10000494087,
       "countryCode": "MKD",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 20.970079,
       "lat": 42.00923,
       "population": 119132,
+      "displayPriority": 100119132,
       "countryCode": "MKD",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 21.339514,
       "lat": 41.039057,
       "population": 86528,
+      "displayPriority": 100086528,
       "countryCode": "MKD",
       "alt": null,
       "temps": [

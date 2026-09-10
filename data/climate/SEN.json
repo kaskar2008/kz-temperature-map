@@ -12,6 +12,7 @@
       "lng": -17.475076,
       "lat": 14.717778,
       "population": 2604000,
+      "displayPriority": 10002604000,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": -16.930011,
       "lat": 14.8104,
       "population": 293001,
+      "displayPriority": 100293001,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": -16.10001,
       "lat": 14.149975,
       "population": 277812,
+      "displayPriority": 100277812,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": -16.289998,
       "lat": 12.589992,
       "population": 191716,
+      "displayPriority": 100191716,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": -16.240001,
       "lat": 14.660383,
       "population": 148024,
+      "displayPriority": 100148024,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": -13.680028,
       "lat": 13.780359,
       "population": 89212,
+      "displayPriority": 100089212,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": -16.250001,
       "lat": 15.610377,
       "population": 85075,
+      "displayPriority": 100085075,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": -14.950028,
       "lat": 12.910438,
       "population": 69267,
+      "displayPriority": 100069267,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": -16.416,
       "lat": 14.344002,
       "population": 24243,
+      "displayPriority": 100024243,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": -13.499988,
       "lat": 16.150008,
       "population": 21656,
+      "displayPriority": 100021656,
       "countryCode": "SEN",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": -12.179991,
       "lat": 12.560434,
       "population": 18226,
+      "displayPriority": 18226,
       "countryCode": "SEN",
       "alt": null,
       "temps": [

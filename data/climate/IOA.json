@@ -13,6 +13,7 @@
       "lng": 105.67259,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "IOA",
       "alt": 261,
       "temps": [

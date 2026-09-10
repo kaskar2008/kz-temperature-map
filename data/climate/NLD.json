@@ -12,6 +12,7 @@
       "lng": 4.914694,
       "lat": 52.351914,
       "population": 1031000,
+      "displayPriority": 11001031000,
       "countryCode": "NLD",
       "alt": -3.9,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 5.120039,
       "lat": 52.100346,
       "population": 640000,
+      "displayPriority": 100640000,
       "countryCode": "NLD",
       "alt": 1.9,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 4.629991,
       "lat": 52.380432,
       "population": 349957,
+      "displayPriority": 100349957,
       "countryCode": "NLD",
       "alt": -3.9,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 6.580001,
       "lat": 53.220407,
       "population": 216688,
+      "displayPriority": 100216688,
       "countryCode": "NLD",
       "alt": 3.2,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 5.923,
       "lat": 51.987996,
       "population": 141674,
+      "displayPriority": 100141674,
       "countryCode": "NLD",
       "alt": 45.2,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 5.316661,
       "lat": 51.683337,
       "population": 134520,
+      "displayPriority": 100134520,
       "countryCode": "NLD",
       "alt": 0.7,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": 5.783357,
       "lat": 53.250379,
       "population": 125778,
+      "displayPriority": 100125778,
       "countryCode": "NLD",
       "alt": 0.3,
       "temps": [
@@ -481,6 +488,7 @@
       "lng": 5.677003,
       "lat": 50.852997,
       "population": 122378,
+      "displayPriority": 100122378,
       "countryCode": "NLD",
       "alt": 112.7,
       "temps": [
@@ -548,6 +556,7 @@
       "lng": 6.096997,
       "lat": 52.524,
       "population": 111805,
+      "displayPriority": 100111805,
       "countryCode": "NLD",
       "alt": -3.3,
       "temps": [
@@ -615,6 +624,7 @@
       "lng": 6.550003,
       "lat": 53.000001,
       "population": 62237,
+      "displayPriority": 100062237,
       "countryCode": "NLD",
       "alt": 3.2,
       "temps": [
@@ -682,6 +692,7 @@
       "lng": 3.609999,
       "lat": 51.501996,
       "population": 46485,
+      "displayPriority": 100046485,
       "countryCode": "NLD",
       "alt": 8,
       "temps": [
@@ -749,6 +760,7 @@
       "lng": 4.269961,
       "lat": 52.080037,
       "population": 1406000,
+      "displayPriority": 1406000,
       "countryCode": "NLD",
       "alt": -1.1,
       "temps": [
@@ -816,6 +828,7 @@
       "lng": 4.478028,
       "lat": 51.921915,
       "population": 1005000,
+      "displayPriority": 1005000,
       "countryCode": "NLD",
       "alt": -5.1,
       "temps": [
@@ -883,6 +896,7 @@
       "lng": 5.500015,
       "lat": 51.429973,
       "population": 398053,
+      "displayPriority": 398053,
       "countryCode": "NLD",
       "alt": 20.7,
       "temps": [

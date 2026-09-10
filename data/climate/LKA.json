@@ -12,6 +12,7 @@
       "lng": 79.857751,
       "lat": 6.931966,
       "population": 217000,
+      "displayPriority": 10000217000,
       "countryCode": "LKA",
       "alt": 7,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 80.3833,
       "lat": 8.349993,
       "population": 118302,
+      "displayPriority": 100118302,
       "countryCode": "LKA",
       "alt": 92,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 80.670001,
       "lat": 7.279981,
       "population": 111701,
+      "displayPriority": 100111701,
       "countryCode": "LKA",
       "alt": 477,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 81.233002,
       "lat": 8.568999,
       "population": 108420,
+      "displayPriority": 100108420,
       "countryCode": "LKA",
       "alt": 24,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 80.240001,
       "lat": 6.030005,
       "population": 99478,
+      "displayPriority": 100099478,
       "countryCode": "LKA",
       "alt": 13,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 80.386003,
       "lat": 6.693003,
       "population": 47832,
+      "displayPriority": 100047832,
       "countryCode": "LKA",
       "alt": 86,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": 81.049926,
       "lat": 6.983694,
       "population": 47587,
+      "displayPriority": 100047587,
       "countryCode": "LKA",
       "alt": 670,
       "temps": [
@@ -481,6 +488,7 @@
       "lng": 79.826004,
       "lat": 8.033004,
       "population": 45661,
+      "displayPriority": 100045661,
       "countryCode": "LKA",
       "alt": 2,
       "temps": [
@@ -548,6 +556,7 @@
       "lng": 80.005028,
       "lat": 9.675002,
       "population": 250000,
+      "displayPriority": 250000,
       "countryCode": "LKA",
       "alt": 3,
       "temps": [
@@ -615,6 +624,7 @@
       "lng": 79.880023,
       "lat": 6.780399,
       "population": 200000,
+      "displayPriority": 200000,
       "countryCode": "LKA",
       "alt": 5,
       "temps": [
@@ -682,6 +692,7 @@
       "lng": 81.700015,
       "lat": 7.717008,
       "population": 129222,
+      "displayPriority": 129222,
       "countryCode": "LKA",
       "alt": 8,
       "temps": [
@@ -749,6 +760,7 @@
       "lng": 79.949993,
       "lat": 6.900004,
       "population": 115826,
+      "displayPriority": 115826,
       "countryCode": "LKA",
       "alt": 7,
       "temps": [
@@ -816,6 +828,7 @@
       "lng": 80.39994,
       "lat": 9.40042,
       "population": 103717,
+      "displayPriority": 103717,
       "countryCode": "LKA",
       "alt": 3,
       "temps": [
@@ -883,6 +896,7 @@
       "lng": 80.542773,
       "lat": 5.948977,
       "population": 68244,
+      "displayPriority": 68244,
       "countryCode": "LKA",
       "alt": 13,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": 12.44177,
       "lat": 43.936096,
       "population": 29579,
+      "displayPriority": 10000029579,
       "countryCode": "SMR",
       "alt": null,
       "temps": [

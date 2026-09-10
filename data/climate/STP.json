@@ -12,6 +12,7 @@
       "lng": 6.72965,
       "lat": 0.337466,
       "population": 88219,
+      "displayPriority": 10000088219,
       "countryCode": "STP",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 7.412005,
       "lat": 1.645002,
       "population": 1156,
+      "displayPriority": 100001156,
       "countryCode": "STP",
       "alt": null,
       "temps": [

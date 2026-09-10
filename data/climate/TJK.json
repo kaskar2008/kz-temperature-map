@@ -12,6 +12,7 @@
       "lng": 68.773879,
       "lat": 38.560035,
       "population": 1086244,
+      "displayPriority": 10001086244,
       "countryCode": "TJK",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 69.619926,
       "lat": 40.289981,
       "population": 437684,
+      "displayPriority": 100437684,
       "countryCode": "TJK",
       "alt": 289,
       "temps": [
@@ -142,6 +144,7 @@
       "lng": 68.771347,
       "lat": 37.837314,
       "population": 311574,
+      "displayPriority": 100311574,
       "countryCode": "TJK",
       "alt": null,
       "temps": [
@@ -205,6 +208,7 @@
       "lng": 69.77573,
       "lat": 37.92116,
       "population": 115164,
+      "displayPriority": 100115164,
       "countryCode": "TJK",
       "alt": null,
       "temps": [
@@ -268,6 +272,7 @@
       "lng": 71.54756,
       "lat": 37.487517,
       "population": 30000,
+      "displayPriority": 100030000,
       "countryCode": "TJK",
       "alt": null,
       "temps": [
@@ -331,6 +336,7 @@
       "lng": 69.000004,
       "lat": 39.750003,
       "population": 11468,
+      "displayPriority": 100011468,
       "countryCode": "TJK",
       "alt": null,
       "temps": [
@@ -394,6 +400,7 @@
       "lng": 70.427164,
       "lat": 40.292152,
       "population": 259876,
+      "displayPriority": 259876,
       "countryCode": "TJK",
       "alt": null,
       "temps": [
@@ -457,6 +464,7 @@
       "lng": 69.001462,
       "lat": 39.921916,
       "population": 156621,
+      "displayPriority": 156621,
       "countryCode": "TJK",
       "alt": null,
       "temps": [
@@ -520,6 +528,7 @@
       "lng": 68.688975,
       "lat": 37.979399,
       "population": 8925,
+      "displayPriority": 8925,
       "countryCode": "TJK",
       "alt": null,
       "temps": [

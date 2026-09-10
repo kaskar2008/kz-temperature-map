@@ -12,6 +12,7 @@
       "lng": 8.783278,
       "lat": 3.750015,
       "population": 155963,
+      "displayPriority": 10000155963,
       "countryCode": "GNQ",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 9.769987,
       "lat": 1.870001,
       "population": 173046,
+      "displayPriority": 100173046,
       "countryCode": "GNQ",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 8.55,
       "lat": 3.449997,
       "population": 8655,
+      "displayPriority": 100008655,
       "countryCode": "GNQ",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 10.566703,
       "lat": 1.449999,
       "population": 8462,
+      "displayPriority": 100008462,
       "countryCode": "GNQ",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 11.31656,
       "lat": 1.633684,
       "population": 6560,
+      "displayPriority": 100006560,
       "countryCode": "GNQ",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 9.418588,
       "lat": 1.116403,
       "population": 628,
+      "displayPriority": 628,
       "countryCode": "GNQ",
       "alt": null,
       "temps": [

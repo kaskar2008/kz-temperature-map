@@ -12,6 +12,7 @@
       "lng": 58.378311,
       "lat": 23.585179,
       "population": 734697,
+      "displayPriority": 10000734697,
       "countryCode": "OMN",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 58.182536,
       "lat": 23.680246,
       "population": 237816,
+      "displayPriority": 237816,
       "countryCode": "OMN",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 54.085215,
       "lat": 17.025458,
       "population": 203877,
+      "displayPriority": 203877,
       "countryCode": "OMN",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 56.734419,
       "lat": 24.361973,
       "population": 151349,
+      "displayPriority": 151349,
       "countryCode": "OMN",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 56.516953,
       "lat": 23.22539,
       "population": 101640,
+      "displayPriority": 101640,
       "countryCode": "OMN",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 57.531413,
       "lat": 22.92639,
       "population": 72076,
+      "displayPriority": 72076,
       "countryCode": "OMN",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 59.534805,
       "lat": 22.575817,
       "population": 71152,
+      "displayPriority": 71152,
       "countryCode": "OMN",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 57.978208,
       "lat": 23.303189,
       "population": 47718,
+      "displayPriority": 47718,
       "countryCode": "OMN",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 58.876762,
       "lat": 20.656153,
       "population": 8500,
+      "displayPriority": 8500,
       "countryCode": "OMN",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 54.691793,
       "lat": 16.992437,
       "population": 1120,
+      "displayPriority": 1120,
       "countryCode": "OMN",
       "alt": null,
       "temps": [

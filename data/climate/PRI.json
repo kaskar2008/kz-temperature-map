@@ -12,6 +12,7 @@
       "lng": -66.129979,
       "lat": 18.440023,
       "population": 2478905,
+      "displayPriority": 102478905,
       "countryCode": "PRI",
       "alt": 3,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": -67.139711,
       "lat": 18.20151,
       "population": 291339,
+      "displayPriority": 291339,
       "countryCode": "PRI",
       "alt": null,
       "temps": [
@@ -142,6 +144,7 @@
       "lng": -66.616642,
       "lat": 18.000386,
       "population": 160334,
+      "displayPriority": 160334,
       "countryCode": "PRI",
       "alt": null,
       "temps": [
@@ -205,6 +208,7 @@
       "lng": -66.729994,
       "lat": 18.440023,
       "population": 69307,
+      "displayPriority": 69307,
       "countryCode": "PRI",
       "alt": null,
       "temps": [

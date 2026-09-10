@@ -12,6 +12,7 @@
       "lng": 12.453387,
       "lat": 41.903282,
       "population": 832,
+      "displayPriority": 11000000832,
       "countryCode": "VAT",
       "alt": null,
       "temps": [

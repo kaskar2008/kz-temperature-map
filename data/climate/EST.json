@@ -12,6 +12,7 @@
       "lng": 24.728041,
       "lat": 59.433877,
       "population": 394024,
+      "displayPriority": 10000394024,
       "countryCode": "EST",
       "alt": 33,
       "temps": [
@@ -79,6 +80,7 @@
       "lng": 26.709884,
       "lat": 58.383941,
       "population": 101092,
+      "displayPriority": 100101092,
       "countryCode": "EST",
       "alt": 70,
       "temps": [
@@ -146,6 +148,7 @@
       "lng": 24.513583,
       "lat": 58.374743,
       "population": 44192,
+      "displayPriority": 100044192,
       "countryCode": "EST",
       "alt": 2,
       "temps": [
@@ -213,6 +216,7 @@
       "lng": 25.59,
       "lat": 58.363889,
       "population": 20309,
+      "displayPriority": 100020309,
       "countryCode": "EST",
       "alt": 86,
       "temps": [
@@ -280,6 +284,7 @@
       "lng": 23.541389,
       "lat": 58.943056,
       "population": 11805,
+      "displayPriority": 100011805,
       "countryCode": "EST",
       "alt": 24,
       "temps": [
@@ -347,6 +352,7 @@
       "lng": 28.160286,
       "lat": 59.377628,
       "population": 66980,
+      "displayPriority": 66980,
       "countryCode": "EST",
       "alt": 73,
       "temps": [
@@ -414,6 +420,7 @@
       "lng": 27.283337,
       "lat": 59.399978,
       "population": 46060,
+      "displayPriority": 46060,
       "countryCode": "EST",
       "alt": 73,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": 73.508901,
       "lat": 4.172037,
       "population": 112927,
+      "displayPriority": 10000112927,
       "countryCode": "MDV",
       "alt": 1.7,
       "temps": [

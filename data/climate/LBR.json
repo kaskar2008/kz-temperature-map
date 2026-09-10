@@ -12,6 +12,7 @@
       "lng": -10.79966,
       "lat": 6.314582,
       "population": 1041000,
+      "displayPriority": 10001041000,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": -10.052472,
       "lat": 5.916085,
       "population": 48315,
+      "displayPriority": 100048315,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": -9.49,
       "lat": 7.010411,
       "population": 45835,
+      "displayPriority": 100045835,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": -10.349001,
       "lat": 6.525999,
       "population": 33945,
+      "displayPriority": 100033945,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": -7.716981,
       "lat": 4.375378,
       "population": 32661,
+      "displayPriority": 100032661,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": -9.749996,
       "lat": 8.416701,
       "population": 26594,
+      "displayPriority": 100026594,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": -8.130005,
       "lat": 6.07039,
       "population": 25678,
+      "displayPriority": 100025678,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": -11.368593,
       "lat": 6.75332,
       "population": 11969,
+      "displayPriority": 100011969,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": -8.684999,
       "lat": 7.371,
       "population": 11415,
+      "displayPriority": 100011415,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": -9.038813,
       "lat": 5.011127,
       "population": 10374,
+      "displayPriority": 100010374,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -642,6 +652,7 @@
       "lng": -10.600001,
       "lat": 6.433299,
       "population": 4089,
+      "displayPriority": 100004089,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -705,6 +716,7 @@
       "lng": -8.231595,
       "lat": 4.674103,
       "population": 2733,
+      "displayPriority": 100002733,
       "countryCode": "LBR",
       "alt": null,
       "temps": [
@@ -768,6 +780,7 @@
       "lng": -9.577997,
       "lat": 5.464998,
       "population": 2578,
+      "displayPriority": 100002578,
       "countryCode": "LBR",
       "alt": null,
       "temps": [

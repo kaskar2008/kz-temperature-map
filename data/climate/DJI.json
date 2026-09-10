@@ -12,6 +12,7 @@
       "lng": 43.148002,
       "lat": 11.595014,
       "population": 923000,
+      "displayPriority": 10000923000,
       "countryCode": "DJI",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 42.712524,
       "lat": 11.15623,
       "population": 40074,
+      "displayPriority": 100040074,
       "countryCode": "DJI",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 42.900003,
       "lat": 11.783304,
       "population": 22193,
+      "displayPriority": 100022193,
       "countryCode": "DJI",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 43.285564,
       "lat": 11.973441,
       "population": 17776,
+      "displayPriority": 100017776,
       "countryCode": "DJI",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 42.372001,
       "lat": 11.104002,
       "population": 12043,
+      "displayPriority": 100012043,
       "countryCode": "DJI",
       "alt": null,
       "temps": [

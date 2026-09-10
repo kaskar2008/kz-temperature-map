@@ -12,6 +12,7 @@
       "lng": 114.933284,
       "lat": 4.883331,
       "population": 296500,
+      "displayPriority": 10000296500,
       "countryCode": "BRN",
       "alt": null,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": 173.017571,
       "lat": 1.338188,
       "population": 28802,
+      "displayPriority": 10000028802,
       "countryCode": "KIR",
       "alt": 2,
       "temps": [

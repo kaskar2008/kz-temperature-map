@@ -12,6 +12,7 @@
       "lng": 15.999995,
       "lat": 45.800007,
       "population": 722526,
+      "displayPriority": 10000722526,
       "countryCode": "HRV",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 16.469992,
       "lat": 43.520404,
       "population": 214741,
+      "displayPriority": 100214741,
       "countryCode": "HRV",
       "alt": null,
       "temps": [
@@ -138,6 +140,7 @@
       "lng": 14.450012,
       "lat": 45.329984,
       "population": 170992,
+      "displayPriority": 100170992,
       "countryCode": "HRV",
       "alt": null,
       "temps": [
@@ -201,6 +204,7 @@
       "lng": 18.015582,
       "lat": 45.160278,
       "population": 97718,
+      "displayPriority": 100097718,
       "countryCode": "HRV",
       "alt": null,
       "temps": [
@@ -264,6 +268,7 @@
       "lng": 18.680038,
       "lat": 45.550384,
       "population": 95077,
+      "displayPriority": 100095077,
       "countryCode": "HRV",
       "alt": null,
       "temps": [
@@ -327,6 +332,7 @@
       "lng": 15.262262,
       "lat": 44.120135,
       "population": 71258,
+      "displayPriority": 100071258,
       "countryCode": "HRV",
       "alt": null,
       "temps": [
@@ -390,6 +396,7 @@
       "lng": 15.547774,
       "lat": 45.487209,
       "population": 55063,
+      "displayPriority": 100055063,
       "countryCode": "HRV",
       "alt": null,
       "temps": [
@@ -453,6 +460,7 @@
       "lng": 15.905833,
       "lat": 43.727222,
       "population": 37112,
+      "displayPriority": 100037112,
       "countryCode": "HRV",
       "alt": null,
       "temps": [
@@ -516,6 +524,7 @@
       "lng": 18.091392,
       "lat": 42.660948,
       "population": 36994,
+      "displayPriority": 100036994,
       "countryCode": "HRV",
       "alt": null,
       "temps": [
@@ -579,6 +588,7 @@
       "lng": 13.848085,
       "lat": 44.86872,
       "population": 61599,
+      "displayPriority": 61599,
       "countryCode": "HRV",
       "alt": null,
       "temps": [

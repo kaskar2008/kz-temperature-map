@@ -12,6 +12,7 @@
       "lng": -64.783937,
       "lat": 32.29419,
       "population": 52320,
+      "displayPriority": 10000052320,
       "countryCode": "BMU",
       "alt": 6,
       "temps": [

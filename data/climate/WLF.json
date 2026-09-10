@@ -13,6 +13,7 @@
       "lng": -178.137436,
       "population": null,
       "representativePoint": true,
+      "displayPriority": 0,
       "countryCode": "WLF",
       "alt": null,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": -60.992875,
       "lat": 14.007875,
       "population": 37963,
+      "displayPriority": 10000037963,
       "countryCode": "LCA",
       "alt": null,
       "temps": [

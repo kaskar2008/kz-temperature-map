@@ -12,6 +12,7 @@
       "lng": -61.220236,
       "lat": 13.155756,
       "population": 49485,
+      "displayPriority": 10000049485,
       "countryCode": "VCT",
       "alt": null,
       "temps": [

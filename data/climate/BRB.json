@@ -12,6 +12,7 @@
       "lng": -59.616527,
       "lat": 13.102003,
       "population": 191152,
+      "displayPriority": 10000191152,
       "countryCode": "BRB",
       "alt": 56,
       "temps": [

@@ -12,6 +12,7 @@
       "lng": 14.514969,
       "lat": 46.055288,
       "population": 314807,
+      "displayPriority": 10000314807,
       "countryCode": "SVN",
       "alt": null,
       "temps": [
@@ -75,6 +76,7 @@
       "lng": 15.650042,
       "lat": 46.540478,
       "population": 114228,
+      "displayPriority": 114228,
       "countryCode": "SVN",
       "alt": null,
       "temps": [

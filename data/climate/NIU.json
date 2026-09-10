@@ -12,6 +12,7 @@
       "lng": -169.913625,
       "lat": -19.065988,
       "population": 581,
+      "displayPriority": 100000581,
       "countryCode": "NIU",
       "alt": null,
       "temps": [
