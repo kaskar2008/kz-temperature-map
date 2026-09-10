@@ -1,0 +1,43 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Забираем репозиторий
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # Настраиваем GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Загружаем именно содержимое dist
+      - name: Upload dist
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+
+      # Публикуем
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
