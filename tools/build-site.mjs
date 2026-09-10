@@ -29,9 +29,7 @@ async function asset(name, content) {
   await writeFile(new URL(`assets/${filename}`, out), content);
   return filename;
 }
-const fallback = await asset('kazakhstan-fallback.js', await readFile(new URL('assets/kazakhstan-fallback.js', root)));
-const js = (await readFile(new URL('assets/app.js', root), 'utf8')).replaceAll('./kazakhstan-fallback.js', `./${fallback}`);
-const app = await asset('app.js', js);
+const app = await asset('app.js', await readFile(new URL('assets/app.js', root), 'utf8'));
 const css = await asset('app.css', await readFile(new URL('assets/app.css', root)));
 const html = (await readFile(new URL('index.html', root), 'utf8'))
   .replaceAll('./assets/app.js', `./assets/${app}`).replaceAll('./assets/app.css', `./assets/${css}`);

@@ -1,0 +1,122 @@
+{
+  "countryCode": "GEO",
+  "placeStrategy": "merge",
+  "cityLimit": 20,
+  "placeSource": {
+    "name": "GeoNames",
+    "datasetUrl": "https://download.geonames.org/export/dump/GE.zip",
+    "recordUrlTemplate": "https://www.geonames.org/{id}"
+  },
+  "places": [
+    {
+      "sourceId": 614455,
+      "name": "Gori",
+      "lat": 41.98532,
+      "lng": 44.1129,
+      "elevation": 602,
+      "population": 41933,
+      "admin1": true
+    },
+    {
+      "sourceId": 610824,
+      "name": "Zugdidi",
+      "lat": 42.5084,
+      "lng": 41.86796,
+      "elevation": 128,
+      "population": 40067,
+      "admin1": true
+    },
+    {
+      "sourceId": 611694,
+      "name": "Telavi",
+      "lat": 41.91957,
+      "lng": 45.47002,
+      "elevation": 699,
+      "population": 19875,
+      "admin1": true
+    },
+    {
+      "sourceId": 615860,
+      "name": "Akhaltsikhe",
+      "lat": 41.63952,
+      "lng": 42.98604,
+      "elevation": 984,
+      "population": 17445,
+      "admin1": true
+    },
+    {
+      "sourceId": 612536,
+      "name": "Ozurgeti",
+      "lat": 41.92336,
+      "lng": 42.00525,
+      "elevation": 82,
+      "population": 13935,
+      "admin1": true
+    },
+    {
+      "sourceId": 615403,
+      "name": "Borjomi",
+      "lat": 41.84692,
+      "lng": 43.3971,
+      "elevation": 802,
+      "population": 11248
+    },
+    {
+      "sourceId": 615893,
+      "name": "Akhalkalaki",
+      "lat": 41.40514,
+      "lng": 43.48629,
+      "elevation": 1717,
+      "population": 7437
+    },
+    {
+      "sourceId": 613342,
+      "name": "Lagodekhi",
+      "lat": 41.82747,
+      "lng": 46.27495,
+      "elevation": 479,
+      "population": 5607
+    },
+    {
+      "sourceId": 615005,
+      "name": "Dedoplistsqaro",
+      "lat": 41.46566,
+      "lng": 46.10385,
+      "elevation": 837,
+      "population": 5460
+    },
+    {
+      "sourceId": 615776,
+      "name": "Ambrolauri",
+      "lat": 42.52322,
+      "lng": 43.14982,
+      "elevation": 564,
+      "population": 1952,
+      "admin1": true
+    },
+    {
+      "sourceId": 612987,
+      "name": "Mestia",
+      "lat": 43.0438,
+      "lng": 42.72368,
+      "elevation": 1413,
+      "population": 1689
+    },
+    {
+      "sourceId": 614087,
+      "name": "Stepantsminda",
+      "lat": 42.65691,
+      "lng": 44.64311,
+      "elevation": 1767,
+      "population": 1552
+    },
+    {
+      "sourceId": 612600,
+      "name": "Omalo",
+      "lat": 42.37047,
+      "lng": 45.63334,
+      "elevation": 1894,
+      "population": 37
+    }
+  ]
+}

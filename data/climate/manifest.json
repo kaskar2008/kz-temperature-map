@@ -1,8 +1,8 @@
 {
   "period": "1991–2020",
   "generated": 256,
-  "totalWmo": 1667,
-  "totalCru": 2292,
+  "totalWmo": 1642,
+  "totalCru": 2330,
   "countries": [
     {
       "countryCode": "ABW",
@@ -64,8 +64,8 @@
       "countryCode": "ARG",
       "countryName": "Аргентина",
       "cityCount": 80,
-      "wmoCount": 53,
-      "cruCount": 27
+      "wmoCount": 52,
+      "cruCount": 28
     },
     {
       "countryCode": "ARM",
@@ -106,8 +106,8 @@
       "countryCode": "AUS",
       "countryName": "Австралия",
       "cityCount": 80,
-      "wmoCount": 77,
-      "cruCount": 3
+      "wmoCount": 76,
+      "cruCount": 4
     },
     {
       "countryCode": "AUT",
@@ -232,8 +232,8 @@
       "countryCode": "BRA",
       "countryName": "Бразилия",
       "cityCount": 80,
-      "wmoCount": 25,
-      "cruCount": 55
+      "wmoCount": 24,
+      "cruCount": 56
     },
     {
       "countryCode": "BRB",
@@ -288,8 +288,8 @@
       "countryCode": "CAN",
       "countryName": "Канада",
       "cityCount": 80,
-      "wmoCount": 40,
-      "cruCount": 40
+      "wmoCount": 37,
+      "cruCount": 43
     },
     {
       "countryCode": "CHE",
@@ -351,8 +351,8 @@
       "countryCode": "COG",
       "countryName": "Республика Конго",
       "cityCount": 14,
-      "wmoCount": 4,
-      "cruCount": 10
+      "wmoCount": 1,
+      "cruCount": 13
     },
     {
       "countryCode": "COK",
@@ -477,8 +477,8 @@
       "countryCode": "DZA",
       "countryName": "Алжир",
       "cityCount": 35,
-      "wmoCount": 25,
-      "cruCount": 10
+      "wmoCount": 18,
+      "cruCount": 17
     },
     {
       "countryCode": "ECU",
@@ -588,9 +588,9 @@
     {
       "countryCode": "GEO",
       "countryName": "Грузия",
-      "cityCount": 7,
-      "wmoCount": 5,
-      "cruCount": 2
+      "cityCount": 20,
+      "wmoCount": 11,
+      "cruCount": 9
     },
     {
       "countryCode": "GGY",
@@ -617,8 +617,8 @@
       "countryCode": "GIN",
       "countryName": "Гвинея",
       "cityCount": 20,
-      "wmoCount": 7,
-      "cruCount": 13
+      "wmoCount": 6,
+      "cruCount": 14
     },
     {
       "countryCode": "GMB",
@@ -729,8 +729,8 @@
       "countryCode": "IDN",
       "countryName": "Индонезия",
       "cityCount": 80,
-      "wmoCount": 22,
-      "cruCount": 58
+      "wmoCount": 19,
+      "cruCount": 61
     },
     {
       "countryCode": "IMN",
@@ -778,8 +778,8 @@
       "countryCode": "IRQ",
       "countryName": "Ирак",
       "cityCount": 27,
-      "wmoCount": 21,
-      "cruCount": 6
+      "wmoCount": 15,
+      "cruCount": 12
     },
     {
       "countryCode": "ISL",
@@ -1141,8 +1141,8 @@
       "countryCode": "NAM",
       "countryName": "Намибия",
       "cityCount": 20,
-      "wmoCount": 1,
-      "cruCount": 19
+      "wmoCount": 0,
+      "cruCount": 20
     },
     {
       "countryCode": "NCL",
@@ -1155,8 +1155,8 @@
       "countryCode": "NER",
       "countryName": "Нигер",
       "cityCount": 16,
-      "wmoCount": 12,
-      "cruCount": 4
+      "wmoCount": 11,
+      "cruCount": 5
     },
     {
       "countryCode": "NFK",
@@ -1232,8 +1232,8 @@
       "countryCode": "PAK",
       "countryName": "Пакистан",
       "cityCount": 41,
-      "wmoCount": 28,
-      "cruCount": 13
+      "wmoCount": 27,
+      "cruCount": 14
     },
     {
       "countryCode": "PAN",
@@ -1582,8 +1582,8 @@
       "countryCode": "THA",
       "countryName": "Таиланд",
       "cityCount": 55,
-      "wmoCount": 55,
-      "cruCount": 0
+      "wmoCount": 54,
+      "cruCount": 1
     },
     {
       "countryCode": "TJK",
@@ -1792,8 +1792,8 @@
       "countryCode": "ZMB",
       "countryName": "Замбия",
       "cityCount": 20,
-      "wmoCount": 1,
-      "cruCount": 19
+      "wmoCount": 0,
+      "cruCount": 20
     },
     {
       "countryCode": "ZWE",

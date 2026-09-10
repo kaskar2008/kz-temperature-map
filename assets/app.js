@@ -176,9 +176,10 @@
       return climateRequests.get(code);
     }
     // Start while the map style and tiles load. Attach rejection handling immediately.
-    const initialClimate = loadCountryClimate('KAZ').catch(async () => ({
-      cities: (await import('./kazakhstan-fallback.js')).default
-    })).then(value => ({ value }), error => ({ error }));
+    const initialClimate = loadCountryClimate('KAZ').then(
+      value => ({ value }),
+      error => ({ error }),
+    );
 
     const geometryRequests = new Map();
     function loadCountryGeometry(code) {
@@ -710,20 +711,6 @@
         if (token !== countryChangeToken) return;
         console.error('Country climate JSON load failed:', error);
 
-        if (countryCode === 'KAZ') {
-          const fallback = (await import('./kazakhstan-fallback.js')).default;
-          if (token !== countryChangeToken) return;
-          activeCities = fallback;
-          updateInfoPanel();
-          renderMarkers();
-          fitToCountry(feature, { cities: activeCities });
-          setCountryStatus(
-            'KAZ.json не найден — использую встроенную резервную копию данных Казахстана.',
-            { error: true }
-          );
-          return;
-        }
-
         activeCities = [];
         updateInfoPanel();
         renderMarkers();
@@ -825,13 +812,17 @@
       if (!countryPicker.contains(event.target)) closeCountryDropdown();
     });
 
-    function formatTemp(value) {
-      if (value == null) return 'н/д';
+    function hasTemperature(value) {
+      return Number.isFinite(value) && value > -90 && value < 60;
+    }
+
+    function formatTemp(value, missingText = '—') {
+      if (!hasTemperature(value)) return missingText;
       return `${value > 0 ? '+' : ''}${value.toFixed(1)}°C`;
     }
 
     function temperatureColor(temp) {
-      if (temp == null) return '#64748b';
+      if (!hasTemperature(temp)) return '#64748b';
       if (temp <= -15) return '#1d4ed8';
       if (temp <= -8)  return '#2563eb';
       if (temp <= -2)  return '#0891b2';
@@ -846,12 +837,15 @@
 
       const el = document.createElement('div');
       el.className = 'temperature-marker';
-      el.title = `${city.name}: ${formatTemp(temp)}`;
+      el.title = hasTemperature(temp)
+        ? `${city.name}: ${formatTemp(temp)}`
+        : `${city.name}: нет данных за ${MONTHS[monthIndex].toLocaleLowerCase('ru')}`;
 
       const badge = document.createElement('div');
       badge.className = 'temperature-badge';
       badge.style.background = temperatureColor(temp);
       badge.textContent = formatTemp(temp);
+      if (!hasTemperature(temp)) badge.classList.add('temperature-badge-missing');
 
       const cityEl = document.createElement('div');
       cityEl.className = 'temperature-city';
@@ -880,12 +874,18 @@
       const avgHigh = city.avgHigh?.[monthIndex] ?? null;
       const alt = city.alt == null ? 'не указана' : `${city.alt} м`;
       const color = temperatureColor(temp);
+      const hasMissingClimateValue = [temp, avgLow, avgHigh].some(
+        value => !hasTemperature(value),
+      );
+      const missingClimateNote = hasMissingClimateValue
+        ? '<div class="popup-climate-missing">Значение за этот месяц отсутствует в источнике.</div>'
+        : '';
 
       return `
         <div class="popup">
           <div class="popup-head" style="background:${color}">
             <div class="popup-city">${city.name}</div>
-            <div class="popup-temp">${formatTemp(temp)}</div>
+            <div class="popup-temp">${formatTemp(temp, 'Нет данных')}</div>
           </div>
 
           <div class="popup-body">
@@ -914,6 +914,7 @@
               «Ночью / под утро» — средний суточный минимум,
               «днём» — средний суточный максимум. Это климатология, не прогноз.
             </div>
+            ${missingClimateNote}
 
             <div class="popup-row" style="margin-top:10px">
               Высота метеостанции: ${alt}
@@ -1072,7 +1073,12 @@
       return coordinates;
     }
 
-    function clearRoute() {
+    function restoreCountryViewport() {
+      const countryFeature = countryByCode.get(activeCountryCode) || null;
+      fitToCountry(countryFeature, { cities: activeCities });
+    }
+
+    function clearRoute({ restoreCountry = false } = {}) {
       if (routeRequestController) {
         routeRequestController.abort();
         routeRequestController = null;
@@ -1090,6 +1096,8 @@
       activeRouteDestination = null;
       routePanel.hidden = true;
       routePanel.classList.remove('route-error');
+
+      if (restoreCountry) restoreCountryViewport();
     }
 
     function drawRoute(coordinates) {
@@ -1175,19 +1183,33 @@
     }
 
     function fitRouteIntoViewport(coordinates) {
-      const bounds = new maplibregl.LngLatBounds();
-      coordinates.forEach(coordinate => bounds.extend(coordinate));
+      const routeBounds = boundsFromPoints(coordinates);
+      if (!routeBounds) return;
 
-      if (bounds.isEmpty()) return;
+      const bounds = [
+        [routeBounds.west, routeBounds.south],
+        [routeBounds.east, routeBounds.north]
+      ];
+      const padding = isMobileViewport()
+        ? { top: 92, right: 28, bottom: 135, left: 28 }
+        : { top: 80, right: 70, bottom: 110, left: 270 };
+
+      // Маршрут может начинаться за пределами выбранной страны. На время его
+      // просмотра снимаем страновые ограничения и разрешаем отдалиться ровно
+      // настолько, чтобы вся линия поместилась в доступной области карты.
+      map.setMinZoom(-1);
+      map.setMaxBounds(null);
+
+      const camera = map.cameraForBounds(bounds, { padding, maxZoom: 11 });
+      const routeMinZoom = Math.max(-1, Math.min(10.5, (camera?.zoom ?? 3) - 0.35));
 
       map.fitBounds(bounds, {
-        padding: isMobileViewport()
-          ? { top: 92, right: 28, bottom: 135, left: 28 }
-          : { top: 80, right: 70, bottom: 110, left: 270 },
+        padding,
         maxZoom: 11,
         duration: 750,
         essential: true
       });
+      map.setMinZoom(routeMinZoom);
     }
 
     function getCurrentPosition() {
@@ -1355,7 +1377,7 @@
 
     routeClose.addEventListener('click', event => {
       event.stopPropagation();
-      clearRoute();
+      clearRoute({ restoreCountry: true });
     });
 
     function isMobileViewport() {
@@ -1546,8 +1568,7 @@
     monthSelect.addEventListener('change', renderMarkers);
 
     map.on('load', async () => {
-      // Начальные данные тоже читаем из локального JSON.
-      // Резервный модуль загружается только при ошибке JSON.
+      // Начальные данные читаем из того же локального JSON, что и другие страны.
       try {
         const result = await initialClimate;
         if (result.error) throw result.error;
@@ -1555,9 +1576,12 @@
         activeCountryName = kazakhstan.countryName || activeCountryName;
         activeCities = kazakhstan.cities;
       } catch (error) {
-        console.warn('KAZ.json load failed; using embedded fallback:', error);
+        console.error('Country climate JSON load failed:', error);
         activeCities = [];
-        setCountryStatus('Не удалось загрузить климат Казахстана. Выберите страну повторно.', { error: true });
+        setCountryStatus(
+          'Не удалось загрузить data/climate/KAZ.json. Проверьте полноту публикации сайта.',
+          { error: true },
+        );
       }
 
       updateInfoPanel();

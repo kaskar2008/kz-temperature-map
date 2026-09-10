@@ -1,5 +1,5 @@
 import { createReadStream } from 'node:fs';
-import { mkdir, readFile, writeFile, access, open, unlink } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, access, open, unlink, readdir } from 'node:fs/promises';
 import { createGunzip } from 'node:zlib';
 import { createInterface } from 'node:readline';
 import { dirname, join, resolve } from 'node:path';
@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const OUTPUT_DIR = join(ROOT, 'data', 'climate');
+const COUNTRY_PATCH_DIR = join(ROOT, 'patches', 'countries');
 const CACHE_DIR = join(ROOT, '.cache', 'climate-build');
 
 const PERIOD = '1991–2020';
@@ -51,6 +52,10 @@ const CRU_CELL_SIZE = 0.5;
 const CRU_FIRST_LAT = -89.75;
 const CRU_FIRST_LON = -179.75;
 const CRU_SEARCH_RADIUS = 2;
+const MIN_VALID_CLIMATE_TEMP = -90;
+const MAX_VALID_CLIMATE_TEMP = 60;
+const MIN_VALID_ELEVATION = -500;
+const MAX_VALID_ELEVATION = 9000;
 
 function cruAsciiUrl(variable, period) {
   return `${CRU_BASE_URL}/${variable}/cru_ts4.09.${period}.${variable}.dat.gz`;
@@ -149,9 +154,29 @@ function parseCsv(text) {
 }
 
 function parseClimateNumber(value) {
-  const number = Number(String(value ?? '').trim());
-  // Температуры вне физически разумного диапазона считаем missing/sentinel.
-  return Number.isFinite(number) && number > -100 && number < 100 ? round1(number) : null;
+  const text = String(value ?? '').trim();
+  if (!text) return null;
+
+  const number = Number(text);
+  // В таблицах WMO -99.9 означает отсутствие месячной нормы. Более широкий
+  // разумный диапазон заодно не пропускает другие служебные значения источника.
+  return Number.isFinite(number) &&
+    number > MIN_VALID_CLIMATE_TEMP &&
+    number < MAX_VALID_CLIMATE_TEMP
+    ? round1(number)
+    : null;
+}
+
+function parseElevation(value) {
+  const text = String(value ?? '').trim();
+  if (!text) return null;
+
+  const number = Number(text);
+  return Number.isFinite(number) &&
+    number >= MIN_VALID_ELEVATION &&
+    number <= MAX_VALID_ELEVATION
+    ? number
+    : null;
 }
 
 function complete12(values) {
@@ -298,7 +323,7 @@ function parseWmoTable(text, kind, countryNameIndex) {
       wigosId,
       lat,
       lng,
-      elevation: Number.isFinite(Number(row[6])) ? Number(row[6]) : null,
+      elevation: parseElevation(row[6]),
       country,
       countryCode: countryNameIndex.get(normalizeName(country)) || null,
       station,
@@ -329,9 +354,17 @@ function mergeWmoStations(tables) {
     }
   }
 
-  return [...stations.values()].filter(
-    station => complete12(station.mean) && complete12(station.min) && complete12(station.max),
-  );
+  return [...stations.values()].filter(station => {
+    if (!complete12(station.mean) || !complete12(station.min) || !complete12(station.max)) {
+      return false;
+    }
+
+    // Некорректные строки встречаются и без явного sentinel: например, когда
+    // TAVG ниже TMIN. Не используем такую станцию — город получит CRU fallback.
+    return station.mean.every(
+      (mean, month) => station.min[month] <= mean && mean <= station.max[month],
+    );
+  });
 }
 
 function scorePlace(feature) {
@@ -345,7 +378,40 @@ function scorePlace(feature) {
   return capital + worldCity + admin1 + population;
 }
 
-function buildPlacesByCountry(features) {
+function patchPlaceFeature(countryCode, place, defaultSource = null) {
+  const lat = Number(place?.lat);
+  const lng = Number(place?.lng);
+  const elevation = place?.elevation == null ? null : Number(place.elevation);
+  const source = place?.source || defaultSource;
+  const sourceId = place?.sourceId == null ? null : String(place.sourceId);
+  const sourceUrl = source?.url || (
+    sourceId && source?.recordUrlTemplate
+      ? source.recordUrlTemplate.replace('{id}', encodeURIComponent(sourceId))
+      : null
+  );
+  if (!place?.name || !Number.isFinite(lat) || !Number.isFinite(lng)) {
+    throw new Error(`${countryCode}: у города в патче обязательны name, lat и lng`);
+  }
+
+  return {
+    type: 'Feature',
+    properties: {
+      adm0_a3: countryCode,
+      name: place.name,
+      namepar: place.name,
+      pop_max: Number(place.population) || 0,
+      location_elevation: Number.isFinite(elevation) ? elevation : null,
+      featurecla: place.admin1 ? 'Admin-1 capital' : 'Populated place',
+      location_source: source?.name || null,
+      location_source_id: sourceId,
+      location_source_url: sourceUrl,
+      location_dataset_url: source?.datasetUrl || null,
+    },
+    geometry: { type: 'Point', coordinates: [lng, lat] },
+  };
+}
+
+function buildPlacesByCountry(features, countryPatches = new Map()) {
   const byCountry = new Map();
   for (const feature of features) {
     const code = String(
@@ -355,10 +421,33 @@ function buildPlacesByCountry(features) {
     if (!byCountry.has(code)) byCountry.set(code, []);
     byCountry.get(code).push(feature);
   }
+
+  for (const [code, patch] of countryPatches) {
+    const patchedFeatures = (patch.places || []).map(
+      place => patchPlaceFeature(code, place, patch.placeSource),
+    );
+    if (patch.placeStrategy === 'replace') {
+      byCountry.set(code, patchedFeatures);
+      continue;
+    }
+
+    // merge работает как upsert: совпавший по имени город из патча заменяет
+    // исходную точку Natural Earth, новые названия просто добавляются.
+    const patchedNames = new Set(
+      patchedFeatures.map(feature => normalizeName(getPlaceName(feature))),
+    );
+    const baseFeatures = (byCountry.get(code) || []).filter(
+      feature => !patchedNames.has(normalizeName(getPlaceName(feature))),
+    );
+    byCountry.set(code, [...baseFeatures, ...patchedFeatures]);
+  }
+
   return byCountry;
 }
 
-function countryCityLimit(countryFeature, availableCount) {
+function countryCityLimit(countryFeature, availableCount, patch) {
+  if (Number.isInteger(patch?.cityLimit) && patch.cityLimit > 0) return patch.cityLimit;
+
   const population = Number(
     getProperty(countryFeature?.properties, 'POP_EST', 'pop_est', 'POPULATION', 'population') || 0,
   );
@@ -436,7 +525,7 @@ function selectGeographicallyBalancedPlaces(features, limit) {
   return selected;
 }
 
-function chooseCountryPlaces(countryCode, countryFeature, placesByCountry) {
+function chooseCountryPlaces(countryCode, countryFeature, placesByCountry, patch) {
   const features = placesByCountry.get(countryCode) || [];
   const unique = new Map();
 
@@ -449,16 +538,35 @@ function chooseCountryPlaces(countryCode, countryFeature, placesByCountry) {
   }
 
   const available = [...unique.values()];
-  const limit = countryCityLimit(countryFeature, available.length);
+  const limit = countryCityLimit(countryFeature, available.length, patch);
   const selected = selectGeographicallyBalancedPlaces(available, limit)
-    .map(feature => ({
-      name: getPlaceName(feature),
-      lng: Number(feature.geometry.coordinates[0]),
-      lat: Number(feature.geometry.coordinates[1]),
-      population: Number(getProperty(feature.properties, 'pop_max', 'POP_MAX') || 0) || null,
-      // Нужен только для возможного declutter на клиенте; на климатические расчёты не влияет.
-      displayPriority: scorePlace(feature),
-    }));
+    .map(feature => {
+      const locationElevationValue = getProperty(feature.properties, 'location_elevation');
+      const locationElevation = locationElevationValue == null
+        ? null
+        : Number(locationElevationValue);
+      const locationSourceName = getProperty(feature.properties, 'location_source');
+      const locationSourceId = getProperty(feature.properties, 'location_source_id');
+      const locationSourceUrl = getProperty(feature.properties, 'location_source_url');
+      const locationDatasetUrl = getProperty(feature.properties, 'location_dataset_url');
+      return {
+        name: getPlaceName(feature),
+        lng: Number(feature.geometry.coordinates[0]),
+        lat: Number(feature.geometry.coordinates[1]),
+        population: Number(getProperty(feature.properties, 'pop_max', 'POP_MAX') || 0) || null,
+        // Нужен только для возможного declutter на клиенте; на климатические расчёты не влияет.
+        displayPriority: scorePlace(feature),
+        ...(Number.isFinite(locationElevation) ? { locationElevation } : {}),
+        ...(locationSourceName ? {
+          locationSource: {
+            name: locationSourceName,
+            id: locationSourceId,
+            url: locationSourceUrl,
+            datasetUrl: locationDatasetUrl,
+          },
+        } : {}),
+      };
+    });
 
   if (selected.length) return selected;
 
@@ -509,6 +617,11 @@ function nearestWmoStation(city, countryCode, stationsByCountry, allStations) {
     if (Math.abs(station.lng - city.lng) * lonScale > 1.5) continue;
     const distanceKm = haversineKm(city.lat, city.lng, station.lat, station.lng);
     if (distanceKm > maxDistance) continue;
+    if (
+      Number.isFinite(city.locationElevation) &&
+      Number.isFinite(station.elevation) &&
+      Math.abs(city.locationElevation - station.elevation) > 400
+    ) continue;
     if (!best || distanceKm < best.distanceKm) best = { station, distanceKm };
   }
 
@@ -700,6 +813,32 @@ function wmoCity(city, countryCode, match) {
   };
 }
 
+async function loadCountryPatches() {
+  if (!(await exists(COUNTRY_PATCH_DIR))) return new Map();
+
+  const patches = new Map();
+  const filenames = (await readdir(COUNTRY_PATCH_DIR))
+    .filter(name => /^[A-Z]{3}\.json$/.test(name))
+    .sort();
+
+  for (const filename of filenames) {
+    const code = filename.slice(0, 3);
+    const patch = JSON.parse(await readFile(join(COUNTRY_PATCH_DIR, filename), 'utf8'));
+    if (patch.countryCode !== code) {
+      throw new Error(`${filename}: countryCode должен совпадать с именем файла`);
+    }
+    if (!['merge', 'replace'].includes(patch.placeStrategy)) {
+      throw new Error(`${filename}: placeStrategy должен быть merge или replace`);
+    }
+    if (!Array.isArray(patch.places)) {
+      throw new Error(`${filename}: places должен быть массивом`);
+    }
+    patches.set(code, patch);
+  }
+
+  return patches;
+}
+
 async function main() {
   await ensureDir(OUTPUT_DIR);
   await ensureDir(CACHE_DIR);
@@ -714,7 +853,8 @@ async function main() {
     const code = getCountryCode(feature);
     return code && code !== 'ATA';
   });
-  const placesByCountry = buildPlacesByCountry(places.features);
+  const countryPatches = await loadCountryPatches();
+  const placesByCountry = buildPlacesByCountry(places.features, countryPatches);
   const countryNameIndex = buildCountryNameIndex(countryFeatures);
 
   console.log('Загружаю WMO normals (TAVG/TMIN/TMAX)…');
@@ -754,7 +894,12 @@ async function main() {
 
     const countryName = getCountryDisplayName(feature);
     const availablePlaces = (placesByCountry.get(code) || []).length;
-    const baseCities = chooseCountryPlaces(code, feature, placesByCountry);
+    const baseCities = chooseCountryPlaces(
+      code,
+      feature,
+      placesByCountry,
+      countryPatches.get(code),
+    );
     if (baseCities.length >= 35) {
       console.log(`• ${code} ${countryName}: выбираю ${baseCities.length} из ${availablePlaces} городских точек`);
     }
@@ -883,8 +1028,18 @@ async function main() {
   console.log(`Файлы: ${OUTPUT_DIR}`);
 }
 
-main().catch(error => {
-  console.error('\nСборка климатических JSON завершилась с ошибкой:');
-  console.error(error);
-  process.exitCode = 1;
-});
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(error => {
+    console.error('\nСборка климатических JSON завершилась с ошибкой:');
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
+
+export {
+  buildPlacesByCountry,
+  complete12,
+  mergeWmoStations,
+  parseClimateNumber,
+  parseElevation,
+};
