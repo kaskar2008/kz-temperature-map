@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#0f172a" />
-  <title>Климатическая карта Казахстана</title>
+  <title>Климатическая карта мира</title>
 
   <!-- MapLibre GL JS: современный WebGL-движок карты -->
   <link
@@ -76,9 +76,17 @@
         0 1px 2px rgba(15,23,42,.06);
     }
 
+    .country-control,
     .month-control {
       display: block;
-      width: 184px;
+    }
+
+    .country-control {
+      width: 170px;
+    }
+
+    .month-control {
+      width: 150px;
     }
 
     .field-label {
@@ -284,6 +292,33 @@
       color: #64748b;
       font-size: 10px;
       line-height: 1.4;
+    }
+
+    .country-status {
+      width: fit-content;
+      max-width: min(430px, calc(100vw - 28px));
+      margin-top: 8px;
+      padding: 8px 11px;
+      border: 1px solid rgba(148,163,184,.30);
+      border-radius: 11px;
+      background: rgba(255,255,255,.97);
+      box-shadow: 0 8px 22px rgba(15,23,42,.14);
+      color: #475569;
+      font-size: 10px;
+      line-height: 1.35;
+      pointer-events: auto;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .country-status[hidden] {
+      display: none;
+    }
+
+    .country-status.is-error {
+      color: #b91c1c;
+      border-color: rgba(185,28,28,.18);
+      background: rgba(254,242,242,.97);
     }
 
     /* Компактные temperature markers.
@@ -756,13 +791,21 @@
       }
 
       .compact-bar {
+        width: 100%;
         gap: 10px;
-        padding: 11px;
+        padding: 10px;
         border-radius: 18px;
       }
 
+      .country-control {
+        width: auto;
+        min-width: 0;
+        flex: 1 1 auto;
+      }
+
       .month-control {
-        width: 154px;
+        width: 110px;
+        flex: 0 0 110px;
       }
 
       .field-label {
@@ -831,6 +874,31 @@
         min-width: 210px;
       }
     }
+
+    @media (max-width: 360px) {
+      .compact-bar {
+        gap: 8px;
+        padding: 9px;
+      }
+
+      .month-control {
+        width: 104px;
+        flex-basis: 104px;
+      }
+
+      select {
+        padding-left: 11px;
+        padding-right: 34px;
+        background-position: right 11px center;
+        font-size: 13px;
+      }
+
+      .info-toggle {
+        width: 42px;
+        height: 44px;
+        flex-basis: 42px;
+      }
+    }
   </style>
 </head>
 
@@ -839,6 +907,13 @@
 
   <section class="panel" id="controlsPanel">
     <div class="compact-bar">
+      <label class="country-control">
+        <span class="field-label">Страна</span>
+        <select id="country" aria-label="Выберите страну" disabled>
+          <option value="KAZ" selected>Казахстан</option>
+        </select>
+      </label>
+
       <label class="month-control">
         <span class="field-label">Месяц</span>
         <select id="month" aria-label="Выберите месяц"></select>
@@ -856,11 +931,13 @@
       </button>
     </div>
 
+    <div id="countryStatus" class="country-status" aria-live="polite" hidden></div>
+
     <div id="infoContent" class="info-content" hidden>
       <div class="info-head">
         <div>
-          <h1 class="title">Климатическая карта Казахстана</h1>
-          <p class="subtitle">
+          <h1 id="infoTitle" class="title">Климатическая карта · Казахстан</h1>
+          <p id="infoSubtitle" class="subtitle">
             Среднемесячная температура по 21 городу. В карточке города — типичная температура
             ночью/под утро и днём по климатическим нормам 1991–2020.
           </p>
@@ -878,7 +955,7 @@
       <div class="meta-row">
         <div class="verified">
           <span class="verified-dot"></span>
-          <span>Средняя: Казгидромет 14 · WMO/CRU 7</span>
+          <span id="sourceSummary">Средняя: Казгидромет 14 · WMO/CRU 7</span>
         </div>
         <strong id="count">21 город</strong>
       </div>
@@ -889,7 +966,7 @@
         <span>теплее</span>
       </div>
 
-      <div class="info-note">
+      <div id="infoNote" class="info-note">
         Приоритет источников: Казгидромет → WMO/WorldClim/CRU → вторичные климатические таблицы.
         Средняя температура маркера для 14 городов берётся напрямую из Казгидромета.
         «Ночь/день» — отдельные нормы среднего суточного минимума/максимума; их источник указан в карточке города.
@@ -909,7 +986,7 @@
 
   <div id="loading" class="loading">
     <div class="loading-card">
-      <div class="loading-title">Загружаю карту Казахстана…</div>
+      <div class="loading-title">Загружаю климатическую карту…</div>
       <div id="loadingText" class="loading-text">
         Для этой версии нужен интернет: карта и дороги загружаются как в обычном картографическом сервисе.
         API-ключ не требуется.
@@ -943,13 +1020,20 @@
       'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'
     ];
 
-    const CITIES = [{"name": "Актау", "lat": 43.58, "lng": 51.08, "alt": -15, "temps": [-1.1, -0.2, 4.9, 11.5, 17.7, 22.4, 24.8, 24.5, 19.7, 12.7, 6.0, 1.2], "official": true, "avgLow": [-3.6, -3.0, 2.7, 8.9, 15.1, 19.9, 21.9, 21.3, 15.3, 8.8, 2.0, -2.3], "avgHigh": [2.0, 4.1, 10.3, 16.9, 23.5, 28.9, 31.9, 30.9, 25.2, 17.8, 9.3, 3.9], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/aktau", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Aktau", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Актобе", "lat": 50.28, "lng": 57.15, "alt": 219, "temps": [-14.1, -13.8, -6.8, 6.2, 15.2, 20.4, 22.7, 20.6, 13.7, 4.8, -3.7, -10.7], "official": true, "avgLow": [-16.7, -16.2, -9.0, 1.8, 8.4, 13.5, 15.8, 13.9, 7.5, 0.9, -6.4, -13.6], "avgHigh": [-8.4, -6.8, 0.3, 14.1, 22.9, 28.4, 30.1, 29.0, 22.0, 12.6, 1.1, -5.9], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/aktobe", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Aktobe", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Алматы", "lat": 43.23, "lng": 76.93, "alt": 851, "temps": [-6.1, -4.3, 2.7, 11.2, 16.5, 21.1, 23.7, 22.6, 17.3, 9.8, 1.5, -4.0], "official": true, "avgLow": [-8.1, -6.2, -0.2, 6.8, 11.5, 16.4, 18.6, 17.3, 12.0, 5.3, -1.0, -6.1], "avgHigh": [0.5, 2.7, 9.9, 17.8, 22.9, 27.9, 30.5, 29.7, 24.5, 16.9, 8.1, 2.0], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/almaty", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Almaty", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Атырау", "lat": 47.12, "lng": 51.92, "alt": -22, "temps": [-8.6, -7.9, -0.7, 10.2, 18.6, 23.7, 26.2, 24.2, 17.3, 8.7, 0.7, -5.2], "official": true, "avgLow": [-9.3, -9.0, -2.1, 6.5, 13.7, 18.8, 21.0, 19.2, 12.7, 5.5, -1.6, -7.0], "avgHigh": [-3.0, -1.3, 6.8, 17.3, 25.3, 31.3, 33.7, 32.2, 24.7, 15.6, 5.3, -1.2], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/atyrau", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Atyrau", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Караганда", "lat": 49.8, "lng": 73.15, "alt": 553, "temps": [-14.2, -13.6, -6.9, 5.2, 13.0, 18.5, 20.2, 18.1, 12.0, 3.6, -5.9, -11.9], "official": true, "avgLow": [-17.7, -17.2, -9.8, 0.8, 6.9, 12.3, 13.9, 12.1, 5.9, -0.1, -8.7, -15.3], "avgHigh": [-9.2, -7.6, -0.6, 12.9, 20.4, 25.4, 26.4, 25.5, 19.0, 10.9, -0.6, -7.1], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/karaganda", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Karaganda", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Кокшетау", "lat": 53.28, "lng": 69.38, "alt": 229, "temps": [-15.5, -14.8, -8.2, 3.8, 12.4, 17.9, 19.8, 17.3, 11.5, 3.4, -6.4, -13.0], "official": true, "avgLow": [-18.8, -18.0, -10.5, -0.2, 6.9, 12.1, 13.8, 12.0, 6.4, 0.6, -9.2, -15.7], "avgHigh": [-10.3, -8.8, -1.2, 10.5, 19.6, 24.3, 25.2, 23.6, 17.3, 9.1, -2.2, -8.1], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/kokshetau", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Kokshetau", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Костанай", "lat": 53.22, "lng": 63.62, "alt": 156, "temps": [-16.4, -15.5, -8.2, 5.1, 13.7, 19.1, 20.5, 18.3, 12.3, 3.7, -6.1, -13.3], "official": true, "avgLow": [-19.3, -18.7, -11.0, 0.5, 7.9, 13.2, 14.9, 13.1, 7.1, 0.7, -8.5, -16.7], "avgHigh": [-10.6, -9.0, -1.4, 11.7, 21.1, 26.0, 26.8, 25.5, 19.0, 10.4, -1.0, -8.4], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/kostanay", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Kostanay", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Кызылорда", "lat": 44.85, "lng": 65.5, "alt": 130, "temps": [-8.6, -6.8, 1.6, 12.4, 19.9, 24.9, 26.8, 24.4, 17.6, 9.0, 0.6, -6.0], "official": true, "avgLow": [-10.6, -9.1, -1.4, 7.3, 13.8, 19.2, 21.0, 18.9, 11.7, 4.2, -2.8, -8.5], "avgHigh": [-2.5, 0.8, 10.4, 20.9, 28.2, 33.6, 35.1, 33.4, 26.6, 18.1, 7.1, -0.5], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/kyzylorda", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Kyzylorda", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Петропавловск", "lat": 54.77, "lng": 69.18, "alt": 126, "temps": [-17.7, -16.3, -9.4, 3.1, 11.9, 17.5, 19.2, 16.6, 10.8, 2.4, -7.5, -14.8], "official": true, "avgLow": [-20.8, -19.5, -11.7, -0.4, 6.8, 12.1, 14.0, 12.1, 6.1, 0.4, -10.1, -17.7], "avgHigh": [-12.5, -10.0, -2.0, 10.1, 19.8, 24.1, 25.0, 23.3, 17.0, 8.9, -3.1, -9.8], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/petropalovsk", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Petropavl", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Тараз", "lat": 42.85, "lng": 71.38, "alt": 655, "temps": [-4.5, -2.7, 3.9, 11.6, 17.2, 22.3, 24.8, 22.8, 17.0, 9.9, 2.4, -2.9], "official": true, "avgLow": [-7.4, -5.8, 0.1, 6.2, 10.9, 15.6, 17.5, 15.7, 10.3, 4.7, -1.2, -5.9], "avgHigh": [2.2, 4.3, 11.3, 18.6, 24.7, 30.6, 33.0, 31.8, 25.8, 18.0, 9.4, 3.8], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/taraz", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Taraz", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Уральск", "lat": 51.25, "lng": 51.28, "alt": 37, "temps": [-12.3, -11.9, -5.1, 7.5, 15.8, 20.5, 22.7, 21.0, 14.3, 5.6, -2.5, -8.8], "official": true, "avgLow": [-14.1, -14.5, -7.4, 2.6, 9.3, 13.9, 16.0, 14.2, 8.3, 2.1, -4.7, -11.6], "avgHigh": [-6.7, -5.9, 1.2, 14.7, 23.2, 28.1, 30.2, 29.0, 21.9, 12.5, 2.1, -4.7], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/uralsk", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Oral,_Kazakhstan", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Усть-Каменогорск", "lat": 49.97, "lng": 82.63, "alt": 292, "temps": [-16.3, -15.2, -7.1, 5.4, 13.6, 18.8, 20.6, 18.4, 12.3, 5.1, -5.7, -13.2], "official": true, "avgLow": [-20.4, -19.2, -11.0, 0.5, 6.9, 12.5, 14.2, 11.4, 4.6, -0.2, -9.1, -16.3], "avgHigh": [-9.8, -7.0, 0.4, 13.9, 21.6, 26.2, 27.8, 26.7, 20.6, 12.3, 0.6, -6.8], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/ust-kamenogorsk", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Oskemen", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Шымкент", "lat": 42.32, "lng": 69.7, "alt": 604, "temps": [-1.6, 0.4, 6.3, 13.4, 18.7, 23.8, 26.5, 25.1, 19.5, 12.4, 5.4, 0.4], "official": true, "avgLow": [-4.8, -3.4, 2.7, 8.2, 12.6, 16.7, 18.6, 17.6, 12.6, 6.8, 1.3, -3.3], "avgHigh": [5.2, 7.2, 14.1, 20.5, 26.0, 31.5, 34.1, 33.4, 28.0, 20.3, 12.3, 6.6], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/shymkent", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Shymkent", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Астана", "lat": 51.17, "lng": 71.45, "alt": 349, "temps": [-14.5, -13.6, -6.0, 6.5, 14.5, 19.6, 20.6, 19.1, 12.6, 5.0, -5.2, -12.0], "official": true, "note": "Государственный гидрометеорологический фонд РГП «Казгидромет», нормы 1991–2020.", "avgLow": [-18.7, -18.0, -10.4, 1.2, 8.2, 13.4, 14.9, 13.0, 6.8, 0.5, -8.7, -16.0], "avgHigh": [-10.3, -8.8, -1.5, 12.2, 20.9, 25.8, 26.6, 25.5, 18.9, 10.4, -1.3, -8.0], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://journal.kazhydromet.kz/index.php/kazgidro/article/download/36/1162/6242", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Astana", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Павлодар", "lat": 52.3, "lng": 76.95, "alt": 123, "temps": [-16.0, -15.0, -6.8, 6.3, 14.2, 20.1, 21.6, 19.0, 12.5, 4.2, -6.2, -13.3], "official": false, "avgLow": [-21.1, -20.6, -12.4, -0.3, 6.9, 12.8, 14.9, 12.2, 5.6, -1.5, -10.6, -17.9], "avgHigh": [-10.9, -9.3, -1.3, 12.9, 21.5, 27.3, 28.3, 25.8, 19.4, 10.0, -1.8, -8.6], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Kazakhstan/report_Pavlodar/", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Kazakhstan/report_Pavlodar/", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Семей", "lat": 50.41, "lng": 80.25, "alt": null, "temps": [-14.7, -13.6, -6.4, 6.7, 14.3, 19.7, 21.2, 18.9, 12.4, 4.9, -4.8, -11.8], "official": false, "avgLow": [-19.6, -19.1, -12.0, 0.4, 7.0, 12.6, 14.4, 11.8, 5.2, -0.7, -9.4, -16.3], "avgHigh": [-9.7, -8.0, -0.8, 12.9, 21.5, 26.8, 28.0, 25.9, 19.7, 10.6, -0.2, -7.3], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Semey", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Semey", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Талдыкорган", "lat": 45.02, "lng": 78.37, "alt": null, "temps": [-6.8, -5.0, -0.7, 8.8, 15.2, 19.9, 24.5, 23.5, 18.2, 10.6, 3.2, -5.0], "official": false, "avgLow": [-12.3, -10.8, -5.8, 1.8, 8.3, 12.4, 16.8, 15.1, 9.5, 2.9, -3.0, -10.5], "avgHigh": [-1.2, 0.9, 4.4, 15.8, 22.2, 27.3, 32.2, 31.9, 26.8, 18.2, 9.4, 0.4], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Taldykorgan", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Taldykorgan", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Туркестан", "lat": 43.3, "lng": 68.25, "alt": null, "temps": [-3.6, -0.9, 6.8, 15.1, 21.2, 26.7, 29.1, 27.0, 20.4, 11.6, 4.4, -1.4], "official": false, "avgLow": [-8.4, -6.0, 0.8, 8.5, 14.1, 18.6, 20.9, 18.5, 11.7, 3.7, -1.6, -6.0], "avgHigh": [1.1, 4.1, 12.7, 21.7, 28.3, 34.7, 37.2, 35.5, 29.2, 19.6, 10.3, 3.1], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Turkestan", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Turkestan", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Жезказган", "lat": 47.78, "lng": 67.7, "alt": null, "temps": [-13.6, -12.9, -4.5, 9.3, 16.4, 22.6, 24.6, 22.3, 15.1, 5.9, -3.0, -10.7], "official": false, "avgLow": [-18.6, -18.4, -9.4, 2.8, 9.1, 14.9, 17.0, 14.4, 6.8, -1.2, -8.0, -15.6], "avgHigh": [-8.6, -7.5, 0.4, 15.9, 23.7, 30.4, 32.3, 30.2, 23.4, 13.1, 2.0, -5.9], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Zhezqazghan", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Zhezqazghan", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Балхаш", "lat": 46.85, "lng": 74.98, "alt": null, "temps": [-12.8, -11.6, -3.6, 8.6, 16.5, 22.2, 24.3, 22.1, 15.6, 7.1, -1.8, -9.3], "official": false, "avgLow": [-17.2, -16.5, -8.6, 2.8, 10.5, 16.5, 18.8, 16.4, 9.8, 2.0, -5.8, -13.4], "avgHigh": [-8.3, -6.6, 1.5, 14.3, 22.5, 28.0, 29.8, 27.9, 21.5, 12.3, 2.3, -5.3], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Balqash", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Balqash", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Конаев", "lat": 43.85, "lng": 77.06, "alt": null, "temps": [-6.4, -4.2, 3.1, 11.7, 17.5, 23.4, 26.3, 24.4, 19.1, 10.9, 2.7, -3.7], "official": false, "avgLow": [-12.0, -9.0, -1.6, 5.4, 10.7, 16.8, 19.1, 16.4, 11.2, 3.8, -3.1, -8.3], "avgHigh": [-0.8, 0.7, 7.7, 18.1, 24.3, 30.1, 33.4, 32.4, 27.0, 18.0, 8.4, 1.0], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Konayev", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Konayev", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}];
+    const KAZAKHSTAN_CITIES = [{"name": "Актау", "lat": 43.58, "lng": 51.08, "alt": -15, "temps": [-1.1, -0.2, 4.9, 11.5, 17.7, 22.4, 24.8, 24.5, 19.7, 12.7, 6.0, 1.2], "official": true, "avgLow": [-3.6, -3.0, 2.7, 8.9, 15.1, 19.9, 21.9, 21.3, 15.3, 8.8, 2.0, -2.3], "avgHigh": [2.0, 4.1, 10.3, 16.9, 23.5, 28.9, 31.9, 30.9, 25.2, 17.8, 9.3, 3.9], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/aktau", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Aktau", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Актобе", "lat": 50.28, "lng": 57.15, "alt": 219, "temps": [-14.1, -13.8, -6.8, 6.2, 15.2, 20.4, 22.7, 20.6, 13.7, 4.8, -3.7, -10.7], "official": true, "avgLow": [-16.7, -16.2, -9.0, 1.8, 8.4, 13.5, 15.8, 13.9, 7.5, 0.9, -6.4, -13.6], "avgHigh": [-8.4, -6.8, 0.3, 14.1, 22.9, 28.4, 30.1, 29.0, 22.0, 12.6, 1.1, -5.9], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/aktobe", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Aktobe", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Алматы", "lat": 43.23, "lng": 76.93, "alt": 851, "temps": [-6.1, -4.3, 2.7, 11.2, 16.5, 21.1, 23.7, 22.6, 17.3, 9.8, 1.5, -4.0], "official": true, "avgLow": [-8.1, -6.2, -0.2, 6.8, 11.5, 16.4, 18.6, 17.3, 12.0, 5.3, -1.0, -6.1], "avgHigh": [0.5, 2.7, 9.9, 17.8, 22.9, 27.9, 30.5, 29.7, 24.5, 16.9, 8.1, 2.0], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/almaty", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Almaty", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Атырау", "lat": 47.12, "lng": 51.92, "alt": -22, "temps": [-8.6, -7.9, -0.7, 10.2, 18.6, 23.7, 26.2, 24.2, 17.3, 8.7, 0.7, -5.2], "official": true, "avgLow": [-9.3, -9.0, -2.1, 6.5, 13.7, 18.8, 21.0, 19.2, 12.7, 5.5, -1.6, -7.0], "avgHigh": [-3.0, -1.3, 6.8, 17.3, 25.3, 31.3, 33.7, 32.2, 24.7, 15.6, 5.3, -1.2], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/atyrau", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Atyrau", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Караганда", "lat": 49.8, "lng": 73.15, "alt": 553, "temps": [-14.2, -13.6, -6.9, 5.2, 13.0, 18.5, 20.2, 18.1, 12.0, 3.6, -5.9, -11.9], "official": true, "avgLow": [-17.7, -17.2, -9.8, 0.8, 6.9, 12.3, 13.9, 12.1, 5.9, -0.1, -8.7, -15.3], "avgHigh": [-9.2, -7.6, -0.6, 12.9, 20.4, 25.4, 26.4, 25.5, 19.0, 10.9, -0.6, -7.1], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/karaganda", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Karaganda", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Кокшетау", "lat": 53.28, "lng": 69.38, "alt": 229, "temps": [-15.5, -14.8, -8.2, 3.8, 12.4, 17.9, 19.8, 17.3, 11.5, 3.4, -6.4, -13.0], "official": true, "avgLow": [-18.8, -18.0, -10.5, -0.2, 6.9, 12.1, 13.8, 12.0, 6.4, 0.6, -9.2, -15.7], "avgHigh": [-10.3, -8.8, -1.2, 10.5, 19.6, 24.3, 25.2, 23.6, 17.3, 9.1, -2.2, -8.1], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/kokshetau", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Kokshetau", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Костанай", "lat": 53.22, "lng": 63.62, "alt": 156, "temps": [-16.4, -15.5, -8.2, 5.1, 13.7, 19.1, 20.5, 18.3, 12.3, 3.7, -6.1, -13.3], "official": true, "avgLow": [-19.3, -18.7, -11.0, 0.5, 7.9, 13.2, 14.9, 13.1, 7.1, 0.7, -8.5, -16.7], "avgHigh": [-10.6, -9.0, -1.4, 11.7, 21.1, 26.0, 26.8, 25.5, 19.0, 10.4, -1.0, -8.4], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/kostanay", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Kostanay", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Кызылорда", "lat": 44.85, "lng": 65.5, "alt": 130, "temps": [-8.6, -6.8, 1.6, 12.4, 19.9, 24.9, 26.8, 24.4, 17.6, 9.0, 0.6, -6.0], "official": true, "avgLow": [-10.6, -9.1, -1.4, 7.3, 13.8, 19.2, 21.0, 18.9, 11.7, 4.2, -2.8, -8.5], "avgHigh": [-2.5, 0.8, 10.4, 20.9, 28.2, 33.6, 35.1, 33.4, 26.6, 18.1, 7.1, -0.5], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/kyzylorda", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Kyzylorda", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Петропавловск", "lat": 54.77, "lng": 69.18, "alt": 126, "temps": [-17.7, -16.3, -9.4, 3.1, 11.9, 17.5, 19.2, 16.6, 10.8, 2.4, -7.5, -14.8], "official": true, "avgLow": [-20.8, -19.5, -11.7, -0.4, 6.8, 12.1, 14.0, 12.1, 6.1, 0.4, -10.1, -17.7], "avgHigh": [-12.5, -10.0, -2.0, 10.1, 19.8, 24.1, 25.0, 23.3, 17.0, 8.9, -3.1, -9.8], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/petropalovsk", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Petropavl", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Тараз", "lat": 42.85, "lng": 71.38, "alt": 655, "temps": [-4.5, -2.7, 3.9, 11.6, 17.2, 22.3, 24.8, 22.8, 17.0, 9.9, 2.4, -2.9], "official": true, "avgLow": [-7.4, -5.8, 0.1, 6.2, 10.9, 15.6, 17.5, 15.7, 10.3, 4.7, -1.2, -5.9], "avgHigh": [2.2, 4.3, 11.3, 18.6, 24.7, 30.6, 33.0, 31.8, 25.8, 18.0, 9.4, 3.8], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/taraz", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Taraz", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Уральск", "lat": 51.25, "lng": 51.28, "alt": 37, "temps": [-12.3, -11.9, -5.1, 7.5, 15.8, 20.5, 22.7, 21.0, 14.3, 5.6, -2.5, -8.8], "official": true, "avgLow": [-14.1, -14.5, -7.4, 2.6, 9.3, 13.9, 16.0, 14.2, 8.3, 2.1, -4.7, -11.6], "avgHigh": [-6.7, -5.9, 1.2, 14.7, 23.2, 28.1, 30.2, 29.0, 21.9, 12.5, 2.1, -4.7], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/uralsk", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Oral,_Kazakhstan", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Усть-Каменогорск", "lat": 49.97, "lng": 82.63, "alt": 292, "temps": [-16.3, -15.2, -7.1, 5.4, 13.6, 18.8, 20.6, 18.4, 12.3, 5.1, -5.7, -13.2], "official": true, "avgLow": [-20.4, -19.2, -11.0, 0.5, 6.9, 12.5, 14.2, 11.4, 4.6, -0.2, -9.1, -16.3], "avgHigh": [-9.8, -7.0, 0.4, 13.9, 21.6, 26.2, 27.8, 26.7, 20.6, 12.3, 0.6, -6.8], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/ust-kamenogorsk", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Oskemen", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Шымкент", "lat": 42.32, "lng": 69.7, "alt": 604, "temps": [-1.6, 0.4, 6.3, 13.4, 18.7, 23.8, 26.5, 25.1, 19.5, 12.4, 5.4, 0.4], "official": true, "avgLow": [-4.8, -3.4, 2.7, 8.2, 12.6, 16.7, 18.6, 17.6, 12.6, 6.8, 1.3, -3.3], "avgHigh": [5.2, 7.2, 14.1, 20.5, 26.0, 31.5, 34.1, 33.4, 28.0, 20.3, 12.3, 6.6], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://www.kazhydromet.kz/ru/klimat/shymkent", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Shymkent", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Астана", "lat": 51.17, "lng": 71.45, "alt": 349, "temps": [-14.5, -13.6, -6.0, 6.5, 14.5, 19.6, 20.6, 19.1, 12.6, 5.0, -5.2, -12.0], "official": true, "note": "Государственный гидрометеорологический фонд РГП «Казгидромет», нормы 1991–2020.", "avgLow": [-18.7, -18.0, -10.4, 1.2, 8.2, 13.4, 14.9, 13.0, 6.8, 0.5, -8.7, -16.0], "avgHigh": [-10.3, -8.8, -1.5, 12.2, 20.9, 25.8, 26.6, 25.5, 18.9, 10.4, -1.3, -8.0], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://journal.kazhydromet.kz/index.php/kazgidro/article/download/36/1162/6242", "meanSourceName": "РГП «Казгидромет» · норма 1991–2020", "meanSourceTier": "primary", "rangeSourceUrl": "https://en.wikipedia.org/wiki/Astana", "rangeSourceName": "Станционная климатическая таблица 1991–2020 · вторичный источник", "rangeSourceTier": "secondary"}, {"name": "Павлодар", "lat": 52.3, "lng": 76.95, "alt": 123, "temps": [-16.0, -15.0, -6.8, 6.3, 14.2, 20.1, 21.6, 19.0, 12.5, 4.2, -6.2, -13.3], "official": false, "avgLow": [-21.1, -20.6, -12.4, -0.3, 6.9, 12.8, 14.9, 12.2, 5.6, -1.5, -10.6, -17.9], "avgHigh": [-10.9, -9.3, -1.3, 12.9, 21.5, 27.3, 28.3, 25.8, 19.4, 10.0, -1.8, -8.6], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Kazakhstan/report_Pavlodar/", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Kazakhstan/report_Pavlodar/", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Семей", "lat": 50.41, "lng": 80.25, "alt": null, "temps": [-14.7, -13.6, -6.4, 6.7, 14.3, 19.7, 21.2, 18.9, 12.4, 4.9, -4.8, -11.8], "official": false, "avgLow": [-19.6, -19.1, -12.0, 0.4, 7.0, 12.6, 14.4, 11.8, 5.2, -0.7, -9.4, -16.3], "avgHigh": [-9.7, -8.0, -0.8, 12.9, 21.5, 26.8, 28.0, 25.9, 19.7, 10.6, -0.2, -7.3], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Semey", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Semey", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Талдыкорган", "lat": 45.02, "lng": 78.37, "alt": null, "temps": [-6.8, -5.0, -0.7, 8.8, 15.2, 19.9, 24.5, 23.5, 18.2, 10.6, 3.2, -5.0], "official": false, "avgLow": [-12.3, -10.8, -5.8, 1.8, 8.3, 12.4, 16.8, 15.1, 9.5, 2.9, -3.0, -10.5], "avgHigh": [-1.2, 0.9, 4.4, 15.8, 22.2, 27.3, 32.2, 31.9, 26.8, 18.2, 9.4, 0.4], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Taldykorgan", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Taldykorgan", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Туркестан", "lat": 43.3, "lng": 68.25, "alt": null, "temps": [-3.6, -0.9, 6.8, 15.1, 21.2, 26.7, 29.1, 27.0, 20.4, 11.6, 4.4, -1.4], "official": false, "avgLow": [-8.4, -6.0, 0.8, 8.5, 14.1, 18.6, 20.9, 18.5, 11.7, 3.7, -1.6, -6.0], "avgHigh": [1.1, 4.1, 12.7, 21.7, 28.3, 34.7, 37.2, 35.5, 29.2, 19.6, 10.3, 3.1], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Turkestan", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Turkestan", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Жезказган", "lat": 47.78, "lng": 67.7, "alt": null, "temps": [-13.6, -12.9, -4.5, 9.3, 16.4, 22.6, 24.6, 22.3, 15.1, 5.9, -3.0, -10.7], "official": false, "avgLow": [-18.6, -18.4, -9.4, 2.8, 9.1, 14.9, 17.0, 14.4, 6.8, -1.2, -8.0, -15.6], "avgHigh": [-8.6, -7.5, 0.4, 15.9, 23.7, 30.4, 32.3, 30.2, 23.4, 13.1, 2.0, -5.9], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Zhezqazghan", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Zhezqazghan", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Балхаш", "lat": 46.85, "lng": 74.98, "alt": null, "temps": [-12.8, -11.6, -3.6, 8.6, 16.5, 22.2, 24.3, 22.1, 15.6, 7.1, -1.8, -9.3], "official": false, "avgLow": [-17.2, -16.5, -8.6, 2.8, 10.5, 16.5, 18.8, 16.4, 9.8, 2.0, -5.8, -13.4], "avgHigh": [-8.3, -6.6, 1.5, 14.3, 22.5, 28.0, 29.8, 27.9, 21.5, 12.3, 2.3, -5.3], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Balqash", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Balqash", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}, {"name": "Конаев", "lat": 43.85, "lng": 77.06, "alt": null, "temps": [-6.4, -4.2, 3.1, 11.7, 17.5, 23.4, 26.3, 24.4, 19.1, 10.9, 2.7, -3.7], "official": false, "avgLow": [-12.0, -9.0, -1.6, 5.4, 10.7, 16.8, 19.1, 16.4, 11.2, 3.8, -3.1, -8.3], "avgHigh": [-0.8, 0.7, 7.7, 18.1, 24.3, 30.1, 33.4, 32.4, 27.0, 18.0, 8.4, 1.0], "temperaturePeriod": "1991–2020", "meanSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Konayev", "meanSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "meanSourceTier": "fallback", "rangeSourceUrl": "https://statsclimat.com/Asia/Kazakhstan/report_Konayev", "rangeSourceName": "WorldClim/CRU TS v4.09 · WMO 1991–2020", "rangeSourceTier": "fallback"}];
 
+    const countrySelect = document.getElementById('country');
     const monthSelect = document.getElementById('month');
     const loading = document.getElementById('loading');
     const loadingText = document.getElementById('loadingText');
     const mapContainer = document.getElementById('map');
     const controlsPanel = document.getElementById('controlsPanel');
+    const countryStatus = document.getElementById('countryStatus');
+    const infoTitle = document.getElementById('infoTitle');
+    const infoSubtitle = document.getElementById('infoSubtitle');
+    const sourceSummary = document.getElementById('sourceSummary');
+    const infoNote = document.getElementById('infoNote');
+    const cityCount = document.getElementById('count');
 
     const infoToggle = document.getElementById('infoToggle');
     const infoContent = document.getElementById('infoContent');
@@ -960,6 +1044,440 @@
     const routeStatus = document.getElementById('routeStatus');
     const routeProvider = document.getElementById('routeProvider');
     const routeClose = document.getElementById('routeClose');
+
+    const NATURAL_EARTH_COUNTRIES_URL =
+      'https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_10m_admin_0_countries.geojson';
+    const CLIMATE_DATA_BASE_URL = './data/climate';
+
+    const COUNTRY_SOURCE_ID = 'selected-country';
+    const COUNTRY_FILL_LAYER_ID = 'selected-country-fill';
+    const COUNTRY_LINE_LAYER_ID = 'selected-country-line';
+
+    let countryGeoJson = null;
+    let countryByCode = new Map();
+    let activeCountryCode = 'KAZ';
+    let activeCountryName = 'Казахстан';
+    let activeCities = KAZAKHSTAN_CITIES;
+    let countryChangeToken = 0;
+
+    function getProperty(properties, ...names) {
+      for (const name of names) {
+        const value = properties?.[name];
+        if (value !== undefined && value !== null && value !== '') return value;
+      }
+      return null;
+    }
+
+    function getCountryCode(feature) {
+      const code = String(getProperty(feature?.properties, 'ADM0_A3', 'adm0_a3', 'SOV_A3', 'sov_a3') || '');
+      return /^[A-Z]{3}$/.test(code) ? code : null;
+    }
+
+    function getCountryDisplayName(feature) {
+      return String(
+        getProperty(
+          feature?.properties,
+          'NAME_RU', 'name_ru', 'NAME_LONG', 'ADMIN', 'NAME', 'admin', 'name'
+        ) || getCountryCode(feature) || 'Страна'
+      );
+    }
+
+    function getPlaceKey(feature, index = 0) {
+      return String(getProperty(feature?.properties, 'ne_id', 'NE_ID', 'geonameid', 'GEONAMEID') || `place-${index}`);
+    }
+
+    function getPlaceName(feature) {
+      return String(
+        getProperty(feature?.properties, 'namepar', 'name', 'NAME', 'nameascii', 'NAMEASCII') || 'Город'
+      );
+    }
+
+    function setCountryStatus(message = '', { error = false } = {}) {
+      countryStatus.hidden = !message;
+      countryStatus.textContent = message;
+      countryStatus.classList.toggle('is-error', error);
+    }
+
+    function pluralizeCities(count) {
+      const mod10 = count % 10;
+      const mod100 = count % 100;
+      if (mod10 === 1 && mod100 !== 11) return `${count} город`;
+      if ([2, 3, 4].includes(mod10) && ![12, 13, 14].includes(mod100)) return `${count} города`;
+      return `${count} городов`;
+    }
+
+    function updateInfoPanel(cities = activeCities) {
+      const count = cities.length;
+      infoTitle.textContent = `Климатическая карта · ${activeCountryName}`;
+      infoSubtitle.textContent =
+        `Среднемесячная температура по ${pluralizeCities(count)}. В карточке города — ` +
+        'типичная температура ночью/под утро и днём по климатическим нормам 1991–2020.';
+      cityCount.textContent = pluralizeCities(count);
+
+      if (activeCountryCode === 'KAZ') {
+        sourceSummary.textContent = 'Средняя: Казгидромет 14 · WMO/CRU 7';
+        infoNote.textContent =
+          'Приоритет источников: Казгидромет → WMO/WorldClim/CRU → вторичные климатические таблицы. ' +
+          'Средняя температура маркера для 14 городов берётся напрямую из Казгидромета. ' +
+          '«Ночь/день» — отдельные нормы среднего суточного минимума/максимума; их источник указан в карточке города.';
+        return;
+      }
+
+      const wmoCount = cities.filter(city => city.climateSource === 'wmo').length;
+      const cruCount = cities.filter(city => city.climateSource === 'cru').length;
+      const parts = [];
+      if (wmoCount) parts.push(`WMO 1991–2020: ${wmoCount}`);
+      if (cruCount) parts.push(`CRU TS 4.09: ${cruCount}`);
+      sourceSummary.textContent = parts.length ? parts.join(' · ') : 'Локальные климатические данные';
+
+      infoNote.textContent =
+        'Для остальных стран климатические нормы загружаются только из локальных JSON-файлов. ' +
+        'Приоритет при их сборке: WMO Climatological Standard Normals 1991–2020 → CRU TS 4.09. ' +
+        'В рантайме карта не обращается к внешним климатическим API.';
+    }
+
+    async function loadCountryClimate(countryCode) {
+      const response = await fetch(
+        `${CLIMATE_DATA_BASE_URL}/${encodeURIComponent(countryCode)}.json`,
+        { cache: 'force-cache' }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Локальный климатический JSON ${countryCode}: HTTP ${response.status}`);
+      }
+
+      const payload = await response.json();
+      if (!Array.isArray(payload?.cities)) {
+        throw new Error(`Некорректный формат ${countryCode}.json`);
+      }
+
+      return payload;
+    }
+
+    function collectCoordinates(geometry, target = []) {
+      if (!geometry) return target;
+      const walk = coordinates => {
+        if (!Array.isArray(coordinates)) return;
+        if (coordinates.length >= 2 && typeof coordinates[0] === 'number' && typeof coordinates[1] === 'number') {
+          target.push([Number(coordinates[0]), Number(coordinates[1])]);
+          return;
+        }
+        coordinates.forEach(walk);
+      };
+      walk(geometry.coordinates);
+      return target;
+    }
+
+    function minimalLongitudeInterval(longitudes) {
+      if (!longitudes.length) return [-180, 180];
+      const normalized = longitudes.map(lng => ((lng % 360) + 360) % 360).sort((a, b) => a - b);
+      if (normalized.length === 1) return [normalized[0], normalized[0]];
+
+      let largestGap = -1;
+      let gapIndex = 0;
+      for (let i = 0; i < normalized.length; i += 1) {
+        const current = normalized[i];
+        const next = i === normalized.length - 1 ? normalized[0] + 360 : normalized[i + 1];
+        const gap = next - current;
+        if (gap > largestGap) {
+          largestGap = gap;
+          gapIndex = i;
+        }
+      }
+
+      let west = normalized[(gapIndex + 1) % normalized.length];
+      let east = normalized[gapIndex];
+      if (east < west) east += 360;
+      while (west > 180) { west -= 360; east -= 360; }
+      return [west, east];
+    }
+
+    function countryBounds(feature) {
+      const coordinates = collectCoordinates(feature?.geometry);
+      if (!coordinates.length) return null;
+
+      // Не используем Math.min(...largeArray): у сложных полигонов стран
+      // десятки тысяч вершин, и spread может превысить лимит аргументов JS.
+      let south = Infinity;
+      let north = -Infinity;
+      const longitudes = [];
+      for (const [lng, lat] of coordinates) {
+        longitudes.push(lng);
+        if (lat < south) south = lat;
+        if (lat > north) north = lat;
+      }
+
+      const [west, east] = minimalLongitudeInterval(longitudes);
+      return { west, east, south, north };
+    }
+
+    function boundsFromPoints(points) {
+      const valid = points.filter(
+        point => Array.isArray(point) && Number.isFinite(point[0]) && Number.isFinite(point[1])
+      );
+      if (!valid.length) return null;
+
+      let south = Infinity;
+      let north = -Infinity;
+      const longitudes = [];
+
+      for (const [lng, lat] of valid) {
+        longitudes.push(lng);
+        south = Math.min(south, lat);
+        north = Math.max(north, lat);
+      }
+
+      const [west, east] = minimalLongitudeInterval(longitudes);
+      return { west, east, south, north };
+    }
+
+    function cityBounds(cities = []) {
+      return boundsFromPoints(
+        cities.map(city => [Number(city.lng), Number(city.lat)])
+      );
+    }
+
+    function expandBounds(bounds, {
+      lngRatio = 0.22,
+      latRatio = 0.18,
+      minLngPad = 0.55,
+      minLatPad = 0.45
+    } = {}) {
+      const width = Math.max(0.1, bounds.east - bounds.west);
+      const height = Math.max(0.1, bounds.north - bounds.south);
+      const lngPad = Math.max(minLngPad, width * lngRatio);
+      const latPad = Math.max(minLatPad, height * latRatio);
+
+      return {
+        west: bounds.west - lngPad,
+        east: bounds.east + lngPad,
+        south: Math.max(-84, bounds.south - latPad),
+        north: Math.min(84, bounds.north + latPad)
+      };
+    }
+
+    function countryViewBounds(feature, cities = []) {
+      const geometryBounds = countryBounds(feature);
+      const markersBounds = cityBounds(cities);
+
+      if (!geometryBounds) return markersBounds;
+      if (!markersBounds || cities.length < 2) return geometryBounds;
+
+      const geometryWidth = Math.max(0.1, geometryBounds.east - geometryBounds.west);
+      const geometryHeight = Math.max(0.1, geometryBounds.north - geometryBounds.south);
+      const markerWidth = Math.max(0.1, markersBounds.east - markersBounds.west);
+      const markerHeight = Math.max(0.1, markersBounds.north - markersBounds.south);
+
+      // У некоторых стран в одной геометрии есть очень удалённые территории/острова.
+      // Если полный bbox во много раз больше области с климатическими городами,
+      // фреймим именно рабочую (населённую) область карты. Это исправляет, например,
+      // Норвегию и аналогичные составные геометрии, не меняя подсветку самой страны.
+      const hasRemoteGeometry =
+        geometryWidth > markerWidth * 3.2 ||
+        geometryHeight > markerHeight * 3.2 ||
+        (geometryWidth > 80 && markerWidth < 35) ||
+        (geometryHeight > 55 && markerHeight < 24);
+
+      if (hasRemoteGeometry) {
+        return expandBounds(markersBounds, {
+          lngRatio: 0.32,
+          latRatio: 0.28,
+          minLngPad: 0.9,
+          minLatPad: 0.7
+        });
+      }
+
+      return geometryBounds;
+    }
+
+    function paddedCountryBounds(bounds) {
+      const expanded = expandBounds(bounds, {
+        lngRatio: 0.32,
+        latRatio: 0.32,
+        minLngPad: 0.8,
+        minLatPad: 0.65
+      });
+
+      return [
+        [expanded.west, expanded.south],
+        [expanded.east, expanded.north]
+      ];
+    }
+
+    function updateCountryLayer(feature) {
+      const source = map.getSource(COUNTRY_SOURCE_ID);
+      if (!source || !feature) return;
+      source.setData({ type: 'FeatureCollection', features: [feature] });
+    }
+
+    function fitToCountry(feature, { animate = true, cities = activeCities } = {}) {
+      const bounds = countryViewBounds(feature, cities);
+      if (!bounds) return;
+
+      const mapBounds = [[bounds.west, bounds.south], [bounds.east, bounds.north]];
+      const cameraPadding = {
+        top: isMobileViewport() ? 92 : 80,
+        right: isMobileViewport() ? 28 : 55,
+        bottom: 45,
+        left: isMobileViewport() ? 28 : 230
+      };
+
+      // Снимаем ограничение предыдущей страны перед расчётом новой камеры.
+      // Иначе после маленькой страны нельзя корректно перейти к большой.
+      map.setMinZoom(1);
+      map.setMaxBounds(null);
+
+      const camera = map.cameraForBounds(mapBounds, {
+        padding: cameraPadding,
+        maxZoom: 7.5
+      });
+      const targetZoom = Math.min(camera?.zoom ?? 4, 7.5);
+
+      // Разрешаем отдалиться лишь немного относительно масштаба выбранной страны.
+      // Раньше minZoom=1 позволял после выбора Норвегии снова увидеть почти весь мир.
+      const countryMinZoom = Math.max(1, Math.min(6.9, targetZoom - 0.65));
+
+      map.setMaxBounds(paddedCountryBounds(bounds));
+      map.fitBounds(mapBounds, {
+        padding: cameraPadding,
+        maxZoom: 7.5,
+        duration: animate ? 650 : 0,
+        essential: true
+      });
+      map.setMinZoom(countryMinZoom);
+    }
+
+    function addCountryLayerIfNeeded() {
+      if (map.getSource(COUNTRY_SOURCE_ID)) return;
+      map.addSource(COUNTRY_SOURCE_ID, {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features: [] }
+      });
+
+      const firstSymbolLayerId = map.getStyle().layers?.find(layer => layer.type === 'symbol')?.id;
+      map.addLayer({
+        id: COUNTRY_FILL_LAYER_ID,
+        type: 'fill',
+        source: COUNTRY_SOURCE_ID,
+        paint: {
+          'fill-color': '#2563eb',
+          'fill-opacity': 0.035
+        }
+      }, firstSymbolLayerId);
+      map.addLayer({
+        id: COUNTRY_LINE_LAYER_ID,
+        type: 'line',
+        source: COUNTRY_SOURCE_ID,
+        paint: {
+          'line-color': '#0f172a',
+          'line-width': 1.4,
+          'line-opacity': 0.45
+        }
+      }, firstSymbolLayerId);
+    }
+
+    function fillCountrySelect() {
+      const collator = new Intl.Collator('ru', { sensitivity: 'base' });
+      const entries = [...countryByCode.entries()]
+        .filter(([code]) => code !== 'ATA')
+        .map(([code, feature]) => ({ code, name: getCountryDisplayName(feature) }))
+        .sort((a, b) => {
+          if (a.code === 'KAZ') return -1;
+          if (b.code === 'KAZ') return 1;
+          return collator.compare(a.name, b.name);
+        });
+
+      countrySelect.replaceChildren();
+      entries.forEach(({ code, name }) => {
+        const option = document.createElement('option');
+        option.value = code;
+        option.textContent = name;
+        countrySelect.appendChild(option);
+      });
+      countrySelect.value = activeCountryCode;
+      countrySelect.disabled = false;
+    }
+
+    async function loadGlobalGeography() {
+      setCountryStatus('Загружаю список стран…');
+      const countriesResponse = await fetch(
+        NATURAL_EARTH_COUNTRIES_URL,
+        { cache: 'force-cache' }
+      );
+      if (!countriesResponse.ok) {
+        throw new Error('Не удалось загрузить Natural Earth');
+      }
+
+      countryGeoJson = await countriesResponse.json();
+
+      countryByCode = new Map();
+      countryGeoJson.features.forEach(feature => {
+        const code = getCountryCode(feature);
+        if (code && !countryByCode.has(code)) countryByCode.set(code, feature);
+      });
+
+      fillCountrySelect();
+      addCountryLayerIfNeeded();
+      updateCountryLayer(countryByCode.get(activeCountryCode));
+      setCountryStatus('');
+    }
+
+    async function setActiveCountry(countryCode) {
+      const token = ++countryChangeToken;
+      const feature = countryByCode.get(countryCode);
+      if (!feature) return;
+
+      clearRoute();
+      closePopup();
+      setInfoExpanded(false);
+      activeCountryCode = countryCode;
+      activeCountryName = getCountryDisplayName(feature);
+      countrySelect.value = countryCode;
+      updateCountryLayer(feature);
+
+      activeCities = [];
+      updateInfoPanel();
+      renderMarkers();
+      setCountryStatus(`Загружаю локальные данные для ${activeCountryName}…`);
+
+      try {
+        const payload = await loadCountryClimate(countryCode);
+        if (token !== countryChangeToken) return;
+
+        activeCountryName = payload.countryName || activeCountryName;
+        activeCities = payload.cities;
+        updateInfoPanel();
+        renderMarkers();
+        fitToCountry(feature, { cities: activeCities });
+        setCountryStatus('');
+      } catch (error) {
+        if (token !== countryChangeToken) return;
+        console.error('Country climate JSON load failed:', error);
+
+        if (countryCode === 'KAZ') {
+          activeCities = KAZAKHSTAN_CITIES;
+          updateInfoPanel();
+          renderMarkers();
+          fitToCountry(feature, { cities: activeCities });
+          setCountryStatus(
+            'KAZ.json не найден — использую встроенную резервную копию данных Казахстана.',
+            { error: true }
+          );
+          return;
+        }
+
+        activeCities = [];
+        updateInfoPanel();
+        renderMarkers();
+        // Даже без климатического JSON не оставляем ограничения от предыдущей страны.
+        fitToCountry(feature, { cities: [] });
+        setCountryStatus(
+          `Нет локального файла data/climate/${countryCode}.json. ` +
+          'Сначала выполните статическую сборку климатических данных.',
+          { error: true }
+        );
+      }
+    }
 
     function setInfoExpanded(expanded) {
       infoToggle.setAttribute('aria-expanded', String(expanded));
@@ -986,6 +1504,10 @@
       monthSelect.appendChild(option);
     });
     monthSelect.value = '10';
+
+    countrySelect.addEventListener('change', () => {
+      setActiveCountry(countrySelect.value);
+    });
 
     function formatTemp(value) {
       if (value == null) return 'н/д';
@@ -1027,8 +1549,11 @@
       if (tier === 'primary') {
         return '<span class="source-badge source-badge-primary">первичный</span>';
       }
-      if (tier === 'fallback') {
+      if (tier === 'wmo' || tier === 'fallback') {
         return '<span class="source-badge source-badge-fallback">WMO-норма</span>';
+      }
+      if (tier === 'cru') {
+        return '<span class="source-badge source-badge-fallback">CRU 0.5°</span>';
       }
       return '<span class="source-badge source-badge-secondary">вторичный</span>';
     }
@@ -1049,7 +1574,7 @@
 
           <div class="popup-body">
             <div>
-              <strong>${MONTHS[monthIndex]}</strong> · климатические нормы 1991–2020
+              <strong>${MONTHS[monthIndex]}</strong> · климатические нормы ${city.temperaturePeriod || '1991–2020'}
             </div>
 
             <div class="popup-climate-range">
@@ -1632,7 +2157,7 @@
       markers.length = 0;
       closePopup();
 
-      CITIES.forEach(city => {
+      activeCities.forEach(city => {
         const el = createMarkerElement(city, monthIndex);
 
         const marker = new maplibregl.Marker({
@@ -1703,10 +2228,22 @@
     // Фильтр месяца обновляет температуры без перезагрузки карты.
     monthSelect.addEventListener('change', renderMarkers);
 
-    map.on('load', () => {
+    map.on('load', async () => {
+      // Начальные данные тоже читаем из локального JSON.
+      // Встроенный массив Казахстана остаётся только аварийным fallback.
+      try {
+        const kazakhstan = await loadCountryClimate('KAZ');
+        activeCountryName = kazakhstan.countryName || activeCountryName;
+        activeCities = kazakhstan.cities;
+      } catch (error) {
+        console.warn('KAZ.json load failed; using embedded fallback:', error);
+        activeCities = KAZAKHSTAN_CITIES;
+      }
+
+      updateInfoPanel();
       renderMarkers();
 
-      // Подбираем масштаб так, чтобы Казахстан был виден целиком.
+      // Казахстан остаётся стартовой страной и использует исходный framing.
       map.fitBounds(
         [[46.2, 40.2], [87.5, 55.6]],
         {
@@ -1722,6 +2259,16 @@
 
       loading.classList.add('hidden');
       setTimeout(() => loading.remove(), 350);
+
+      // География мира догружается в фоне; климат для стран читается из ./data/climate/*.json.
+      loadGlobalGeography().catch(error => {
+        console.error('Global geography load failed:', error);
+        countrySelect.disabled = true;
+        setCountryStatus(
+          'Не удалось загрузить список стран. Казахстан продолжает работать в локальном режиме.',
+          { error: true }
+        );
+      });
     });
 
     map.on('error', event => {

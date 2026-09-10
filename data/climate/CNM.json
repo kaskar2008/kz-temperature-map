@@ -1,0 +1,79 @@
+{
+  "countryCode": "CNM",
+  "countryName": "Зелёная линия",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Зелёная линия",
+      "lat": 35.140713,
+      "lng": 33.288134,
+      "population": null,
+      "representativePoint": true,
+      "countryCode": "CNM",
+      "alt": 162,
+      "temps": [
+        10.7,
+        11.2,
+        13.8,
+        17.7,
+        22.6,
+        27.1,
+        30,
+        30,
+        26.7,
+        22.5,
+        16.8,
+        12.5
+      ],
+      "avgLow": [
+        5.7,
+        5.8,
+        7.6,
+        10.8,
+        15.3,
+        19.8,
+        22.6,
+        22.5,
+        19.4,
+        15.9,
+        10.8,
+        7.3
+      ],
+      "avgHigh": [
+        15.8,
+        16.6,
+        20,
+        24.7,
+        29.8,
+        34.4,
+        37.5,
+        37.4,
+        34,
+        29.2,
+        22.7,
+        17.7
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "wmo",
+      "sourceStation": {
+        "name": "AthalassaRadiosonde",
+        "id": "00017607",
+        "wigosId": "0-20000-0-17607",
+        "country": "Cyprus",
+        "lat": 35.141,
+        "lng": 33.397,
+        "distanceKm": 9.9
+      },
+      "meanSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "meanSourceName": "WMO 1991–2020 · AthalassaRadiosonde",
+      "meanSourceTier": "wmo",
+      "rangeSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "rangeSourceName": "WMO 1991–2020 · TMIN/TMAX · AthalassaRadiosonde",
+      "rangeSourceTier": "wmo"
+    }
+  ]
+}

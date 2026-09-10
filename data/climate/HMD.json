@@ -1,0 +1,75 @@
+{
+  "countryCode": "HMD",
+  "countryName": "Остров Херд и острова Макдональд",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Остров Херд и острова Макдональд",
+      "lat": -53.103462,
+      "lng": 73.50521,
+      "population": null,
+      "representativePoint": true,
+      "countryCode": "HMD",
+      "alt": null,
+      "temps": [
+        7.5,
+        6.8,
+        5,
+        2.6,
+        0.6,
+        -0.4,
+        -1.3,
+        -1.4,
+        -0.8,
+        1.1,
+        3.7,
+        6.5
+      ],
+      "avgLow": [
+        4.3,
+        3.5,
+        1.7,
+        -0.4,
+        -2.3,
+        -3.1,
+        -4.1,
+        -4.2,
+        -3.9,
+        -2.1,
+        0.5,
+        3.3
+      ],
+      "avgHigh": [
+        10.7,
+        10.1,
+        8.3,
+        5.7,
+        3.5,
+        2.3,
+        1.5,
+        1.5,
+        2.2,
+        4.3,
+        6.9,
+        9.7
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": -53.2,
+        "lng": 73.8,
+        "distanceKm": 23.1
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

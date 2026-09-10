@@ -1,0 +1,137 @@
+{
+  "countryCode": "SVN",
+  "countryName": "Словения",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Ljubljana",
+      "lng": 14.514969,
+      "lat": 46.055288,
+      "population": 314807,
+      "countryCode": "SVN",
+      "alt": null,
+      "temps": [
+        -0.9,
+        0.4,
+        4.1,
+        8.5,
+        12.9,
+        16.6,
+        18.6,
+        18.6,
+        14.2,
+        9.6,
+        4.2,
+        -0.6
+      ],
+      "avgLow": [
+        -4.3,
+        -3.6,
+        -0.5,
+        3.3,
+        7.6,
+        11.3,
+        13.1,
+        13.2,
+        9.2,
+        5.5,
+        0.9,
+        -3.7
+      ],
+      "avgHigh": [
+        2.5,
+        4.3,
+        8.7,
+        13.8,
+        18.2,
+        22,
+        24.3,
+        24,
+        19.2,
+        13.7,
+        7.6,
+        2.5
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": 46.3,
+        "lng": 14.8,
+        "distanceKm": 28.2
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    },
+    {
+      "name": "Maribor",
+      "lng": 15.650042,
+      "lat": 46.540478,
+      "population": 114228,
+      "countryCode": "SVN",
+      "alt": null,
+      "temps": [
+        -0.1,
+        2,
+        6.2,
+        10.9,
+        15.4,
+        19.1,
+        20.9,
+        20.7,
+        16,
+        11.1,
+        5.6,
+        0.4
+      ],
+      "avgLow": [
+        -3.9,
+        -2.3,
+        1,
+        5.1,
+        9.6,
+        13.4,
+        14.9,
+        14.8,
+        10.6,
+        6.1,
+        1.8,
+        -3
+      ],
+      "avgHigh": [
+        3.6,
+        6.2,
+        11.4,
+        16.8,
+        21.2,
+        24.9,
+        26.9,
+        26.6,
+        21.5,
+        16.1,
+        9.5,
+        3.9
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": 46.8,
+        "lng": 15.8,
+        "distanceKm": 24.5
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

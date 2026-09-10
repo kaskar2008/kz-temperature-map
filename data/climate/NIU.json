@@ -1,0 +1,74 @@
+{
+  "countryCode": "NIU",
+  "countryName": "Ниуэ",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Alofi",
+      "lng": -169.913625,
+      "lat": -19.065988,
+      "population": 581,
+      "countryCode": "NIU",
+      "alt": null,
+      "temps": [
+        26.7,
+        26.7,
+        26.6,
+        25.9,
+        24.7,
+        24,
+        23.2,
+        23.2,
+        23.8,
+        24.4,
+        25.1,
+        25.8
+      ],
+      "avgLow": [
+        24.1,
+        24,
+        23.9,
+        23.3,
+        22.2,
+        21.4,
+        20.5,
+        20.5,
+        20.9,
+        21.7,
+        22.5,
+        23.2
+      ],
+      "avgHigh": [
+        29.3,
+        29.5,
+        29.4,
+        28.5,
+        27.3,
+        26.6,
+        26,
+        25.9,
+        26.7,
+        27.1,
+        27.8,
+        28.5
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": -19.2,
+        "lng": -169.7,
+        "distanceKm": 26.7
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

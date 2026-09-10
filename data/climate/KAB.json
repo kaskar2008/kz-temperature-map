@@ -1,0 +1,75 @@
+{
+  "countryCode": "KAB",
+  "countryName": "Байконур",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Байконур",
+      "lat": 45.978332,
+      "lng": 63.383897,
+      "population": null,
+      "representativePoint": true,
+      "countryCode": "KAB",
+      "alt": null,
+      "temps": [
+        -8.8,
+        -7.4,
+        1.7,
+        12.5,
+        20.1,
+        25.8,
+        27.5,
+        25.5,
+        17.9,
+        9.5,
+        0.2,
+        -6.2
+      ],
+      "avgLow": [
+        -12.9,
+        -12.2,
+        -3.4,
+        6.2,
+        13.3,
+        18.9,
+        20.7,
+        18.4,
+        10.8,
+        3,
+        -4.4,
+        -10.3
+      ],
+      "avgHigh": [
+        -4.7,
+        -2.7,
+        6.8,
+        18.8,
+        26.9,
+        32.8,
+        34.4,
+        32.6,
+        25.1,
+        16,
+        4.8,
+        -2.2
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": 45.8,
+        "lng": 63.3,
+        "distanceKm": 27.4
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

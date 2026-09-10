@@ -1,0 +1,78 @@
+{
+  "countryCode": "DMA",
+  "countryName": "Доминика",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Roseau",
+      "lng": -61.387013,
+      "lat": 15.301016,
+      "population": 23336,
+      "countryCode": "DMA",
+      "alt": 5,
+      "temps": [
+        21.7,
+        21.7,
+        22,
+        22.9,
+        24,
+        24.6,
+        24.5,
+        24.2,
+        24,
+        23.8,
+        23.2,
+        22.4
+      ],
+      "avgLow": [
+        25.7,
+        25.7,
+        26.1,
+        27,
+        27.9,
+        28.4,
+        28.2,
+        28.2,
+        28.1,
+        27.8,
+        27.2,
+        26.4
+      ],
+      "avgHigh": [
+        29.7,
+        29.7,
+        30.3,
+        31.1,
+        31.8,
+        32,
+        31.8,
+        32.1,
+        32,
+        31.9,
+        31.2,
+        30.3
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "wmo",
+      "sourceStation": {
+        "name": "CanefieldAP",
+        "id": "00078906",
+        "wigosId": "0-20000-0-78906",
+        "country": "Dominica",
+        "lat": 15.433,
+        "lng": -61.467,
+        "distanceKm": 17
+      },
+      "meanSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "meanSourceName": "WMO 1991–2020 · CanefieldAP",
+      "meanSourceTier": "wmo",
+      "rangeSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "rangeSourceName": "WMO 1991–2020 · TMIN/TMAX · CanefieldAP",
+      "rangeSourceTier": "wmo"
+    }
+  ]
+}

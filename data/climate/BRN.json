@@ -1,0 +1,74 @@
+{
+  "countryCode": "BRN",
+  "countryName": "Бруней",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Bandar Seri Begawan",
+      "lng": 114.933284,
+      "lat": 4.883331,
+      "population": 296500,
+      "countryCode": "BRN",
+      "alt": null,
+      "temps": [
+        26.8,
+        26.9,
+        27.6,
+        28,
+        28,
+        27.8,
+        27.6,
+        27.8,
+        27.6,
+        27.2,
+        27.2,
+        27
+      ],
+      "avgLow": [
+        23.2,
+        23.1,
+        23.4,
+        23.7,
+        23.7,
+        23.3,
+        23.1,
+        23.1,
+        23.1,
+        23.1,
+        23.1,
+        23.1
+      ],
+      "avgHigh": [
+        30.5,
+        30.8,
+        31.8,
+        32.2,
+        32.4,
+        32.3,
+        32.2,
+        32.5,
+        32.1,
+        31.5,
+        31.3,
+        31
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": 4.8,
+        "lng": 114.8,
+        "distanceKm": 25.1
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

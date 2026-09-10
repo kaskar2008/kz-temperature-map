@@ -1,0 +1,137 @@
+{
+  "countryCode": "TON",
+  "countryName": "Тонга",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Nuku'alofa",
+      "lng": -175.220564,
+      "lat": -21.138512,
+      "population": 42620,
+      "countryCode": "TON",
+      "alt": null,
+      "temps": [
+        26.5,
+        27.1,
+        26.5,
+        25.5,
+        24.2,
+        23.3,
+        22.7,
+        22.3,
+        22.9,
+        23.6,
+        24.8,
+        25.6
+      ],
+      "avgLow": [
+        23.9,
+        24.4,
+        23.8,
+        23,
+        21.7,
+        20.9,
+        19.8,
+        19.8,
+        20,
+        21,
+        22.3,
+        23.1
+      ],
+      "avgHigh": [
+        29.1,
+        29.8,
+        29.2,
+        28.1,
+        26.7,
+        25.9,
+        25.5,
+        25,
+        25.9,
+        26.2,
+        27.4,
+        28
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": -21.2,
+        "lng": -175.2,
+        "distanceKm": 12.8
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    },
+    {
+      "name": "Neiafu",
+      "lng": -173.983293,
+      "lat": -18.649573,
+      "population": 7391,
+      "countryCode": "TON",
+      "alt": null,
+      "temps": [
+        27.1,
+        27.4,
+        27,
+        26.3,
+        25.3,
+        24.6,
+        24,
+        23.7,
+        24.3,
+        24.8,
+        25.7,
+        26.4
+      ],
+      "avgLow": [
+        24.5,
+        24.6,
+        24.3,
+        23.7,
+        22.8,
+        22.2,
+        21.3,
+        21.1,
+        21.5,
+        22.2,
+        23,
+        23.7
+      ],
+      "avgHigh": [
+        29.7,
+        30.2,
+        29.8,
+        29,
+        27.9,
+        27.2,
+        26.7,
+        26.4,
+        27.1,
+        27.5,
+        28.3,
+        29.1
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": -18.7,
+        "lng": -173.7,
+        "distanceKm": 27
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

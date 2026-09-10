@@ -1,0 +1,74 @@
+{
+  "countryCode": "NCL",
+  "countryName": "Новая Каледония",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Nouméa",
+      "lng": 166.444285,
+      "lat": -22.262528,
+      "population": 93060,
+      "countryCode": "NCL",
+      "alt": null,
+      "temps": [
+        25.4,
+        25.6,
+        25,
+        23.3,
+        21.5,
+        19.9,
+        18.9,
+        18.9,
+        19.8,
+        21.5,
+        23,
+        24.5
+      ],
+      "avgLow": [
+        21.5,
+        21.8,
+        21.5,
+        19.7,
+        18,
+        16.4,
+        15.2,
+        15.2,
+        15.6,
+        17.2,
+        18.9,
+        20.4
+      ],
+      "avgHigh": [
+        29.3,
+        29.4,
+        28.5,
+        26.9,
+        25,
+        23.5,
+        22.6,
+        22.7,
+        24,
+        25.8,
+        27.2,
+        28.6
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": -22.2,
+        "lng": 166.3,
+        "distanceKm": 20
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

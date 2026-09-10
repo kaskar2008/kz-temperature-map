@@ -1,0 +1,74 @@
+{
+  "countryCode": "GRD",
+  "countryName": "Гренада",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Saint George's",
+      "lng": -61.741643,
+      "lat": 12.052633,
+      "population": 33734,
+      "countryCode": "GRD",
+      "alt": null,
+      "temps": [
+        25.2,
+        25.3,
+        25.8,
+        26.6,
+        27.3,
+        27.1,
+        26.9,
+        27.2,
+        27.3,
+        26.9,
+        26.4,
+        25.7
+      ],
+      "avgLow": [
+        21.4,
+        21.5,
+        22,
+        22.9,
+        23.8,
+        23.8,
+        23.4,
+        23.6,
+        23.6,
+        23.3,
+        22.7,
+        22.1
+      ],
+      "avgHigh": [
+        29.1,
+        29.1,
+        29.7,
+        30.3,
+        30.8,
+        30.4,
+        30.4,
+        30.8,
+        31.1,
+        30.6,
+        30,
+        29.5
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": 12.3,
+        "lng": -61.7,
+        "distanceKm": 22
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

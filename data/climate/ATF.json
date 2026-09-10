@@ -1,0 +1,75 @@
+{
+  "countryCode": "ATF",
+  "countryName": "Французские Южные и Антарктические территории",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Французские Южные и Антарктические территории",
+      "lat": -49.303721,
+      "lng": 69.122136,
+      "population": null,
+      "representativePoint": true,
+      "countryCode": "ATF",
+      "alt": null,
+      "temps": [
+        6.4,
+        6.4,
+        5.5,
+        3.9,
+        1.7,
+        0.7,
+        0,
+        0.1,
+        0.7,
+        1.9,
+        3.4,
+        5.4
+      ],
+      "avgLow": [
+        3.1,
+        3,
+        2.1,
+        0.5,
+        -1.5,
+        -2.5,
+        -3,
+        -3,
+        -2.9,
+        -1.8,
+        0,
+        2.1
+      ],
+      "avgHigh": [
+        9.7,
+        9.8,
+        9,
+        7.3,
+        4.9,
+        3.9,
+        3,
+        3.2,
+        4.2,
+        5.6,
+        6.9,
+        8.6
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": -49.2,
+        "lng": 69.3,
+        "distanceKm": 11
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

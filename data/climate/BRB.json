@@ -1,0 +1,78 @@
+{
+  "countryCode": "BRB",
+  "countryName": "Барбадос",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Bridgetown",
+      "lng": -59.616527,
+      "lat": 13.102003,
+      "population": 191152,
+      "countryCode": "BRB",
+      "alt": 56,
+      "temps": [
+        26,
+        25.9,
+        26.3,
+        27,
+        27.7,
+        27.8,
+        27.8,
+        27.9,
+        27.9,
+        27.7,
+        27.2,
+        26.6
+      ],
+      "avgLow": [
+        23.3,
+        23,
+        23.4,
+        24.2,
+        25,
+        25.2,
+        25.1,
+        24.8,
+        24.8,
+        24.7,
+        24.5,
+        23.9
+      ],
+      "avgHigh": [
+        29.1,
+        29.2,
+        29.7,
+        30.2,
+        30.6,
+        30.7,
+        30.7,
+        30.9,
+        31,
+        30.8,
+        30.3,
+        29.6
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "wmo",
+      "sourceStation": {
+        "name": "Charnocks",
+        "id": "00078954",
+        "wigosId": "0-52-130-0001",
+        "country": "Barbados",
+        "lat": 13.085,
+        "lng": -59.487,
+        "distanceKm": 14.2
+      },
+      "meanSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "meanSourceName": "WMO 1991–2020 · Charnocks",
+      "meanSourceTier": "wmo",
+      "rangeSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "rangeSourceName": "WMO 1991–2020 · TMIN/TMAX · Charnocks",
+      "rangeSourceTier": "wmo"
+    }
+  ]
+}

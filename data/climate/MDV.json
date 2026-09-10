@@ -1,0 +1,78 @@
+{
+  "countryCode": "MDV",
+  "countryName": "Мальдивы",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Malé",
+      "lng": 73.508901,
+      "lat": 4.172037,
+      "population": 112927,
+      "countryCode": "MDV",
+      "alt": 1.7,
+      "temps": [
+        28.2,
+        28.6,
+        29.2,
+        29.6,
+        29.3,
+        29,
+        28.7,
+        28.6,
+        28.4,
+        28.3,
+        28.1,
+        28
+      ],
+      "avgLow": [
+        26,
+        26.3,
+        26.8,
+        27.1,
+        26.6,
+        26.4,
+        25.9,
+        25.9,
+        25.7,
+        25.7,
+        25.5,
+        25.6
+      ],
+      "avgHigh": [
+        30.6,
+        31,
+        31.6,
+        31.9,
+        31.5,
+        31.1,
+        30.8,
+        30.7,
+        30.5,
+        30.5,
+        30.4,
+        30.4
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "wmo",
+      "sourceStation": {
+        "name": "Hulhule",
+        "id": "00043555",
+        "wigosId": "0-20000-0-43555",
+        "country": "Maldives",
+        "lat": 4.194,
+        "lng": 73.531,
+        "distanceKm": 3.5
+      },
+      "meanSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "meanSourceName": "WMO 1991–2020 · Hulhule",
+      "meanSourceTier": "wmo",
+      "rangeSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "rangeSourceName": "WMO 1991–2020 · TMIN/TMAX · Hulhule",
+      "rangeSourceTier": "wmo"
+    }
+  ]
+}

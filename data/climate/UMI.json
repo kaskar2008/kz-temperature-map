@@ -1,0 +1,79 @@
+{
+  "countryCode": "UMI",
+  "countryName": "Внешние малые острова США",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Внешние малые острова США",
+      "lat": 19.285663,
+      "lng": 166.644535,
+      "population": null,
+      "representativePoint": true,
+      "countryCode": "UMI",
+      "alt": 4,
+      "temps": [
+        25.9,
+        25.7,
+        25.9,
+        26.6,
+        27.4,
+        28.5,
+        28.6,
+        28.7,
+        28.6,
+        28.2,
+        27.4,
+        26.6
+      ],
+      "avgLow": [
+        23.4,
+        22.9,
+        23,
+        23.6,
+        24.4,
+        25.5,
+        25.4,
+        25.6,
+        25.4,
+        25.2,
+        24.7,
+        24.1
+      ],
+      "avgHigh": [
+        28.4,
+        28.5,
+        28.9,
+        29.7,
+        30.4,
+        31.5,
+        31.7,
+        31.9,
+        31.7,
+        31.2,
+        30,
+        29.1
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "wmo",
+      "sourceStation": {
+        "name": "WAKE_ISLAND",
+        "id": "00091246",
+        "wigosId": "0-20000-0-91246",
+        "country": "United_States",
+        "lat": 19.283,
+        "lng": 166.65,
+        "distanceKm": 0.6
+      },
+      "meanSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "meanSourceName": "WMO 1991–2020 · WAKE_ISLAND",
+      "meanSourceTier": "wmo",
+      "rangeSourceUrl": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "rangeSourceName": "WMO 1991–2020 · TMIN/TMAX · WAKE_ISLAND",
+      "rangeSourceTier": "wmo"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "countryCode": "TUV",
+  "countryName": "Тувалу",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Funafuti",
+      "lng": 179.216647,
+      "lat": -8.516652,
+      "population": 4749,
+      "countryCode": "TUV",
+      "alt": null,
+      "temps": [
+        28.3,
+        28.3,
+        28.3,
+        28.5,
+        28.5,
+        28.3,
+        28.2,
+        28.1,
+        28.2,
+        28.3,
+        28.4,
+        28.4
+      ],
+      "avgLow": [
+        25.1,
+        25.2,
+        25,
+        25.1,
+        25.4,
+        25.5,
+        25.3,
+        25.1,
+        25.2,
+        25.2,
+        25.1,
+        25.2
+      ],
+      "avgHigh": [
+        31.6,
+        31.5,
+        31.6,
+        31.8,
+        31.7,
+        31.1,
+        31.1,
+        31.2,
+        31.3,
+        31.4,
+        31.8,
+        31.6
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": -8.7,
+        "lng": 179.3,
+        "distanceKm": 26.2
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

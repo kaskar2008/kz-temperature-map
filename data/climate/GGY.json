@@ -1,0 +1,75 @@
+{
+  "countryCode": "GGY",
+  "countryName": "Гернси",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Гернси",
+      "lat": 49.463533,
+      "lng": -2.561736,
+      "population": null,
+      "representativePoint": true,
+      "countryCode": "GGY",
+      "alt": null,
+      "temps": [
+        7.5,
+        7.2,
+        8.4,
+        10,
+        12.6,
+        15.1,
+        17.1,
+        17.4,
+        16,
+        13.4,
+        10.5,
+        8.1
+      ],
+      "avgLow": [
+        5.6,
+        5,
+        5.7,
+        6.9,
+        9.5,
+        11.8,
+        13.9,
+        14.3,
+        13.1,
+        11.4,
+        8.5,
+        6.1
+      ],
+      "avgHigh": [
+        9.4,
+        9.5,
+        11.1,
+        13.1,
+        15.9,
+        18.4,
+        20.3,
+        20.6,
+        18.8,
+        15.5,
+        12.4,
+        10.1
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": 49.3,
+        "lng": -2.7,
+        "distanceKm": 27.4
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

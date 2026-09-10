@@ -1,0 +1,74 @@
+{
+  "countryCode": "VCT",
+  "countryName": "Сент-Винсент и Гренадины",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "Kingstown",
+      "lng": -61.220236,
+      "lat": 13.155756,
+      "population": 49485,
+      "countryCode": "VCT",
+      "alt": null,
+      "temps": [
+        24.9,
+        24.8,
+        25.5,
+        26.1,
+        27.1,
+        27.1,
+        26.9,
+        27.1,
+        27,
+        26.8,
+        26.2,
+        25.6
+      ],
+      "avgLow": [
+        21.6,
+        21.6,
+        22.1,
+        22.8,
+        23.9,
+        24.1,
+        24,
+        23.9,
+        23.8,
+        23.5,
+        23.1,
+        22.4
+      ],
+      "avgHigh": [
+        28.4,
+        28,
+        28.9,
+        29.4,
+        30.4,
+        30.2,
+        30,
+        30.3,
+        30.3,
+        30,
+        29.4,
+        28.7
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": 13.3,
+        "lng": -61.2,
+        "distanceKm": 11
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

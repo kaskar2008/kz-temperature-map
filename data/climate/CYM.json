@@ -1,0 +1,74 @@
+{
+  "countryCode": "CYM",
+  "countryName": "острова Кайман",
+  "period": "1991–2020",
+  "generatedFrom": {
+    "primary": "WMO Climatological Standard Normals 1991–2020 (min24 composites)",
+    "fallback": "CRU TS 4.09 ASCII grids, TMP/TMN/TMX averaged over 1991–2020, 0.5°"
+  },
+  "cities": [
+    {
+      "name": "George Town",
+      "lng": -81.37157,
+      "lat": 19.294748,
+      "population": 4268,
+      "countryCode": "CYM",
+      "alt": null,
+      "temps": [
+        25.8,
+        26.5,
+        26.6,
+        27.3,
+        28.1,
+        29.2,
+        29.3,
+        29.1,
+        29,
+        28.8,
+        27.7,
+        27
+      ],
+      "avgLow": [
+        22.8,
+        23.3,
+        23.3,
+        23.8,
+        25.1,
+        26.3,
+        26.3,
+        25.9,
+        25.8,
+        25.9,
+        24.8,
+        24.2
+      ],
+      "avgHigh": [
+        28.9,
+        29.7,
+        30,
+        30.9,
+        31.3,
+        32,
+        32.3,
+        32.2,
+        32.2,
+        31.8,
+        30.6,
+        29.9
+      ],
+      "temperaturePeriod": "1991–2020",
+      "climateSource": "cru",
+      "sourceGridCell": {
+        "lat": 19.3,
+        "lng": -81.2,
+        "distanceKm": 13.7
+      },
+      "meanSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "meanSourceName": "CRU TS 4.09 · климатология 1991–2020 · сетка 0.5°",
+      "meanSourceTier": "cru",
+      "rangeSourceUrl": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09/",
+      "rangeSourceName": "CRU TS 4.09 · средний минимум / максимум · 1991–2020",
+      "rangeSourceTier": "cru"
+    }
+  ]
+}

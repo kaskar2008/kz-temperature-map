@@ -1,0 +1,11 @@
+{
+  "name": "climate-map-static-data",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:climate": "node tools/build-climate-data.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
