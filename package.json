@@ -5,7 +5,6 @@
   "scripts": {
     "build:climate": "node tools/build-climate-data.mjs",
     "build:geography": "node tools/build-geography.mjs",
-    "build": "node tools/build-site.mjs",
     "test": "node --test"
   },
   "engines": {
