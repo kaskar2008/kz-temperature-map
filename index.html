@@ -1790,14 +1790,14 @@
     });
 
 
-    // По умолчанию открываем ноябрь.
+    // По умолчанию открываем текущий месяц пользователя.
     MONTHS.forEach((month, index) => {
       const option = document.createElement('option');
       option.value = String(index);
       option.textContent = month;
       monthSelect.appendChild(option);
     });
-    monthSelect.value = '10';
+    monthSelect.value = String(new Date().getMonth());
 
     countryTrigger.addEventListener('click', event => {
       event.stopPropagation();
