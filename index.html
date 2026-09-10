@@ -1156,6 +1156,7 @@
     let activeCities = KAZAKHSTAN_CITIES;
     let countryChangeToken = 0;
     let countryEntries = [];
+    let userSelectedCountry = false;
 
     function getProperty(properties, ...names) {
       for (const name of names) {
@@ -1586,6 +1587,105 @@
       setCountryPickerDisabled(false);
     }
 
+    // Нормализуем долготу вершины относительно пользовательской точки.
+    // Это позволяет корректно проверять полигоны, пересекающие ±180°.
+    function longitudeNearPoint(lng, pointLng) {
+      let normalized = lng;
+      while (normalized - pointLng > 180) normalized -= 360;
+      while (normalized - pointLng < -180) normalized += 360;
+      return normalized;
+    }
+
+    function pointInRing(lng, lat, ring) {
+      let inside = false;
+
+      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+        const xi = longitudeNearPoint(ring[i][0], lng);
+        const yi = ring[i][1];
+        const xj = longitudeNearPoint(ring[j][0], lng);
+        const yj = ring[j][1];
+
+        const crossesLatitude = (yi > lat) !== (yj > lat);
+        if (!crossesLatitude) continue;
+
+        const edgeLng = ((xj - xi) * (lat - yi)) / (yj - yi) + xi;
+        if (lng < edgeLng) inside = !inside;
+      }
+
+      return inside;
+    }
+
+    function pointInPolygonCoordinates(lng, lat, polygon) {
+      if (!polygon?.length || !pointInRing(lng, lat, polygon[0])) return false;
+
+      // Последующие кольца — отверстия внутри основного полигона.
+      for (let i = 1; i < polygon.length; i += 1) {
+        if (pointInRing(lng, lat, polygon[i])) return false;
+      }
+
+      return true;
+    }
+
+    function featureContainsPoint(feature, lng, lat) {
+      const geometry = feature?.geometry;
+      if (!geometry) return false;
+
+      if (geometry.type === 'Polygon') {
+        return pointInPolygonCoordinates(lng, lat, geometry.coordinates);
+      }
+
+      if (geometry.type === 'MultiPolygon') {
+        return geometry.coordinates.some(polygon =>
+          pointInPolygonCoordinates(lng, lat, polygon)
+        );
+      }
+
+      return false;
+    }
+
+    function countryAtCoordinates(lng, lat) {
+      for (const [code, feature] of countryByCode.entries()) {
+        if (code === 'ATA') continue;
+        if (featureContainsPoint(feature, lng, lat)) return code;
+      }
+
+      return null;
+    }
+
+    function getApproximateCurrentPosition() {
+      return new Promise((resolve, reject) => {
+        if (!navigator.geolocation) {
+          reject(new Error('Геолокация не поддерживается этим браузером'));
+          return;
+        }
+
+        navigator.geolocation.getCurrentPosition(resolve, reject, {
+          // Для определения страны точность GPS не нужна: так быстрее и экономнее.
+          enableHighAccuracy: false,
+          timeout: 10000,
+          maximumAge: 10 * 60 * 1000
+        });
+      });
+    }
+
+    async function openCountryFromCurrentLocation() {
+      try {
+        const position = await getApproximateCurrentPosition();
+        if (userSelectedCountry) return;
+
+        const { longitude, latitude } = position.coords;
+        const detectedCountry = countryAtCoordinates(longitude, latitude);
+
+        if (!detectedCountry || detectedCountry === activeCountryCode) return;
+        if (!countryByCode.has(detectedCountry)) return;
+
+        await setActiveCountry(detectedCountry);
+      } catch (error) {
+        // Разрешение на геолокацию необязательно: при отказе остаётся Казахстан.
+        console.info('Country autodetection skipped:', error?.message || error);
+      }
+    }
+
     async function loadGlobalGeography() {
       setCountryStatus('Загружаю список стран…');
       const countriesResponse = await fetch(
@@ -1608,6 +1708,10 @@
       addCountryLayerIfNeeded();
       updateCountryLayer(countryByCode.get(activeCountryCode));
       setCountryStatus('');
+
+      // После загрузки границ определяем страну пользователя локально,
+      // без reverse-geocoding API и дополнительных сетевых запросов.
+      openCountryFromCurrentLocation();
     }
 
     async function setActiveCountry(countryCode) {
