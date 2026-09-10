@@ -557,6 +557,149 @@
       color: #475569;
     }
 
+    /* Маршрутизация: кнопка в popup и компактная карточка активного маршрута. */
+    .route-button {
+      width: 100%;
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 11px;
+      padding: 9px 12px;
+      border: 0;
+      border-radius: 11px;
+      background: #0f172a;
+      color: #fff;
+      font: inherit;
+      font-size: 11px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .12s ease, background .14s ease, box-shadow .14s ease;
+    }
+
+    .route-button:hover {
+      background: #1e293b;
+      box-shadow: 0 6px 16px rgba(15,23,42,.18);
+    }
+
+    .route-button:active {
+      transform: scale(.985);
+    }
+
+    .route-button:focus-visible {
+      outline: 3px solid rgba(37,99,235,.22);
+      outline-offset: 2px;
+    }
+
+    .route-panel {
+      position: absolute;
+      z-index: 6;
+      left: max(14px, env(safe-area-inset-left));
+      bottom: max(14px, env(safe-area-inset-bottom));
+      width: min(350px, calc(100vw - 28px));
+      padding: 13px 44px 13px 14px;
+      border: 1px solid rgba(148,163,184,.32);
+      border-radius: 16px;
+      background: rgba(255,255,255,.97);
+      box-shadow: 0 14px 34px rgba(15,23,42,.20);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      color: #0f172a;
+    }
+
+    .route-panel[hidden] {
+      display: none;
+    }
+
+    .route-panel.route-error .route-status {
+      color: #b91c1c;
+    }
+
+    .route-title {
+      overflow: hidden;
+      font-size: 12px;
+      line-height: 1.25;
+      font-weight: 850;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .route-status {
+      margin-top: 4px;
+      color: #475569;
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .route-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      color: #94a3b8;
+      font-size: 9px;
+      line-height: 1.3;
+    }
+
+    .route-dot {
+      width: 6px;
+      height: 6px;
+      flex: 0 0 6px;
+      border-radius: 50%;
+      background: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+
+    .route-close {
+      position: absolute;
+      top: 9px;
+      right: 9px;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      padding: 0 0 2px;
+      border: 0;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #64748b;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .route-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .current-location-marker {
+      width: 18px;
+      height: 18px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      background: #2563eb;
+      box-shadow:
+        0 0 0 4px rgba(37,99,235,.22),
+        0 4px 12px rgba(15,23,42,.30);
+    }
+
+    @media (max-width: 680px) {
+      .route-panel {
+        left: 10px;
+        bottom: max(10px, env(safe-area-inset-bottom));
+        width: calc(100vw - 20px);
+        padding: 12px 42px 12px 13px;
+        border-radius: 15px;
+      }
+
+      .route-button {
+        min-height: 44px;
+        font-size: 11px;
+      }
+    }
+
     .loading {
       position: absolute;
       z-index: 10;
@@ -754,6 +897,16 @@
     </div>
   </section>
 
+  <aside id="routePanel" class="route-panel" aria-live="polite" hidden>
+    <button id="routeClose" class="route-close" type="button" aria-label="Скрыть маршрут" title="Скрыть маршрут">×</button>
+    <div id="routeTitle" class="route-title">Маршрут</div>
+    <div id="routeStatus" class="route-status">Определяю местоположение…</div>
+    <div class="route-meta">
+      <span class="route-dot"></span>
+      <span id="routeProvider">Маршрут по дорогам OpenStreetMap</span>
+    </div>
+  </aside>
+
   <div id="loading" class="loading">
     <div class="loading-card">
       <div class="loading-title">Загружаю карту Казахстана…</div>
@@ -801,6 +954,12 @@
     const infoToggle = document.getElementById('infoToggle');
     const infoContent = document.getElementById('infoContent');
     const infoClose = document.getElementById('infoClose');
+
+    const routePanel = document.getElementById('routePanel');
+    const routeTitle = document.getElementById('routeTitle');
+    const routeStatus = document.getElementById('routeStatus');
+    const routeProvider = document.getElementById('routeProvider');
+    const routeClose = document.getElementById('routeClose');
 
     function setInfoExpanded(expanded) {
       infoToggle.setAttribute('aria-expanded', String(expanded));
@@ -922,6 +1081,11 @@
               Координаты: ${city.lat.toFixed(2)}°, ${city.lng.toFixed(2)}°
             </div>
 
+            <button class="route-button" type="button" data-route-city="${city.name}">
+              <span aria-hidden="true">🚗</span>
+              <span>Проложить маршрут</span>
+            </button>
+
             <div class="popup-sources">
               <div class="popup-source-row">
                 <span class="popup-source-label">Средняя</span>
@@ -982,12 +1146,376 @@
     const markers = [];
     let activePopup = null;
 
+    const ROUTE_SOURCE_ID = 'active-route';
+    const ROUTE_CASING_LAYER_ID = 'active-route-casing';
+    const ROUTE_LAYER_ID = 'active-route-line';
+    const VALHALLA_ROUTE_URL = 'https://valhalla1.openstreetmap.de/route';
+    const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
+
+    let currentLocationMarker = null;
+    let routeRequestController = null;
+    let activeRouteDestination = null;
+
     function closePopup() {
       if (activePopup) {
         activePopup.remove();
         activePopup = null;
       }
     }
+
+    function setRoutePanel({ destination, status, provider = 'Маршрут по дорогам OpenStreetMap', error = false }) {
+      routePanel.hidden = false;
+      routePanel.classList.toggle('route-error', error);
+      routeTitle.textContent = destination ? `До ${destination}` : 'Маршрут';
+      routeStatus.textContent = status;
+      routeProvider.textContent = provider;
+    }
+
+    function formatRouteDistance(kilometers) {
+      if (!Number.isFinite(kilometers)) return 'н/д';
+      return kilometers < 100
+        ? `${kilometers.toFixed(1)} км`
+        : `${Math.round(kilometers).toLocaleString('ru-RU')} км`;
+    }
+
+    function formatRouteDuration(seconds) {
+      if (!Number.isFinite(seconds)) return 'н/д';
+
+      const totalMinutes = Math.max(1, Math.round(seconds / 60));
+      const days = Math.floor(totalMinutes / 1440);
+      const hours = Math.floor((totalMinutes % 1440) / 60);
+      const minutes = totalMinutes % 60;
+      const parts = [];
+
+      if (days) parts.push(`${days} д`);
+      if (hours) parts.push(`${hours} ч`);
+      if (minutes || parts.length === 0) parts.push(`${minutes} мин`);
+
+      return parts.join(' ');
+    }
+
+    // Valhalla по умолчанию возвращает геометрию маршрута в polyline6.
+    // Декодируем её в координаты MapLibre [lng, lat].
+    function decodePolyline6(encoded) {
+      const coordinates = [];
+      let index = 0;
+      let lat = 0;
+      let lng = 0;
+
+      while (index < encoded.length) {
+        let result = 0;
+        let shift = 0;
+        let byte;
+
+        do {
+          byte = encoded.charCodeAt(index++) - 63;
+          result |= (byte & 0x1f) << shift;
+          shift += 5;
+        } while (byte >= 0x20 && index < encoded.length);
+
+        lat += (result & 1) ? ~(result >> 1) : (result >> 1);
+
+        result = 0;
+        shift = 0;
+
+        do {
+          byte = encoded.charCodeAt(index++) - 63;
+          result |= (byte & 0x1f) << shift;
+          shift += 5;
+        } while (byte >= 0x20 && index < encoded.length);
+
+        lng += (result & 1) ? ~(result >> 1) : (result >> 1);
+        coordinates.push([lng / 1e6, lat / 1e6]);
+      }
+
+      return coordinates;
+    }
+
+    function clearRoute() {
+      if (routeRequestController) {
+        routeRequestController.abort();
+        routeRequestController = null;
+      }
+
+      if (map.getLayer(ROUTE_LAYER_ID)) map.removeLayer(ROUTE_LAYER_ID);
+      if (map.getLayer(ROUTE_CASING_LAYER_ID)) map.removeLayer(ROUTE_CASING_LAYER_ID);
+      if (map.getSource(ROUTE_SOURCE_ID)) map.removeSource(ROUTE_SOURCE_ID);
+
+      if (currentLocationMarker) {
+        currentLocationMarker.remove();
+        currentLocationMarker = null;
+      }
+
+      activeRouteDestination = null;
+      routePanel.hidden = true;
+      routePanel.classList.remove('route-error');
+    }
+
+    function drawRoute(coordinates) {
+      if (!coordinates?.length) {
+        throw new Error('Маршрут не содержит геометрию');
+      }
+
+      if (map.getLayer(ROUTE_LAYER_ID)) map.removeLayer(ROUTE_LAYER_ID);
+      if (map.getLayer(ROUTE_CASING_LAYER_ID)) map.removeLayer(ROUTE_CASING_LAYER_ID);
+      if (map.getSource(ROUTE_SOURCE_ID)) map.removeSource(ROUTE_SOURCE_ID);
+
+      map.addSource(ROUTE_SOURCE_ID, {
+        type: 'geojson',
+        data: {
+          type: 'Feature',
+          properties: {},
+          geometry: {
+            type: 'LineString',
+            coordinates
+          }
+        }
+      });
+
+      // Оставляем подписи дорог/городов над маршрутом.
+      const firstSymbolLayerId = map.getStyle().layers?.find(layer => layer.type === 'symbol')?.id;
+
+      map.addLayer({
+        id: ROUTE_CASING_LAYER_ID,
+        type: 'line',
+        source: ROUTE_SOURCE_ID,
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round'
+        },
+        paint: {
+          'line-color': 'rgba(255,255,255,.96)',
+          'line-width': [
+            'interpolate', ['linear'], ['zoom'],
+            4, 7,
+            8, 9,
+            12, 12
+          ],
+          'line-opacity': .96
+        }
+      }, firstSymbolLayerId);
+
+      map.addLayer({
+        id: ROUTE_LAYER_ID,
+        type: 'line',
+        source: ROUTE_SOURCE_ID,
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round'
+        },
+        paint: {
+          'line-color': '#2563eb',
+          'line-width': [
+            'interpolate', ['linear'], ['zoom'],
+            4, 4,
+            8, 5.5,
+            12, 7
+          ],
+          'line-opacity': .92
+        }
+      }, firstSymbolLayerId);
+    }
+
+    function showCurrentLocation(lng, lat, accuracy) {
+      if (currentLocationMarker) currentLocationMarker.remove();
+
+      const el = document.createElement('div');
+      el.className = 'current-location-marker';
+      el.title = Number.isFinite(accuracy)
+        ? `Текущее местоположение · точность ±${Math.round(accuracy)} м`
+        : 'Текущее местоположение';
+
+      currentLocationMarker = new maplibregl.Marker({
+        element: el,
+        anchor: 'center'
+      })
+        .setLngLat([lng, lat])
+        .addTo(map);
+    }
+
+    function fitRouteIntoViewport(coordinates) {
+      const bounds = new maplibregl.LngLatBounds();
+      coordinates.forEach(coordinate => bounds.extend(coordinate));
+
+      if (bounds.isEmpty()) return;
+
+      map.fitBounds(bounds, {
+        padding: isMobileViewport()
+          ? { top: 92, right: 28, bottom: 135, left: 28 }
+          : { top: 80, right: 70, bottom: 110, left: 270 },
+        maxZoom: 11,
+        duration: 750,
+        essential: true
+      });
+    }
+
+    function getCurrentPosition() {
+      return new Promise((resolve, reject) => {
+        if (!navigator.geolocation) {
+          reject(new Error('Геолокация не поддерживается этим браузером'));
+          return;
+        }
+
+        navigator.geolocation.getCurrentPosition(resolve, reject, {
+          enableHighAccuracy: true,
+          timeout: 15000,
+          maximumAge: 30000
+        });
+      });
+    }
+
+    function geolocationErrorMessage(error) {
+      if (!window.isSecureContext) {
+        return 'Браузер блокирует геолокацию на небезопасной странице. Откройте карту через http://localhost:3000.';
+      }
+
+      if (error?.code === 1) return 'Нет доступа к геопозиции. Разрешите доступ к местоположению для этой страницы.';
+      if (error?.code === 2) return 'Не удалось определить текущее местоположение.';
+      if (error?.code === 3) return 'Определение местоположения заняло слишком много времени. Попробуйте ещё раз.';
+
+      return error?.message || 'Не удалось определить текущее местоположение.';
+    }
+
+    async function requestValhallaRoute(origin, destination, signal) {
+      const payload = {
+        locations: [
+          { lat: origin.lat, lon: origin.lng },
+          { lat: destination.lat, lon: destination.lng }
+        ],
+        costing: 'auto',
+        units: 'kilometers',
+        directions_options: { units: 'kilometers' }
+      };
+
+      // GET не создаёт CORS preflight и удобен для локальной статической страницы.
+      const url = `${VALHALLA_ROUTE_URL}?json=${encodeURIComponent(JSON.stringify(payload))}`;
+      const response = await fetch(url, { signal });
+
+      if (!response.ok) {
+        throw new Error(`Valhalla: HTTP ${response.status}`);
+      }
+
+      const data = await response.json();
+      const shape = data?.trip?.legs?.[0]?.shape;
+      const summary = data?.trip?.summary;
+
+      if (!shape || !summary) {
+        throw new Error('Valhalla не вернул маршрут');
+      }
+
+      return {
+        coordinates: decodePolyline6(shape),
+        distanceKm: Number(summary.length),
+        durationSec: Number(summary.time),
+        provider: 'OpenStreetMap · Valhalla'
+      };
+    }
+
+    async function requestOsrmRoute(origin, destination, signal) {
+      const coordinates = `${origin.lng},${origin.lat};${destination.lng},${destination.lat}`;
+      const url = `${OSRM_ROUTE_URL}/${coordinates}?overview=full&geometries=geojson&steps=false`;
+      const response = await fetch(url, { signal });
+
+      if (!response.ok) {
+        throw new Error(`OSRM: HTTP ${response.status}`);
+      }
+
+      const data = await response.json();
+      const route = data?.routes?.[0];
+
+      if (data?.code !== 'Ok' || !route?.geometry?.coordinates?.length) {
+        throw new Error(data?.message || 'OSRM не вернул маршрут');
+      }
+
+      return {
+        coordinates: route.geometry.coordinates,
+        distanceKm: Number(route.distance) / 1000,
+        durationSec: Number(route.duration),
+        provider: 'OpenStreetMap · OSRM'
+      };
+    }
+
+    async function requestDrivingRoute(origin, destination, signal) {
+      try {
+        return await requestValhallaRoute(origin, destination, signal);
+      } catch (error) {
+        if (error?.name === 'AbortError') throw error;
+        console.warn('Valhalla route failed, using OSRM fallback:', error);
+        return requestOsrmRoute(origin, destination, signal);
+      }
+    }
+
+    async function buildRouteToCity(city) {
+      closePopup();
+      setInfoExpanded(false);
+
+      // При новом запросе убираем предыдущий маршрут, чтобы при ошибке
+      // не оставить на карте старую линию с уже новым названием города.
+      clearRoute();
+      activeRouteDestination = city;
+
+      routeRequestController = new AbortController();
+      const { signal } = routeRequestController;
+
+      setRoutePanel({
+        destination: city.name,
+        status: 'Определяю текущее местоположение…'
+      });
+
+      try {
+        const position = await getCurrentPosition();
+        if (signal.aborted) return;
+
+        const origin = {
+          lng: position.coords.longitude,
+          lat: position.coords.latitude
+        };
+
+        showCurrentLocation(origin.lng, origin.lat, position.coords.accuracy);
+        setRoutePanel({
+          destination: city.name,
+          status: 'Строю автомобильный маршрут…'
+        });
+
+        const result = await requestDrivingRoute(
+          origin,
+          { lng: city.lng, lat: city.lat },
+          signal
+        );
+
+        if (signal.aborted || activeRouteDestination !== city) return;
+
+        drawRoute(result.coordinates);
+        fitRouteIntoViewport(result.coordinates);
+
+        setRoutePanel({
+          destination: city.name,
+          status: `${formatRouteDistance(result.distanceKm)} · ${formatRouteDuration(result.durationSec)}`,
+          provider: result.provider
+        });
+      } catch (error) {
+        if (error?.name === 'AbortError') return;
+
+        console.error('Route error:', error);
+        const isGeoError = typeof error?.code === 'number';
+        setRoutePanel({
+          destination: city.name,
+          status: isGeoError
+            ? geolocationErrorMessage(error)
+            : 'Не удалось построить маршрут. Проверьте интернет и попробуйте ещё раз.',
+          error: true
+        });
+      } finally {
+        if (routeRequestController?.signal === signal) {
+          routeRequestController = null;
+        }
+      }
+    }
+
+    routeClose.addEventListener('click', event => {
+      event.stopPropagation();
+      clearRoute();
+    });
 
     function isMobileViewport() {
       return window.matchMedia('(max-width: 680px)').matches;
@@ -1132,6 +1660,12 @@
             activePopup = null;
           });
 
+          const routeButton = activePopup.getElement()?.querySelector('.route-button');
+          routeButton?.addEventListener('click', routeEvent => {
+            routeEvent.stopPropagation();
+            buildRouteToCity(city);
+          });
+
           // На мобильном автоматически приближаем/смещаем карту так,
           // чтобы popup города целиком помещался в видимой области.
           focusCityPopupOnMobile(city);
@@ -1199,6 +1733,13 @@
           'API-ключ для этой карты не нужен.';
       }
     });
+
+    // MapLibre сам поддерживает:
+    // - pinch-to-zoom двумя пальцами;
+    // - pan одним пальцем;
+    // - kinetic scrolling;
+    // - scroll zoom мышью;
+    // - double tap / double click zoom.
   </script>
 </body>
 </html>
