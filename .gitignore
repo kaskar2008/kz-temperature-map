@@ -2,7 +2,6 @@
 node_modules/
 
 # Build output and caches
-dist/
 build/
 .cache/
 .parcel-cache/
