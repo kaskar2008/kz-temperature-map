@@ -104,6 +104,27 @@
     </div>
   </section>
 
+  <aside
+    id="citySheet"
+    class="city-sheet"
+    role="dialog"
+    aria-modal="false"
+    aria-label="Информация о городе"
+    hidden
+  >
+    <div id="citySheetDrag" class="city-sheet-drag" aria-hidden="true">
+      <span class="city-sheet-grabber"></span>
+    </div>
+    <button
+      id="citySheetClose"
+      class="city-sheet-close"
+      type="button"
+      aria-label="Закрыть карточку города"
+      title="Закрыть"
+    >×</button>
+    <div id="citySheetContent" class="city-sheet-content"></div>
+  </aside>
+
   <aside id="routePanel" class="route-panel" aria-live="polite" hidden>
     <button id="routeClose" class="route-close" type="button" aria-label="Скрыть маршрут" title="Скрыть маршрут">×</button>
     <div id="routeTitle" class="route-title">Маршрут</div>

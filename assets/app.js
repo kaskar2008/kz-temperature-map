@@ -36,6 +36,10 @@
     const loadingText = document.getElementById('loadingText');
     const mapContainer = document.getElementById('map');
     const controlsPanel = document.getElementById('controlsPanel');
+    const citySheet = document.getElementById('citySheet');
+    const citySheetDrag = document.getElementById('citySheetDrag');
+    const citySheetClose = document.getElementById('citySheetClose');
+    const citySheetContent = document.getElementById('citySheetContent');
     const countryStatus = document.getElementById('countryStatus');
     const infoTitle = document.getElementById('infoTitle');
     const infoSubtitle = document.getElementById('infoSubtitle');
@@ -916,7 +920,7 @@
             </div>
             ${missingClimateNote}
 
-            <div class="popup-row" style="margin-top:10px">
+            <div class="popup-row popup-location">
               Высота метеостанции: ${alt}
             </div>
             <div class="popup-row">
@@ -987,6 +991,7 @@
 
     const markers = [];
     let activePopup = null;
+    let activeCity = null;
 
     const ROUTE_SOURCE_ID = 'active-route';
     const ROUTE_CASING_LAYER_ID = 'active-route-casing';
@@ -1003,7 +1008,75 @@
         activePopup.remove();
         activePopup = null;
       }
+
+      citySheet.hidden = true;
+      citySheet.style.removeProperty('transform');
+      citySheet.style.removeProperty('transition');
+      citySheetContent.replaceChildren();
+      activeCity = null;
     }
+
+    citySheetClose.addEventListener('click', event => {
+      event.stopPropagation();
+      closePopup();
+    });
+
+    let citySheetDragStartY = null;
+    let citySheetDragOffset = 0;
+    let citySheetDragPointer = null;
+
+    citySheetDrag.addEventListener('pointerdown', event => {
+      if (citySheet.hidden) return;
+
+      citySheetDragStartY = event.clientY;
+      citySheetDragOffset = 0;
+      citySheetDragPointer = event.pointerId;
+      citySheet.style.transition = 'none';
+      citySheetDrag.setPointerCapture?.(event.pointerId);
+    });
+
+    citySheetDrag.addEventListener('pointermove', event => {
+      if (event.pointerId !== citySheetDragPointer || citySheetDragStartY == null) return;
+
+      citySheetDragOffset = Math.max(0, event.clientY - citySheetDragStartY);
+      citySheet.style.transform = `translateY(${citySheetDragOffset}px)`;
+      event.preventDefault();
+    });
+
+    function finishCitySheetDrag(event, cancelled = false) {
+      if (event.pointerId !== citySheetDragPointer || citySheetDragStartY == null) return;
+
+      if (!cancelled) {
+        citySheetDragOffset = Math.max(citySheetDragOffset, event.clientY - citySheetDragStartY);
+      }
+
+      if (citySheetDrag.hasPointerCapture?.(event.pointerId)) {
+        citySheetDrag.releasePointerCapture(event.pointerId);
+      }
+      citySheetDragStartY = null;
+      citySheetDragPointer = null;
+
+      if (!cancelled && citySheetDragOffset > 72) {
+        closePopup();
+        return;
+      }
+
+      citySheetDragOffset = 0;
+      citySheet.style.transition = 'transform .16s ease-out';
+      citySheet.style.transform = 'translateY(0)';
+      window.setTimeout(() => {
+        if (!citySheet.hidden) citySheet.style.removeProperty('transition');
+      }, 180);
+    }
+
+    citySheetDrag.addEventListener('pointerup', event => finishCitySheetDrag(event));
+    citySheetDrag.addEventListener('pointercancel', event => finishCitySheetDrag(event, true));
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && (activePopup || !citySheet.hidden)) {
+        closePopup();
+      }
+    });
 
     function setRoutePanel({ destination, status, provider = 'Маршрут по дорогам OpenStreetMap', error = false }) {
       routePanel.hidden = false;
@@ -1384,107 +1457,82 @@
       return window.matchMedia('(max-width: 680px)').matches;
     }
 
-    function fitActivePopupIntoMobileViewport() {
-      if (!isMobileViewport() || !activePopup) return;
+    function focusCityAboveSheet(city) {
+      if (!isMobileViewport() || citySheet.hidden) return;
 
-      const popupEl = activePopup.getElement();
-      if (!popupEl) return;
-
-      const mapRect = mapContainer.getBoundingClientRect();
-      const popupRect = popupEl.getBoundingClientRect();
-      const controlsRect = controlsPanel.getBoundingClientRect();
-
-      // Оставляем небольшой визуальный воздух вокруг popup.
-      const margin = 12;
-
-      // Popup не должен заходить под постоянный селект месяца.
-      const safeLeft = mapRect.left + margin;
-      const safeRight = mapRect.right - margin;
-      const safeTop = Math.max(
-        mapRect.top + margin,
-        controlsRect.bottom + 10
-      );
-      const safeBottom = mapRect.bottom - margin;
-
-      let shiftX = 0;
-      let shiftY = 0;
-
-      // Сколько пикселей нужно визуально сдвинуть popup по экрану.
-      if (popupRect.left < safeLeft) {
-        shiftX = safeLeft - popupRect.left;
-      } else if (popupRect.right > safeRight) {
-        shiftX = -(popupRect.right - safeRight);
-      }
-
-      if (popupRect.top < safeTop) {
-        shiftY = safeTop - popupRect.top;
-      } else if (popupRect.bottom > safeBottom) {
-        shiftY = -(popupRect.bottom - safeBottom);
-      }
-
-      if (Math.abs(shiftX) < 1 && Math.abs(shiftY) < 1) return;
-
-      // Чтобы контент карты визуально сдвинулся на shiftX/shiftY,
-      // центр камеры двигаем в противоположную сторону.
-      const currentCenterPoint = map.project(map.getCenter());
-
-      const nextCenter = map.unproject([
-        currentCenterPoint.x - shiftX,
-        currentCenterPoint.y - shiftY
-      ]);
-
-      map.easeTo({
-        center: nextCenter,
-        duration: 280,
-        essential: true
-      });
-    }
-
-    function focusCityPopupOnMobile(city) {
-      if (!isMobileViewport()) return;
-
-      // При открытии карточки города информационную справку сворачиваем,
-      // чтобы она не конкурировала за вертикальное место.
       setInfoExpanded(false);
-
-      const currentZoom = map.getZoom();
-      const targetZoom = Math.max(currentZoom, 5.4);
-
-      // Помещаем точку чуть ниже центра — popup раскрывается над ней,
-      // поэтому сверху остаётся место для всей карточки.
-      const mapHeight = mapContainer.clientHeight;
-      const controlsHeight = controlsPanel.getBoundingClientRect().height;
-
-      const targetMarkerY = Math.min(
-        mapHeight * 0.72,
-        controlsHeight + 380
-      );
-
-      const offsetY = targetMarkerY - mapHeight / 2;
+      const mapRect = mapContainer.getBoundingClientRect();
+      const controlsRect = controlsPanel.getBoundingClientRect();
+      const sheetRect = citySheet.getBoundingClientRect();
+      const visibleTop = Math.max(12, controlsRect.bottom - mapRect.top + 12);
+      const visibleBottom = Math.max(visibleTop, sheetRect.top - mapRect.top - 12);
+      const targetMarkerY = (visibleTop + visibleBottom) / 2;
+      const targetZoom = Math.max(map.getZoom(), 5.4);
 
       map.easeTo({
         center: [city.lng, city.lat],
         zoom: targetZoom,
-        offset: [0, offsetY],
+        offset: [0, targetMarkerY - mapContainer.clientHeight / 2],
         duration: 420,
         essential: true
       });
+    }
 
-      // После завершения движения измеряем реальный popup и делаем
-      // финальную пиксельную коррекцию, если он всё ещё упирается в край.
-      map.once('moveend', () => {
-        requestAnimationFrame(() => {
-          fitActivePopupIntoMobileViewport();
-        });
+    function bindPopupActions(root, city) {
+      const routeButton = root?.querySelector('.route-button');
+      routeButton?.addEventListener('click', event => {
+        event.stopPropagation();
+        buildRouteToCity(city);
       });
+    }
 
-      // Если зум уже был достаточным и движение получилось минимальным,
-      // дополнительная проверка всё равно сработает сразу после layout.
+    function openCitySheet(city, monthIndex) {
+      activeCity = city;
+      setInfoExpanded(false);
+      closeCountryDropdown();
+
+      citySheetContent.innerHTML = popupHtml(city, monthIndex);
+      citySheet.setAttribute('aria-label', `Информация о городе ${city.name}`);
+      citySheet.hidden = false;
+      bindPopupActions(citySheetContent, city);
+
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          fitActivePopupIntoMobileViewport();
-        });
+        requestAnimationFrame(() => focusCityAboveSheet(city));
       });
+    }
+
+    function openDesktopPopup(city, monthIndex) {
+      activeCity = city;
+
+      const popup = new maplibregl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+        offset: 18,
+        maxWidth: '320px'
+      })
+        .setLngLat([city.lng, city.lat])
+        .setHTML(popupHtml(city, monthIndex))
+        .addTo(map);
+
+      activePopup = popup;
+      popup.on('close', () => {
+        if (activePopup === popup) {
+          activePopup = null;
+          activeCity = null;
+        }
+      });
+
+      bindPopupActions(popup.getElement(), city);
+    }
+
+    function openCityCard(city, monthIndex) {
+      closePopup();
+
+      if (isMobileViewport()) {
+        openCitySheet(city, monthIndex);
+      } else {
+        openDesktopPopup(city, monthIndex);
+      }
     }
 
     function renderMarkers() {
@@ -1507,31 +1555,7 @@
 
         el.addEventListener('click', event => {
           event.stopPropagation();
-          closePopup();
-
-          activePopup = new maplibregl.Popup({
-            closeButton: true,
-            closeOnClick: true,
-            offset: 18,
-            maxWidth: '320px'
-          })
-            .setLngLat([city.lng, city.lat])
-            .setHTML(popupHtml(city, monthIndex))
-            .addTo(map);
-
-          activePopup.on('close', () => {
-            activePopup = null;
-          });
-
-          const routeButton = activePopup.getElement()?.querySelector('.route-button');
-          routeButton?.addEventListener('click', routeEvent => {
-            routeEvent.stopPropagation();
-            buildRouteToCity(city);
-          });
-
-          // На мобильном автоматически приближаем/смещаем карту так,
-          // чтобы popup города целиком помещался в видимой области.
-          focusCityPopupOnMobile(city);
+          openCityCard(city, monthIndex);
         });
 
         markers.push(marker);
@@ -1548,12 +1572,18 @@
 
     map.on('zoom', updateZoomDensity);
 
+    let previousMobileLayout = isMobileViewport();
     window.addEventListener('resize', () => {
-      if (!activePopup || !isMobileViewport()) return;
+      const mobileLayout = isMobileViewport();
+      const city = activeCity;
 
-      requestAnimationFrame(() => {
-        fitActivePopupIntoMobileViewport();
-      });
+      if (city && mobileLayout !== previousMobileLayout) {
+        openCityCard(city, Number(monthSelect.value));
+      } else if (city && mobileLayout) {
+        requestAnimationFrame(() => focusCityAboveSheet(city));
+      }
+
+      previousMobileLayout = mobileLayout;
     });
 
 

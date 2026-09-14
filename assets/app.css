@@ -14,7 +14,7 @@
       height: 100%;
       margin: 0;
       overflow: hidden;
-      touch-action: none;
+      touch-action: pan-x pan-y;
       overscroll-behavior: none;
       -webkit-text-size-adjust: 100%;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -490,6 +490,7 @@
 
     /* Popup MapLibre */
     .maplibregl-popup {
+      z-index: 40;
       max-width: min(320px, calc(100vw - 24px)) !important;
     }
 
@@ -549,6 +550,10 @@
 
     .popup-row {
       margin-top: 3px;
+    }
+
+    .popup-location {
+      margin-top: 10px;
     }
 
     .popup-climate-range {
@@ -667,6 +672,11 @@
     .source-badge-secondary {
       background: #f1f5f9;
       color: #475569;
+    }
+
+    /* На мобильном карточка города открывается отдельным нижним листом. */
+    .city-sheet {
+      display: none;
     }
 
     /* Маршрутизация: кнопка в popup и компактная карточка активного маршрута. */
@@ -798,6 +808,94 @@
     }
 
     @media (max-width: 680px) {
+      .city-sheet:not([hidden]) {
+        position: absolute;
+        z-index: 60;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        max-height: min(72vh, calc(100vh - 88px));
+        max-height: min(72dvh, calc(100dvh - 88px));
+        overflow: hidden;
+        padding-bottom: env(safe-area-inset-bottom);
+        border: 1px solid rgba(148,163,184,.28);
+        border-bottom: 0;
+        border-radius: 22px 22px 0 0;
+        background: #fff;
+        box-shadow: 0 -16px 42px rgba(15,23,42,.24);
+        animation: city-sheet-in .22s ease-out;
+        will-change: transform;
+      }
+
+      .city-sheet-drag {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 28px;
+        display: flex;
+        justify-content: center;
+        padding-top: 8px;
+        cursor: grab;
+        touch-action: none;
+      }
+
+      .city-sheet-drag:active {
+        cursor: grabbing;
+      }
+
+      .city-sheet-grabber {
+        width: 38px;
+        height: 4px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.72);
+        box-shadow: 0 1px 3px rgba(15,23,42,.18);
+      }
+
+      .city-sheet-close {
+        position: absolute;
+        z-index: 4;
+        top: 8px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(255,255,255,.88);
+        color: #475569;
+        font-size: 23px;
+        line-height: 30px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(15,23,42,.14);
+      }
+
+      .city-sheet-content {
+        max-height: min(72vh, calc(100vh - 88px - env(safe-area-inset-bottom)));
+        max-height: min(72dvh, calc(100dvh - 88px - env(safe-area-inset-bottom)));
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .city-sheet .popup {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .city-sheet .popup-head {
+        padding-top: 22px;
+      }
+
+      @keyframes city-sheet-in {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+      }
+
       .route-panel {
         left: 10px;
         bottom: max(10px, env(safe-area-inset-bottom));
@@ -862,16 +960,20 @@
 
     @media (max-width: 680px) {
       .panel {
-        top: max(10px, env(safe-area-inset-top));
-        left: 10px;
-        width: calc(100vw - 20px);
+        top: max(8px, env(safe-area-inset-top));
+        left: 8px;
+        width: calc(100vw - 16px);
       }
 
       .compact-bar {
         width: 100%;
-        gap: 10px;
-        padding: 10px;
-        border-radius: 18px;
+        align-items: center;
+        gap: 4px;
+        padding: 5px;
+        border-radius: 17px;
+        box-shadow:
+          0 8px 24px rgba(15,23,42,.15),
+          0 1px 2px rgba(15,23,42,.05);
       }
 
       .country-control {
@@ -881,33 +983,64 @@
       }
 
       .month-control {
-        width: 110px;
-        flex: 0 0 110px;
+        width: 108px;
+        flex: 0 0 108px;
       }
 
       .field-label {
-        margin-bottom: 6px;
-        font-size: 9.5px;
+        display: none;
       }
 
       select {
-        height: 44px;
-        padding-left: 15px;
-        padding-right: 42px;
-        background-position: right 15px center;
-        font-size: 14px;
-        border-radius: 13px;
+        height: 42px;
+        padding-left: 12px;
+        padding-right: 32px;
+        border-color: transparent;
+        border-radius: 12px;
+        background-color: #f1f5f9;
+        background-position: right 11px center;
+        background-size: 12px auto;
+        font-size: 13px;
       }
 
-      .country-picker-trigger { height:44px; padding-left:15px; padding-right:42px; font-size:14px; border-radius:13px; }
-      .country-picker-trigger::after { right:15px; }
-      .country-dropdown { width:min(300px, calc(100vw - 20px)); }
+      .country-picker-trigger {
+        height: 42px;
+        padding-left: 12px;
+        padding-right: 34px;
+        border-color: transparent;
+        border-radius: 12px;
+        background: #f1f5f9;
+        font-size: 13px;
+      }
+
+      .country-picker-trigger::after {
+        right: 12px;
+        width: 12px;
+        background-size: 12px auto;
+      }
+
+      .country-picker-trigger:hover:not(:disabled) {
+        border-color: transparent;
+        background: #e2e8f0;
+      }
+
+      .country-dropdown {
+        width: min(300px, calc(100vw - 16px));
+      }
 
       .info-toggle {
-        width: 44px;
-        height: 44px;
-        flex-basis: 44px;
-        border-radius: 13px;
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+        border-color: transparent;
+        border-radius: 12px;
+        background: #f1f5f9;
+      }
+
+      .info-icon {
+        width: 22px;
+        height: 22px;
+        font-size: 14px;
       }
 
       .info-content {
@@ -954,32 +1087,112 @@
       .popup {
         min-width: 210px;
       }
+
+      .maplibregl-popup {
+        max-width: min(270px, calc(100vw - 20px)) !important;
+      }
+
+      .maplibregl-popup-content {
+        max-height: calc(100vh - 112px);
+        max-height: calc(100dvh - 112px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .popup-head {
+        padding: 10px 38px 8px 11px;
+      }
+
+      .popup-city {
+        font-size: 14px;
+      }
+
+      .popup-temp {
+        margin-top: 2px;
+        font-size: 21px;
+      }
+
+      .popup-body {
+        padding: 8px 11px 10px;
+        font-size: 10px;
+        line-height: 1.35;
+      }
+
+      .popup-climate-range {
+        gap: 4px;
+        margin-top: 7px;
+        padding: 6px 8px;
+      }
+
+      .popup-climate-note {
+        margin-top: 5px;
+        font-size: 8px;
+      }
+
+      .popup-climate-missing {
+        margin-top: 6px;
+        padding: 5px 7px;
+        font-size: 9px;
+      }
+
+      .popup-location {
+        margin-top: 7px;
+      }
+
+      .route-button {
+        min-height: 36px;
+        margin-top: 8px;
+        padding: 7px 10px;
+        font-size: 10px;
+      }
+
+      .popup-sources {
+        gap: 4px;
+        margin-top: 7px;
+        padding-top: 7px;
+      }
+
+      .popup-source-row {
+        grid-template-columns: 68px minmax(0, 1fr);
+        gap: 6px;
+        font-size: 9px;
+        line-height: 1.25;
+      }
     }
 
     @media (max-width: 360px) {
       .compact-bar {
-        gap: 8px;
-        padding: 9px;
+        gap: 3px;
+        padding: 4px;
       }
 
       .month-control {
-        width: 104px;
-        flex-basis: 104px;
+        width: 98px;
+        flex-basis: 98px;
       }
 
       select {
-        padding-left: 11px;
-        padding-right: 34px;
-        background-position: right 11px center;
-        font-size: 13px;
+        padding-left: 10px;
+        padding-right: 29px;
+        background-position: right 9px center;
+        font-size: 12px;
       }
 
-      .country-picker-trigger { padding-left:11px; padding-right:34px; font-size:13px; }
-      .country-picker-trigger::after { right:11px; }
+      .country-picker-trigger {
+        padding-left: 10px;
+        padding-right: 30px;
+        font-size: 12px;
+      }
+
+      .country-picker-trigger::after {
+        right: 10px;
+      }
 
       .info-toggle {
-        width: 42px;
-        height: 44px;
-        flex-basis: 42px;
+        width: 40px;
+        height: 42px;
+        flex-basis: 40px;
       }
     }
