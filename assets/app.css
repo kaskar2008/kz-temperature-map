@@ -29,6 +29,10 @@
       overscroll-behavior: none;
     }
 
+    .maplibregl-canvas:focus-visible {
+      outline: none;
+    }
+
     .panel {
       position: absolute;
       z-index: 5;
